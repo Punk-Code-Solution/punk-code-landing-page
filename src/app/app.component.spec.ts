@@ -14,16 +14,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have the 'Punk-Code-Solution' title`, () => {
+  it(`should have the 'punk-code-solution-leading-page' title`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('Punk-Code-Solution');
+    expect(app.title).toEqual('punk-code-solution-leading-page');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, Punk-Code-Solution');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, punk-code-solution-leading-page');
   });
 });
