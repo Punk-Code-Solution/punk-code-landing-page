@@ -1,0 +1,42 @@
+:host {
+  cursor: pointer;
+
+  width: 40px;
+  height: 40px;
+
+  border: 1px solid var(--light-green);
+  border-radius: 10px;
+
+  background-color: var(--dark-green);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 5px;
+
+  position: relative;
+
+  &>div {
+    width: 70%;
+    height: 10%;
+
+    border-radius: 2px;
+
+    background-color: var(--light-green);
+  }
+
+  &.close-button {
+    &>div:nth-child(2) {
+      display: none;
+      transition: display 1s;
+    }
+  }
+
+  &.menu-button {
+    &>div:nth-child(2) {
+      display: block;
+      transition: display 1s;
+    }
+  }
+}

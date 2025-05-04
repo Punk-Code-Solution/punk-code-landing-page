@@ -1,0 +1,40 @@
+<header class="container">
+  <div id="logo">
+    <a [routerLink]="['/']">
+      <img src="images/logo-light.svg" alt="logo" />
+    </a>
+  </div>
+
+  <div id="button_menu_and_close">
+    <responsive-menu-button (onClickEvent)="menuButtonClick($event)"></responsive-menu-button>
+  </div>
+
+  <nav [class]="navbarClass()">
+    <ul>
+      <li>
+        <a [routerLink]="['/']">
+          <span>Início</span>
+          <div class="animation_bar"></div>
+        </a>
+      </li>
+      <li>
+        <a [routerLink]="['/services']">
+          <span>Serviços</span>
+          <div class="animation_bar"></div>
+        </a>
+      </li>
+      <li>
+        <a [routerLink]="['/contact']">
+          <span>Contato</span>
+          <div class="animation_bar"></div>
+        </a>
+      </li>
+      <li>
+        <a [routerLink]="['/about']">
+          <span>Sobre nós</span>
+          <div class="animation_bar"></div>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>

@@ -1,1 +1,100 @@
-/* You can add global styles to this file, and also import other style files */
+/* Reset CSS - Begin */
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+html {
+  font-size: 18px;
+}
+
+button {
+  cursor: pointer;
+}
+
+li {
+  list-style: none;
+}
+
+/* Reset CSS - End */
+
+/* Variables - Begin */
+
+:root {
+  --menu-height: 80px;
+
+  --light-green: #F2F6EE;
+  --dark-green: #0D4318;
+  --black: #0C0C0C;
+
+  --quantico-font: "Quantico", sans-serif;
+}
+
+/* Variables - End */
+
+/* Media queries - Begin */
+
+@media (max-width: 1200px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 1000px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+/* Media queries - End */
+
+/* General settings - Begin */
+
+body {
+  width: 100%;
+  min-height: 100vh;
+
+  background-color: var(--light-green);
+  font-family: var(--quantico-font);
+}
+
+h1 {
+  font-size: 3.625rem;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+h3 {
+  font-size: 2.375rem;
+}
+
+h4 {
+  font-size: 1.75rem;
+}
+
+h5 {
+  font-size: 1.125rem;
+}
+
+h6 {
+  font-size: 0.5rem;
+}
+
+p {
+  font-size: 1.125rem;
+}
+
+.container {
+  max-width: 1000px;
+  width: 95%;
+
+  margin: 0 auto;
+}
+
+/* General settings - End */
