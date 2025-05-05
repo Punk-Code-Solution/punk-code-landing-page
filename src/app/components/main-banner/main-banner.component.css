@@ -74,6 +74,7 @@
     &>section {
       &>div:first-child {
         width: 100%;
+        justify-content: center;
 
         &>div {
           width: 90%;

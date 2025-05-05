@@ -1,1 +1,23 @@
-<p>testimonials works!</p>
+<section class="container">
+  <header>
+    <h2>
+      Veja o que nossos clientes têm a dizer
+    </h2>
+  </header>
+
+  <br />
+
+  <div id="carousel">
+    <carousel [pages-amount]="pagesAmount" (pageChange)="changePage($event)">
+      @for(testimony of testimonials; track testimony; let index = $index) {
+      <div class="carousel-items" [class.active]="displayItem(index + 1)">
+        <p><b>"</b>{{testimony.comment}}<b>"</b></p>
+        <br />
+        <b>{{testimony.autor}}</b>
+        <br />
+        <span>{{testimony.authorDetails}}</span>
+      </div>
+      }
+    </carousel>
+  </div>
+</section>
