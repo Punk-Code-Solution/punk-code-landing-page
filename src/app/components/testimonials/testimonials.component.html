@@ -8,9 +8,9 @@
   <br />
 
   <div id="carousel">
-    <carousel [pages-amount]="pagesAmount" (pageChange)="changePage($event)">
+    <carousel [pages-amount]="pagesAmount()" (pageChange)="changePage($event)" (windowResize)="windowResize($event)">
       @for(testimony of testimonials; track testimony; let index = $index) {
-      <div class="carousel-items" [class.active]="displayItem(index + 1)">
+      <div class="carousel-items" [class.active]="displayItem(index + 1)" [style.width]="itemsWidth()">
         <p><b>"</b>{{testimony.comment}}<b>"</b></p>
         <br />
         <b>{{testimony.autor}}</b>

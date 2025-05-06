@@ -1,5 +1,6 @@
-import { ApplicationRef, Component, EventEmitter, OnDestroy, OnInit, Output, computed, input, signal } from '@angular/core';
+import { ApplicationRef, Component, EventEmitter, HostListener, OnDestroy, OnInit, Output, computed, inject, input, signal } from '@angular/core';
 import { first } from 'rxjs';
+import { WINDOW } from '../../tokens';
 
 @Component({
   selector: 'carousel',
@@ -9,6 +10,8 @@ import { first } from 'rxjs';
   styleUrl: './carousel.component.css'
 })
 export class CarouselComponent implements OnInit, OnDestroy {
+  private window = inject(WINDOW);
+
   constructor(
     private applicationRef: ApplicationRef
   ) { }
@@ -22,6 +25,7 @@ export class CarouselComponent implements OnInit, OnDestroy {
   pages = computed(() => Array.from({ length: this.pagesAmount() }, (value, index) => (index + 1)));
 
   @Output() pageChange = new EventEmitter<number>();
+  @Output() windowResize = new EventEmitter<number>();
 
   isCurrentPage(page: number) {
     return this.currentPage() === page;
@@ -69,5 +73,14 @@ export class CarouselComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     clearInterval(this.intervalId);
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    const currentPage = 1;
+    this.currentPage.set(currentPage);
+    this.pageChange.emit(currentPage);
+    this.windowResize.emit(this.window.innerWidth);
+    this.resetInterval();
   }
 }
