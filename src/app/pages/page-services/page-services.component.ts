@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { NavbarComponent } from '../../components/navbar/navbar.component';
+import { ServiceBodyComponent } from '../../components/service-body/service-body.component';
 
 @Component({
   selector: 'page-services',
   standalone: true,
   imports: [
-    NavbarComponent
+    ServiceBodyComponent
   ],
   templateUrl: './page-services.component.html',
   styleUrl: './page-services.component.css'
