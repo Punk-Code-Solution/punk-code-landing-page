@@ -1,0 +1,31 @@
+<section class="faq-section container">
+  <h2>Perguntas Frequentes</h2>
+  <p class="subtitle">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  </p>
+
+  <div class="faq-list">
+    <div
+      class="faq-item"
+      *ngFor="let faq of faqs; let i = index"
+      (click)="toggle(i)"
+    >
+      <div class="faq-question">
+        <strong>{{ faq.question }}</strong>
+        <span [class.open]="faq.open">&#9660;</span>
+      </div>
+
+      <div class="faq-answer" *ngIf="faq.open">
+        <p>{{ faq.answer }}</p>
+      </div>
+
+      <hr />
+    </div>
+  </div>
+
+  <div class="faq-cta">
+    <h3>Lorem ipsum dolor?</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipiscing</p>
+    <button class="cta-button">CTA Button Text</button>
+  </div>
+</section>
