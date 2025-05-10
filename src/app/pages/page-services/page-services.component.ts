@@ -5,7 +5,7 @@ import { ServiceBodyComponent } from '../../components/service-body/service-body
   selector: 'page-services',
   standalone: true,
   imports: [
-    ServiceBodyComponent
+    ServiceBodyComponent    
   ],
   templateUrl: './page-services.component.html',
   styleUrl: './page-services.component.css'
