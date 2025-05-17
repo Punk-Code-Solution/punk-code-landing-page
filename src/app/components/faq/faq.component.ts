@@ -11,27 +11,28 @@ import { CommonModule } from '@angular/common';
 export class FaqComponent {
   faqs = [
     {
-      question: 'Lorem ipsum dolor sit amet consectetur adipiscing elit?',
+      question: 'Quais tipos de sites vocês desenvolvem?',
       answer:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed iaculis, velit eget pretium elementum, lacus nisi auctor libero, id varius felis massa non dui. Mauris vel ex in orci scelerisque iaculis vitae ut massa.',
+        'Desenvolvemos sites institucionais profissionais voltados para empresas de diversos segmentos. Nosso foco é criar páginas modernas, responsivas e otimizadas para buscadores (SEO), com ênfase em apresentar sua marca, serviços e diferenciais de forma clara e eficaz.',
       open: true,
     },
     {
-      question: 'Lorem ipsum dolor sit amet consectetur adipiscing elit?',
+      question: 'Quanto tempo leva para desenvolver um site?',
       answer:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed iaculis, velit eget pretium elementum, lacus nisi auctor libero, id varius felis massa non dui. Mauris vel ex in orci scelerisque iaculis vitae ut massa.',
+        'O tempo de desenvolvimento de um site pode variar, depende do escopo do projeto, quantidade de páginas e prontidão dos materiais fornecidos pelo cliente.',
       open: false,
     },
     {
-      question: 'Lorem ipsum dolor sit amet consectetur adipiscing elit?',
+      question: 'O site será adaptado para celulares e tablets?',
       answer:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed iaculis, velit eget pretium elementum, lacus nisi auctor libero, id varius felis massa non dui. Mauris vel ex in orci scelerisque iaculis vitae ut massa.',
+        'Todos os nossos sites são desenvolvidos com design responsivo, garantindo uma boa experiência de navegação em dispositivos móveis, como smartphones e tablets.',
       open: false,
     },
     {
-      question: 'Lorem ipsum dolor sit amet consectetur adipiscing elit?',
+      question:
+        'Posso solicitar novas funcionalidades depois que o site estiver pronto?',
       answer:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed iaculis, velit eget pretium elementum, lacus nisi auctor libero, id varius felis massa non dui. Mauris vel ex in orci scelerisque iaculis vitae ut massa.',
+        'Podemos adicionar novas seções, formulários, integrações ou qualquer funcionalidade que sua empresa precise, mesmo após o site estar publicado. Essas solicitações são tratadas dentro do nosso suporte ou como serviços adicionais, dependendo da complexidade.',
       open: false,
     },
   ];
