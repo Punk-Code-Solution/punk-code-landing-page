@@ -15,7 +15,7 @@
     &>.solution {
       background: var(--light-green);
       border-radius: 0;
-      padding: 0;
+      padding: 2rem;
       box-shadow: none;
       transition: none;
       width: 100%;
