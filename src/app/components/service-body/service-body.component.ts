@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-service-body',
+  selector: 'service-body',
   standalone: true,
   imports: [],
   templateUrl: './service-body.component.html',

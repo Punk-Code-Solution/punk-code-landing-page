@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { NavbarComponent } from '../../components/navbar/navbar.component';
 import { MainBannerComponent } from '../../components/main-banner/main-banner.component';
-import { TestimonialsComponent } from '../../components/testimonials/testimonials.component';
-import { PageServicesComponent } from '../page-services/page-services.component';
-import { PageSolutionComponent } from '../page-solution/page-solution.component';
+import { TestimonialsComponent } from '../../components/testimonials/testimonials.component';import { SoluctionComponentBody } from '../../components/soluction-body/soluction.component';
+import { SolutionComponent } from '../../components/solution/solution.component';
+import { ServiceBodyComponent } from '../../components/service-body/service-body.component';
 
 @Component({
   selector: 'page-home',
@@ -12,8 +12,8 @@ import { PageSolutionComponent } from '../page-solution/page-solution.component'
     NavbarComponent,
     MainBannerComponent,
     TestimonialsComponent,
-    PageSolutionComponent,
-    PageServicesComponent
+    SolutionComponent,
+    ServiceBodyComponent
   ],
   templateUrl: './page-home.component.html',
   styleUrl: './page-home.component.css'
