@@ -52,7 +52,7 @@ export class TestimonialsComponent implements OnInit {
 
   itemsPerPage = computed(() => (this.innerWidth() > 1000 ? 2 : 1));
 
-  itemsWidth = computed(() => `${String(100 / this.itemsPerPage())}%`);
+  itemsWidth = computed(() => `${this.itemsPerPage() === 1 ? 100 : (90 / this.itemsPerPage())}%`);
 
   pagesAmount = computed(() => Math.ceil(this.testimonials.length / this.itemsPerPage()));
 

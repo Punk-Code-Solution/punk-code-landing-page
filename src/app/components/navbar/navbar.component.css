@@ -2,7 +2,7 @@
   width: 100%;
   height: 10vh;
 
-  background-color: var(--dark-green);
+  background: linear-gradient(90deg, var(--dark-green), var(--black));
 
   display: flex;
   justify-content: center;
@@ -61,6 +61,8 @@
 
             color: var(--light-green);
 
+            font-size: 1.1rem;
+
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -77,7 +79,7 @@
             }
 
             &:hover {
-              font-size: 1.1rem;
+              font-size: 1.2rem;
 
               &>.animation_bar {
                 animation: bar_fill 0.3s linear 0s 1 normal forwards;
@@ -112,7 +114,7 @@
   }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1200px) {
   :host {
     &>header {
       width: 100%;
@@ -173,6 +175,8 @@
       }
 
       &:has(nav.active) {
+        background: linear-gradient(90deg, var(--dark-green), var(--black));
+
         position: fixed;
       }
     }
