@@ -7,7 +7,7 @@
   border: 1px solid var(--light-green);
   border-radius: 10px;
 
-  background-color: var(--dark-green);
+  background-color: transparent;
 
   display: flex;
   flex-direction: column;

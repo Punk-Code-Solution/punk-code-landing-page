@@ -36,22 +36,6 @@ li {
 
 /* Variables - End */
 
-/* Media queries - Begin */
-
-@media (max-width: 1200px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-@media (max-width: 1000px) {
-  html {
-    font-size: 12px;
-  }
-}
-
-/* Media queries - End */
-
 /* General settings - Begin */
 
 body {
@@ -91,10 +75,26 @@ p {
 }
 
 .container {
-  max-width: 1000px;
+  max-width: 1500px;
   width: 95%;
 
   margin: 0 auto;
 }
 
 /* General settings - End */
+
+/* Media queries - Begin */
+
+@media (max-width: 1200px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 1000px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+/* Media queries - End */
