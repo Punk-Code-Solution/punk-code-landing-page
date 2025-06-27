@@ -1,112 +1,181 @@
+/* Definindo variáveis de cor para facilitar a manutenção, baseadas na imagem. */
+
 :host {
   display: block;
+  font-family: Arial, sans-serif;
+  /* Use a fonte do seu projeto */
+}
 
-  &>.solutions-section {
-    background: var(--light-green);
-    padding: 8rem 2rem 2rem 2rem;
-    text-align: center;
-    min-height: 70vh;
+/* --- Seção Hero (Cabeçalho Verde Escuro) --- */
+.services-hero {
+  background-color: var(--dark-green);
+  color: var(--text-color-light);
+  padding: 6rem 2rem;
+  /* Espaçamento interno (superior/inferior e laterais) */
+  text-align: center;
+  /* Alinha todo o texto ao centro */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-    &>.solutions-title {
-      font-size: 2.8rem;
-      font-weight: 700;
-      color: #142d13;
-      margin-bottom: 3.5rem;
-      letter-spacing: 0.5px;
-    }
+.hero-content {
+  max-width: 800px;
+  /* Largura máxima para o conteúdo */
+}
 
-    .solution {
-      background: var(--light-green);
-      border-radius: 0;
-      padding: 2rem;
-      box-shadow: none;
-      transition: none;
-      width: 100%;
-      max-width: 340px;
-      text-align: center;
-      border: none;
+.services-hero h1 {
+  font-size: 2.8rem;
+  /* Tamanho da fonte para o título principal */
+  font-weight: 700;
+  /* Peso da fonte (negrito) */
+  margin-bottom: 1rem;
+  /* Margem inferior para separar do parágrafo */
+}
 
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
+.services-hero p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  /* Altura da linha para melhor legibilidade */
+}
 
-    .icon {
-      font-size: 2.8rem;
-      color: #174c1b;
-      margin-bottom: 1.2rem;
-      font-weight: bold;
-    }
+/* --- Seção de Soluções (Fundo Claro) --- */
+.solutions-section {
+  background-color: var(--light-green);
+  padding: 4rem 2rem;
+  text-align: center;
+}
 
-    h3 {
-      color: #142d13;
-      font-size: 1.15rem;
-      margin-bottom: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.2px;
-    }
+.solutions-header {
+  margin-bottom: 3.5rem;
+  /* Espaço abaixo do cabeçalho da seção */
+}
 
-    p {
-      color: #222;
-      line-height: 1.4;
-      font-size: 0.98rem;
-      margin: 0;
-      font-weight: 400;
-    }
+.solutions-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--dark-green);
+  margin-bottom: 0.8rem;
+}
 
+.solutions-subtitle {
+  font-size: 1rem;
+  color: var(--text-color-medium);
+  max-width: 600px;
+  margin: 0 auto;
+  /* Centraliza o parágrafo */
+}
 
-    &>.solutions-grid {
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      gap: 4rem;
-      max-width: 1600px;
-      margin: 0 auto;
-      width: 100%;
-    }
+/* --- Seção "Como Trabalhamos" --- */
+.how-we-work-section {
+  background-color: #ffffff;
+  /* Fundo branco para esta seção específica */
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.how-we-work-section h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--dark-green);
+  margin-bottom: 0.8rem;
+}
+
+.how-we-work-section>p {
+  font-size: 1rem;
+  color: var(--text-color-medium);
+  margin-bottom: 3.5rem;
+}
+
+.steps-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  /* Espaço entre os itens */
+  flex-wrap: wrap;
+  /* Permite que os itens quebrem para a linha de baixo em telas menores */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  /* Organiza os itens (ícone, título, texto) em uma coluna */
+  align-items: center;
+  /* Alinha os itens ao centro horizontalmente */
+  max-width: 240px;
+  /* Largura máxima para cada passo */
+}
+
+.step-icon-container {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  /* Cria o formato circular */
+  background-color: var(--dark-green);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  /* Adicione a imagem do ícone aqui com background-image se preferir */
+}
+
+.step h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--dark-green);
+  margin-bottom: 0.7rem;
+}
+
+.step p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--text-color-dark);
+}
+
+/* --- Media Queries para Responsividade --- */
+
+/* Telas de tablet */
+@media (max-width: 1024px) {
+  .services-hero h1 {
+    font-size: 2.2rem;
   }
 
-  @media (max-width: 1400px) {
-    &>.solutions-section {
-      &>.solutions-title {
-        font-size: 2.2rem;
-      }
+  .solutions-title,
+  .how-we-work-section h2 {
+    font-size: 1.8rem;
+  }
+}
 
-      &>.solutions-grid {
-        max-width: 1200px;
-        gap: 3rem;
-      }
-    }
+/* Telas de celular */
+@media (max-width: 768px) {
+  .services-hero {
+    padding: 4rem 1rem;
   }
 
-  @media (max-width: 1024px) {
-    &>.solutions-section {
-      padding: 3rem 1rem 2.5rem 1rem;
-
-      &>.solutions-title {
-        font-size: 1.7rem;
-      }
-
-      &>.solutions-grid {
-        max-width: 500px;
-        gap: 2rem;
-      }
-    }
+  .services-hero h1 {
+    font-size: 1.8rem;
   }
 
-  @media (max-width: 768px) {
-    &>.solutions-section {
-      padding: 2rem 0.5rem 1.5rem 0.5rem;
+  .services-hero p {
+    font-size: 1rem;
+  }
 
-      &>.solutions-title {
-        font-size: 1.3rem;
-        margin-bottom: 2rem;
-      }
+  .solutions-section,
+  .how-we-work-section {
+    padding: 3rem 1rem;
+  }
 
-      &>.solutions-grid {
-        max-width: 100%;
-        gap: 1.5rem;
-      }
-    }
+  .solutions-title,
+  .how-we-work-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .steps-container {
+    flex-direction: column;
+    /* Empilha os passos verticalmente */
+    align-items: center;
+    gap: 2.5rem;
   }
 }
