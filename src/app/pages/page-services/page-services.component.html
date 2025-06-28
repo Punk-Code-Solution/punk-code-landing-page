@@ -7,38 +7,53 @@
     </div>
   </section>
 
-  <service-solution></service-solution>
+   <section class="service-list-container">
+    <service-solution
+      *ngFor="let service of services"
+      [icon]="service.icon"
+      [title]="service.title"
+      [description]="service.description"
+      [features]="service.features">
+    </service-solution>
+  </section>
 
   <section class="how-we-work-section">
-    <h2>Como Trabalhamos</h2>
-    <p>Nosso processo é transparente e focado</p>
+  <h2>Como Trabalhamos</h2>
+  <p>Nosso processo é transparente e focado</p>
 
-    <div class="steps-container">
-      <div class="step">
-        <div class="step-icon-container">
-          <i class="icon-analise"></i> </div>
-        <h3>1. Análise</h3>
-        <p>Entendemos profundamente suas necessidades e objetivos de negócio.</p>
+  <div class="steps-container">
+    <div class="step">
+      <div class="step-icon-container">
+        <i class="fa-solid fa-magnifying-glass-chart"></i>
       </div>
-      <div class="step">
-        <div class="step-icon-container">
-          <i class="icon-planejamento"></i> </div>
-        <h3>2. Planejamento</h3>
-        <p>Criamos uma estratégia detalhada e cronograma de desenvolvimento.</p>
-      </div>
-      <div class="step">
-        <div class="step-icon-container">
-          <i class="icon-desenvolvimento"></i> </div>
-        <h3>3. Desenvolvimento</h3>
-        <p>Codificamos sua solução com as melhores práticas e tecnologias.</p>
-      </div>
-      <div class="step">
-        <div class="step-icon-container">
-          <i class="icon-entrega"></i> </div>
-        <h3>4. Entrega</h3>
-        <p>Implementamos, testamos e colocamos sua solução em produção.</p>
-      </div>
+      <h3>1. Análise</h3>
+      <p>Entendemos profundamente suas necessidades e objetivos de negócio.</p>
     </div>
+
+    <div class="step">
+      <div class="step-icon-container">
+        <i class="fa-solid fa-list-check"></i>
+      </div>
+      <h3>2. Planejamento</h3>
+      <p>Criamos uma estratégia detalhada e cronograma de desenvolvimento.</p>
+    </div>
+
+    <div class="step">
+      <div class="step-icon-container">
+        <i class="fa-solid fa-code"></i>
+      </div>
+      <h3>3. Desenvolvimento</h3>
+      <p>Codificamos sua solução com as melhores práticas e tecnologias.</p>
+    </div>
+
+    <div class="step">
+      <div class="step-icon-container">
+        <i class="fa-solid fa-rocket"></i>
+      </div>
+      <h3>4. Entrega</h3>
+      <p>Implementamos, testamos e colocamos sua solução em produção.</p>
+    </div>
+  </div>
   </section>
 </main>
 <app-footer></app-footer>

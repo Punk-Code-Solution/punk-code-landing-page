@@ -8,7 +8,7 @@
 
 /* --- Seção Hero (Cabeçalho Verde Escuro) --- */
 .services-hero {
-  background-color: var(--dark-green);
+  background: linear-gradient(9deg, rgba(13, 67, 24, 1) 0%, rgba(13, 115, 47, 1) 50%, rgba(6, 78, 59, 1) 100%);
   color: var(--text-color-light);
   padding: 6rem 2rem;
   /* Espaçamento interno (superior/inferior e laterais) */
@@ -24,6 +24,15 @@
   /* Largura máxima para o conteúdo */
 }
 
+.service-list-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 .services-hero h1 {
   font-size: 2.8rem;
   /* Tamanho da fonte para o título principal */
@@ -31,17 +40,19 @@
   /* Peso da fonte (negrito) */
   margin-bottom: 1rem;
   /* Margem inferior para separar do parágrafo */
+  color: var(--light-green);
 }
 
 .services-hero p {
   font-size: 1.1rem;
   line-height: 1.6;
   /* Altura da linha para melhor legibilidade */
+  color: var(--light-green);
 }
 
 /* --- Seção de Soluções (Fundo Claro) --- */
 .solutions-section {
-  background-color: var(--light-green);
+  background: linear-gradient(9deg, rgba(13, 67, 24, 1) 0%, rgba(13, 115, 47, 1) 50%, rgba(6, 78, 59, 1) 100%);
   padding: 4rem 2rem;
   text-align: center;
 }
@@ -68,7 +79,7 @@
 
 /* --- Seção "Como Trabalhamos" --- */
 .how-we-work-section {
-  background-color: #ffffff;
+  background-color: var(--light-green);
   /* Fundo branco para esta seção específica */
   padding: 4rem 2rem;
   text-align: center;
@@ -113,12 +124,14 @@
   height: 90px;
   border-radius: 50%;
   /* Cria o formato circular */
-  background-color: var(--dark-green);
+  background: linear-gradient(9deg, rgba(13, 67, 24, 1) 0%, rgba(13, 115, 47, 1) 50%, rgba(6, 78, 59, 1) 100%);
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 1.5rem;
+  color: #ffffff;
   /* Adicione a imagem do ícone aqui com background-image se preferir */
+
 }
 
 .step h3 {

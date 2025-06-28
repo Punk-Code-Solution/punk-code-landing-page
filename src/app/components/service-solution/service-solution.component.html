@@ -1,37 +1,21 @@
-<section class="services-container">
+<div  class="service-card">
+  <div class="icon-container">
+    <i class="{{icon}}"></i>
+  </div>
 
-  <i></i>
+  <div class="card-content">
+    <h3>{{title}}</h3>
+    <p>{{description}}</p>
+  </div>
 
-  <section>
-    <h3>
-        Desenvolvimento Web
-    </h3>
-    <p>
-        Sites institucionais, e-commerces e aplicações web
-        modernas e responsivas.
-    </p>
-  </section>
-  <section class="services-content">
+  <ul class="features-list">
+    <li *ngFor="let feature of features">
+      <i class="fa-solid fa-circle-check"></i>
+      <span>{{ feature }}</span>
+    </li>
+  </ul>
 
-    <div>
-      <i icon="fa-check" ></i>
-      <span>Design responsivo</span>
-    </div>
-
-    <div>
-      <i icon="fa-check" ></i>
-      <span>SEO otimizado</span>
-    </div>
-
-    <div>
-      <i icon="fa-check" ></i>
-      <span>Performace alta</span>
-    </div>
-
-    <div>
-      <i icon="fa-check" ></i>
-      <span>Segurança avançada</span>
-    </div>
-
-  </section>
-</section>
+  <button class="quote-button">
+    Solicitar Orçamento
+  </button>
+</div>
