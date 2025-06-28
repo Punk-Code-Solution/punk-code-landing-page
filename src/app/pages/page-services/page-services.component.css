@@ -123,15 +123,14 @@
   width: 90px;
   height: 90px;
   border-radius: 50%;
-  /* Cria o formato circular */
   background: linear-gradient(9deg, rgba(13, 67, 24, 1) 0%, rgba(13, 115, 47, 1) 50%, rgba(6, 78, 59, 1) 100%);
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 1.5rem;
   color: #ffffff;
-  /* Adicione a imagem do ícone aqui com background-image se preferir */
-
+  font-size: 2.0rem;
+  /* Icon size */
 }
 
 .step h3 {
