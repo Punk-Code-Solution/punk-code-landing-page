@@ -1,0 +1,144 @@
+/* Definindo variáveis de cor para facilitar a manutenção, baseadas na imagem. */
+
+:host {
+  display: block;
+  font-family: Arial, sans-serif;
+  /* Use a fonte do seu projeto */
+}
+
+/* --- Seção Hero (Cabeçalho Verde Escuro) --- */
+.about-hero {
+  background: linear-gradient(9deg, rgba(13, 67, 24, 1) 0%, rgba(13, 115, 47, 1) 50%, rgba(6, 78, 59, 1) 100%);
+  color: var(--text-color-light);
+  padding: 6rem 2rem;
+  /* Espaçamento interno (superior/inferior e laterais) */
+  text-align: center;
+  /* Alinha todo o texto ao centro */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-hero-1 {
+  background: var(--light-green);
+  color: var(--dark-green);
+  padding: 6rem 2rem;
+  /* Espaçamento interno (superior/inferior e laterais) */
+  text-align: center;
+  /* Alinha todo o texto ao centro */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-hero-2{
+  background: linear-gradient(9deg, rgba(13, 67, 24, 1) 0%, rgba(13, 115, 47, 1) 50%, rgba(6, 78, 59, 1) 100%);
+  color: var(--light-green);
+  padding: 6rem 2rem;
+  /* Espaçamento interno (superior/inferior e laterais) */
+  text-align: center;
+  /* Alinha todo o texto ao centro */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-content {
+  max-width: 800px;
+  /* Largura máxima para o conteúdo */
+}
+
+.about-hero h1 {
+  font-size: 2.8rem;
+  /* Tamanho da fonte para o título principal */
+  font-weight: 700;
+  /* Peso da fonte (negrito) */
+  margin-bottom: 1rem;
+  /* Margem inferior para separar do parágrafo */
+  color: var(--light-green);
+}
+
+.about-hero p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  /* Altura da linha para melhor legibilidade */
+  color: var(--light-green);
+}
+
+.about-hero-1 h3 {
+  font-size: 2.8rem;
+  /* Tamanho da fonte para o título principal */
+  font-weight: 700;
+  /* Peso da fonte (negrito) */
+  margin-bottom: 1rem;
+  /* Margem inferior para separar do parágrafo */
+  color: var(--dark-green);
+}
+
+.about-hero-1 p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  /* Altura da linha para melhor legibilidade */
+  color: var(--dark-green);
+}
+
+.about-hero-2 h3 {
+  font-size: 2.8rem;
+  /* Tamanho da fonte para o título principal */
+  font-weight: 700;
+  /* Peso da fonte (negrito) */
+  margin-bottom: 1rem;
+  /* Margem inferior para separar do parágrafo */
+  color: var(--light-green);
+}
+
+.about-hero-2 p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  /* Altura da linha para melhor legibilidade */
+  color: var(--light-green);
+}
+
+/* Telas de tablet */
+@media (max-width: 1024px) {
+  .about-hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .about-title,
+  .how-we-work-section h2 {
+    font-size: 1.8rem;
+  }
+}
+
+/* Telas de celular */
+@media (max-width: 768px) {
+  .about-hero {
+    padding: 4rem 1rem;
+  }
+
+  .about-hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .about-hero p {
+    font-size: 1rem;
+  }
+
+  .about-section,
+  .how-we-work-section {
+    padding: 3rem 1rem;
+  }
+
+  .about-title,
+  .how-we-work-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .steps-container {
+    flex-direction: column;
+    /* Empilha os passos verticalmente */
+    align-items: center;
+    gap: 2.5rem;
+  }
+}
