@@ -81,7 +81,10 @@
           <div class="container">
               <h2>Nossa Localização</h2>
               <div class="map-placeholder">
-                  </div>
+                <google-map height="500px" width="100%">
+                <map-marker *ngFor="let marker of markers" [position]="marker.position"></map-marker>
+                </google-map>
+              </div>
           </div>
       </section>
   </section>
