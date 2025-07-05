@@ -1,29 +1,9 @@
-/* Importação de fontes (exemplo, você pode usar Google Fonts) */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-
-:root {
-  --primary-green: #0a4d00;
-  /* Um verde escuro para base */
-  --secondary-green: #1a7a00;
-  /* Um verde mais claro para destaque */
-  --light-grey: #f0f0f0;
-  --dark-text: #333;
-  --light-text: #fff;
-  --form-bg: #e0e0e0;
-  /* Fundo do formulário */
-  --input-border: #ccc;
-  --button-bg: #1e8449;
-  /* Verde para o botão */
-  --button-hover-bg: #166f3a;
-}
-
 .about-hero {
   background: linear-gradient(9deg, rgba(13, 67, 24, 1) 0%, rgba(13, 115, 47, 1) 50%, rgba(6, 78, 59, 1) 100%);
   color: var(--text-color-light);
+  /* Refers to --text-color-light in :root */
   padding: 6rem 2rem;
-  /* Espaçamento interno (superior/inferior e laterais) */
   text-align: center;
-  /* Alinha todo o texto ao centro */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -31,26 +11,21 @@
 
 .hero-content {
   max-width: 800px;
-  /* Largura máxima para o conteúdo */
 }
 
 .about-hero h1 {
   font-size: 2.8rem;
-  /* Tamanho da fonte para o título principal */
   font-weight: 700;
-  /* Peso da fonte (negrito) */
   margin-bottom: 1rem;
-  /* Margem inferior para separar do parágrafo */
   color: var(--light-green);
-  /* Assuming --light-green is defined elsewhere */
+  /* Refers to --light-green in :root */
 }
 
 .about-hero p {
   font-size: 1.1rem;
   line-height: 1.6;
-  /* Altura da linha para melhor legibilidade */
   color: var(--light-green);
-  /* Assuming --light-green is defined elsewhere */
+  /* Refers to --light-green in :root */
 }
 
 .container {
@@ -59,7 +34,7 @@
   padding: 0 20px;
 }
 
-/* Header */
+/* Header - (No changes needed based on provided images for contact page, assuming navbar handles this) */
 header {
   background: linear-gradient(to right, var(--primary-green), var(--secondary-green));
   color: var(--light-text);
@@ -72,7 +47,7 @@ header {
   align-items: center;
 }
 
-/* Hero Section */
+/* Hero Section - (No changes needed based on provided images for contact page, assuming about-hero covers it) */
 .hero-contact {
   background: linear-gradient(to right, var(--primary-green), var(--secondary-green));
   color: var(--light-text);
@@ -100,25 +75,33 @@ header {
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 40px;
+  gap: 0;
+  /* Changed: Removed gap to make the internal sections touch */
   background-color: #fff;
-  /* Fundo branco para a área principal de contato */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   overflow: hidden;
-  /* Garante que os cantos arredondados funcionem com os gradientes internos */
 }
 
 .solicite-proposta {
   background-color: var(--form-bg);
-  /* Fundo do formulário cinza claro */
+  /* Changed: Uses --form-bg */
   padding: 40px;
+  /* Reduced padding slightly to match image spacing */
 }
 
 .solicite-proposta h2 {
   color: var(--dark-text);
   margin-bottom: 30px;
   font-size: 2em;
+}
+
+/* New: For side-by-side form fields */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  /* Spacing between side-by-side fields */
 }
 
 .form-group {
@@ -140,9 +123,27 @@ header {
   width: 100%;
   padding: 12px;
   border: 1px solid var(--input-border);
+  /* Changed: Lighter default border */
   border-radius: 4px;
+  /* Slightly more rounded */
   font-size: 1em;
   font-family: 'Poppins', sans-serif;
+  background-color: #f0f0f0;
+  /* Changed: Lighter background for inputs */
+  transition: border-color 0.3s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="tel"]:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  /* Remove default outline */
+  border-color: var(--input-focus-border);
+  /* Changed: Green border on focus */
+  box-shadow: 0 0 0 2px rgba(26, 122, 0, 0.2);
+  /* Optional: Subtle shadow on focus */
 }
 
 .form-group textarea {
@@ -150,26 +151,44 @@ header {
   min-height: 120px;
 }
 
-.submit-button {
-  background-color: var(--button-bg);
-  color: var(--light-text);
-  padding: 15px 30px;
-  border: none;
-  border-radius: 5px;
-  font-size: 1.1em;
-  font-weight: 600;
+.service-action-btn {
+  margin-top: 2.5rem;
+  padding: 12px 32px;
+  font-size: 1.15rem;
+  font-family: var(--quantico-font);
+  border-radius: 20px 0 20px 0;
+  border: 2px solid var(--dark-green);
+  background: var(--dark-green);
+  color: var(--light-green);
+  font-weight: 700;
+  transition: filter 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(13, 67, 24, 0.08);
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  display: block;
+
+  &:hover {
+    filter: brightness(0.95);
+    box-shadow: 0 4px 16px rgba(13, 67, 24, 0.15);
+  }
 }
 
 .submit-button:hover {
   background-color: var(--button-hover-bg);
+  transform: translateY(-2px);
+  /* Subtle lift effect */
 }
 
 .informacoes-contato {
-  background: linear-gradient(to bottom, var(--primary-green), var(--secondary-green));
+  background: linear-gradient(135deg, var(--primary-green) 0%, var(--secondary-green) 100%);
+  /* Changed: More pronounced gradient angle for Image 2 */
   color: var(--light-text);
   padding: 40px;
+  /* Adjusted padding slightly */
+  display: flex;
+  /* Added for vertical alignment if needed */
+  flex-direction: column;
+  justify-content: center;
+  /* Centers content vertically */
 }
 
 .informacoes-contato h2 {
@@ -181,14 +200,28 @@ header {
   display: flex;
   align-items: center;
   margin-bottom: 25px;
+  /* Adjusted spacing between items */
 }
 
 .contact-item i {
-  font-size: 1.8em;
+  font-size: 1.5em;
+  /* Slightly smaller icon size */
   margin-right: 15px;
-  width: 30px;
-  /* Para alinhar os ícones */
-  text-align: center;
+  width: 40px;
+  /* Increased width for circular background */
+  height: 40px;
+  /* Added height for circular background */
+  background-color: var(--contact-icon-bg);
+  /* New: Dark green background for icons */
+  border-radius: 50%;
+  /* Make it circular */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--light-text);
+  /* Ensure icon color is white */
+  flex-shrink: 0;
+  /* Prevent icon from shrinking */
 }
 
 .contact-item h3 {
@@ -204,8 +237,7 @@ header {
 /* Our Location Section */
 .our-location {
   padding: 60px 0;
-  background-color: #d3d3d3;
-  /* Um cinza mais escuro para esta seção */
+  background-color: var(--light-green);
   text-align: center;
 }
 
@@ -216,15 +248,13 @@ header {
 }
 
 .map-placeholder {
-  background-color: #bbb;
+  /* No changes from previous fix, assuming it's correctly displaying the map */
   height: 400px;
   border-radius: 8px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.5em;
-  color: #666;
-  border: 1px dashed #999;
+  overflow: hidden;
+  /* Ensures the border-radius applies to the map */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Optional: Add shadow to map for consistency */
 }
 
 
@@ -238,13 +268,17 @@ header {
   .contact-grid {
     grid-template-columns: 1fr;
     margin: 0 20px;
-    /* Adiciona margem para centralizar em telas menores */
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    /* Stack form fields vertically on small screens */
+    gap: 0;
   }
 
   .social-icons {
     justify-content: center;
     display: flex;
-    /* Para centralizar os ícones */
   }
 }
 
