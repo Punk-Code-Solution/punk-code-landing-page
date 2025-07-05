@@ -31,39 +31,13 @@
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
-}
-
-/* Header - (No changes needed based on provided images for contact page, assuming navbar handles this) */
-header {
-  background: linear-gradient(to right, var(--primary-green), var(--secondary-green));
-  color: var(--light-text);
-  padding: 15px 0;
+  padding: 0 1px;
 }
 
 .header-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-/* Hero Section - (No changes needed based on provided images for contact page, assuming about-hero covers it) */
-.hero-contact {
-  background: linear-gradient(to right, var(--primary-green), var(--secondary-green));
-  color: var(--light-text);
-  text-align: center;
-  padding: 80px 0;
-}
-
-.hero-contact h1 {
-  font-size: 3em;
-  margin-bottom: 15px;
-}
-
-.hero-contact p {
-  font-size: 1.2em;
-  max-width: 800px;
-  margin: 0 auto;
 }
 
 /* Contact Form Section */
@@ -165,6 +139,7 @@ header {
   box-shadow: 0 2px 8px rgba(13, 67, 24, 0.08);
   cursor: pointer;
   display: block;
+  width: 100%;
 
   &:hover {
     filter: brightness(0.95);
@@ -179,9 +154,9 @@ header {
 }
 
 .informacoes-contato {
-  background: linear-gradient(135deg, var(--primary-green) 0%, var(--secondary-green) 100%);
+  background: linear-gradient(9deg, rgba(13, 67, 24, 1) 0%, rgba(13, 115, 47, 1) 50%, rgba(6, 78, 59, 1) 100%);
   /* Changed: More pronounced gradient angle for Image 2 */
-  color: var(--light-text);
+  color: var(--light-green);
   padding: 40px;
   /* Adjusted padding slightly */
   display: flex;
