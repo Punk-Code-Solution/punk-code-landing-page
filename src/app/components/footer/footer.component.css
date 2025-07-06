@@ -1,5 +1,5 @@
 .footer {
-  background-color: var(--dark-green);
+  background: linear-gradient(9deg, rgba(13, 67, 24, 1) 0%, rgba(13, 115, 47, 1) 50%, rgba(6, 78, 59, 1) 100%);
   color: white;
   padding: 3rem 0;
   font-family: var(--quantico-font);
