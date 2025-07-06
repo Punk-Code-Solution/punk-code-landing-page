@@ -2,7 +2,7 @@
   width: 100%;
   height: 10vh;
 
-    background-color: var(--dark-green);
+    /* background: var(--background); */
     /* background: linear-gradient(to right, var(--dark-green), #00FF00); */
 
   display: flex;
@@ -40,10 +40,10 @@
     }
 
     &>nav {
-      width: 80%;
+      width: 70%;
 
       &>ul {
-        width: 100%;
+        width: 60%;
 
         display: flex;
         flex-wrap: wrap;

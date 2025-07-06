@@ -32,6 +32,14 @@ li {
   --black: #0C0C0C;
 
   --quantico-font: "Quantico", sans-serif;
+
+  --background: linear-gradient(9deg, rgba(13, 67, 24, 1) 0%, rgba(13, 115, 47, 1) 50%, rgba(6, 78, 59, 1) 100%);
+}
+
+.default {
+
+  background: linear-gradient(9deg, rgba(13, 67, 24, 1) 0%, rgba(13, 115, 47, 1) 50%, rgba(6, 78, 59, 1) 100%);
+
 }
 
 /* Variables - End */

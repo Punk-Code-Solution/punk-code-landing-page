@@ -1,5 +1,5 @@
 .footer {
-  background-color: var(--dark-green);
+  /* background: var(--background-home); */
   color: white;
   padding: 3rem 0;
   font-family: var(--quantico-font);
