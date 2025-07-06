@@ -1,1 +1,61 @@
 <navbar class="default"></navbar>
+
+<main>
+  <section class="services-hero">
+    <div class="hero-content">
+      <h1>Nossos Serviços</h1>
+      <p>Oferecemos soluções digitais completas para transformar sua empresa e acelerar seus resultados</p>
+    </div>
+  </section>
+
+   <section class="service-list-container">
+    <service-solution
+      *ngFor="let service of services"
+      [icon]="service.icon"
+      [title]="service.title"
+      [description]="service.description"
+      [features]="service.features">
+    </service-solution>
+  </section>
+
+  <section class="how-we-work-section">
+  <h2>Como Trabalhamos</h2>
+  <p>Nosso processo é transparente e focado</p>
+
+  <div class="steps-container">
+    <div class="step">
+      <div class="step-icon-container">
+        <i class="fa-solid fa-magnifying-glass-chart"></i>
+      </div>
+      <h3>1. Análise</h3>
+      <p>Entendemos profundamente suas necessidades e objetivos de negócio.</p>
+    </div>
+
+    <div class="step">
+      <div class="step-icon-container">
+        <i class="fa-solid fa-list-check"></i>
+      </div>
+      <h3>2. Planejamento</h3>
+      <p>Criamos uma estratégia detalhada e cronograma de desenvolvimento.</p>
+    </div>
+
+    <div class="step">
+      <div class="step-icon-container">
+        <i class="fa-solid fa-code"></i>
+      </div>
+      <h3>3. Desenvolvimento</h3>
+      <p>Codificamos sua solução com as melhores práticas e tecnologias.</p>
+    </div>
+
+    <div class="step">
+      <div class="step-icon-container">
+        <i class="fa-solid fa-rocket"></i>
+      </div>
+      <h3>4. Entrega</h3>
+      <p>Implementamos, testamos e colocamos sua solução em produção.</p>
+    </div>
+  </div>
+  </section>
+</main>
+<app-footer></app-footer>
+>>>>>>> cfe36fa5d04c8d95f21c9119691ba5b0f505e99f

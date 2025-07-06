@@ -1,5 +1,9 @@
 .footer {
+<<<<<<< HEAD
   /* background: var(--background-home); */
+=======
+  background: linear-gradient(9deg, rgba(13, 67, 24, 1) 0%, rgba(13, 115, 47, 1) 50%, rgba(6, 78, 59, 1) 100%);
+>>>>>>> cfe36fa5d04c8d95f21c9119691ba5b0f505e99f
   color: white;
   padding: 3rem 0;
   font-family: var(--quantico-font);

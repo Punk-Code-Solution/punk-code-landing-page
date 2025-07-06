@@ -1,0 +1,21 @@
+<div  class="service-card">
+  <div class="icon-container">
+    <i class="{{icon}}"></i>
+  </div>
+
+  <div class="card-content">
+    <h3>{{title}}</h3>
+    <p>{{description}}</p>
+  </div>
+
+  <ul class="features-list">
+    <li *ngFor="let feature of features">
+      <i class="fa-solid fa-circle-check"></i>
+      <span>{{ feature }}</span>
+    </li>
+  </ul>
+
+  <button class="quote-button">
+    Solicitar Orçamento
+  </button>
+</div>

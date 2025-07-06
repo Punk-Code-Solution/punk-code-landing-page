@@ -1,0 +1,113 @@
+/* Importa uma fonte do Google Fonts que se parece com a da imagem */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+/* --- O CONTAINER PRINCIPAL DO CARD --- */
+.service-card {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f8fbf8;
+  /* Um branco levemente esverdeado */
+  border-radius: 16px;
+  /* Cantos arredondados */
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  /* Sombra suave para dar profundidade */
+  max-width: 320px;
+  /* Largura máxima do card */
+  display: flex;
+  flex-direction: column;
+  /* Organiza os itens em coluna */
+  gap: 20px;
+  /* Espaço entre as seções (ícone, texto, lista, botão) */
+  border: 1px solid #eef3ee;
+
+}
+
+/* --- ÍCONE DO TOPO --- */
+.icon-container {
+  background: linear-gradient(9deg, rgba(13, 67, 24, 1) 0%, rgba(13, 115, 47, 1) 50%, rgba(6, 78, 59, 1) 100%);
+  /* Verde escuro do fundo do ícone */
+  color: #ffffff;
+  /* Cor do ícone (branco) */
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  /* Cantos arredondados do container do ícone */
+
+  /* Centraliza o ícone dentro do container */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-container .fa-solid {
+  font-size: 24px;
+  /* Tamanho do ícone */
+}
+
+/* --- TÍTULO E DESCRIÇÃO --- */
+.card-content h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #2c3e50;
+  margin: 0 0 8px 0;
+  /* Remove margem padrão e adiciona espaço abaixo */
+}
+
+.card-content p {
+  font-size: 14px;
+  color: #7a8b99;
+  line-height: 1.5;
+  /* Altura da linha para melhor legibilidade */
+  margin: 0;
+}
+
+/* --- LISTA DE VANTAGENS --- */
+.features-list {
+  list-style: none;
+  /* Remove as bolinhas padrão da lista */
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  /* Espaço entre os itens da lista */
+}
+
+.features-list li {
+  display: flex;
+  /* Para alinhar o ícone e o texto na mesma linha */
+  align-items: center;
+  gap: 10px;
+  /* Espaço entre o ícone de check e o texto */
+  font-size: 15px;
+  color: #34495e;
+}
+
+.features-list .fa-circle-check {
+  color: #1e6d42;
+  /* Cor verde do ícone de check */
+  font-size: 20px;
+}
+
+/* --- BOTÃO DE ORÇAMENTO --- */
+.quote-button {
+  background: linear-gradient(9deg, rgba(13, 67, 24, 1) 0%, rgba(13, 115, 47, 1) 50%, rgba(6, 78, 59, 1) 100%);
+  /* Verde escuro, o mesmo do ícone */
+  color: #ffffff;
+  /* Texto branco */
+  border: none;
+  border-radius: 12px;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  width: 100%;
+  /* O botão ocupa toda a largura do card */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  /* Efeito suave na transição de cor */
+}
+
+.quote-button:hover {
+  background: linear-gradient(9deg, rgba(13, 67, 24, 1) 0%, rgba(13, 115, 47, 1) 50%, rgba(6, 78, 59, 1) 100%);
+  /* Um tom de verde um pouco mais escuro para o hover */
+}
