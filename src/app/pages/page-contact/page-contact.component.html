@@ -1,91 +1,94 @@
-<navbar class="default"></navbar>
-  <section>
-    <section class="about-hero">
-      <div class="hero-content">
-        <h1>Entre em Contato</h1>
-        <p>Estamos prontos para transformar suas ideias em soluções digitais inovadoras</p>
+
+<div class="default">
+  <navbar></navbar>
+
+  <section class="about-hero">
+    <div class="hero-content">
+      <h1>Entre em Contato</h1>
+      <p>Estamos prontos para transformar suas ideias em soluções digitais inovadoras</p>
+    </div>
+  </section>
+
+</div>
+
+  <section class="contact-form-section">
+      <div class="container contact-grid">
+          <div class="solicite-proposta">
+              <h2>Solicite sua Proposta</h2>
+              <form>
+                  <div class="form-row">
+                      <div class="form-group">
+                          <label for="nome">Nome Completo *</label>
+                          <input type="text" id="nome" name="nome" placeholder="Carlos Fernando de Nascimento" required>
+                      </div>
+                      <div class="form-group">
+                          <label for="email">E-mail *</label>
+                          <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+                      </div>
+                  </div>
+                  <div class="form-row">
+                      <div class="form-group">
+                          <label for="telefone">Telefone</label>
+                          <input type="tel" id="telefone" name="telefone" placeholder="+55 (71) 0000-0000">
+                      </div>
+                      <div class="form-group">
+                          <label for="empresa">Empresa</label>
+                          <input type="text" id="empresa" name="empresa" placeholder="Nome da empresa">
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <label for="servico">Serviço de Interesse *</label>
+                      <select id="servico" name="servico" required>
+                          <option value="web">Desenvolvimento Web</option>
+                          <option value="mobile">Desenvolvimento Mobile</option>
+                      </select>
+                  </div>
+                  <div class="form-group">
+                      <label for="mensagem">Mensagem *</label>
+                      <textarea id="mensagem" name="mensagem" rows="5" placeholder="Conte-nos mais sobre seu projeto..." required></textarea>
+                  </div>
+                  <button type="submit" class="service-action-btn">
+                    <i class="fas fa-paper-plane"></i> Solicitar proposta
+                  </button>
+              </form>
+          </div>
+
+          <div class="informacoes-contato">
+              <h2>Informações de Contato</h2>
+              <div class="contact-item">
+                  <i class="fas fa-envelope"></i> <div>
+                      <h3>E-mail</h3>
+                      <p>contato&#64;punkcode.com</p>
+                  </div>
+              </div>
+              <div class="contact-item">
+                  <i class="fas fa-phone"></i> <div>
+                      <h3>Telefone</h3>
+                      <p>+55 (73) 0000-0000</p>
+                  </div>
+              </div>
+              <div class="contact-item">
+                  <i class="fas fa-map-marker-alt"></i> <div>
+                      <h3>Endereço</h3>
+                      <p>Ilhéus, BA - Brasil</p>
+                  </div>
+              </div>
+              <div class="contact-item">
+                  <i class="fas fa-clock"></i> <div>
+                      <h3>Horário de Atendimento</h3>
+                      <p>Segunda a Sexta, 09h às 18h</p>
+                  </div>
+              </div>
+          </div>
       </div>
-    </section>
+  </section>
 
-      <section class="contact-form-section">
-          <div class="container contact-grid">
-              <div class="solicite-proposta">
-                  <h2>Solicite sua Proposta</h2>
-                  <form>
-                      <div class="form-row">
-                          <div class="form-group">
-                              <label for="nome">Nome Completo *</label>
-                              <input type="text" id="nome" name="nome" placeholder="Carlos Fernando de Nascimento" required>
-                          </div>
-                          <div class="form-group">
-                              <label for="email">E-mail *</label>
-                              <input type="email" id="email" name="email" placeholder="seu@email.com" required>
-                          </div>
-                      </div>
-                      <div class="form-row">
-                          <div class="form-group">
-                              <label for="telefone">Telefone</label>
-                              <input type="tel" id="telefone" name="telefone" placeholder="+55 (71) 0000-0000">
-                          </div>
-                          <div class="form-group">
-                              <label for="empresa">Empresa</label>
-                              <input type="text" id="empresa" name="empresa" placeholder="Nome da empresa">
-                          </div>
-                      </div>
-                      <div class="form-group">
-                          <label for="servico">Serviço de Interesse *</label>
-                          <select id="servico" name="servico" required>
-                              <option value="web">Desenvolvimento Web</option>
-                              <option value="mobile">Desenvolvimento Mobile</option>
-                          </select>
-                      </div>
-                      <div class="form-group">
-                          <label for="mensagem">Mensagem *</label>
-                          <textarea id="mensagem" name="mensagem" rows="5" placeholder="Conte-nos mais sobre seu projeto..." required></textarea>
-                      </div>
-                      <button type="submit" class="service-action-btn">
-                        <i class="fas fa-paper-plane"></i> Solicitar proposta
-                      </button>
-                  </form>
-              </div>
-
-              <div class="informacoes-contato">
-                  <h2>Informações de Contato</h2>
-                  <div class="contact-item">
-                      <i class="fas fa-envelope"></i> <div>
-                          <h3>E-mail</h3>
-                          <p>contato&#64;punkcode.com</p>
-                      </div>
-                  </div>
-                  <div class="contact-item">
-                      <i class="fas fa-phone"></i> <div>
-                          <h3>Telefone</h3>
-                          <p>+55 (73) 0000-0000</p>
-                      </div>
-                  </div>
-                  <div class="contact-item">
-                      <i class="fas fa-map-marker-alt"></i> <div>
-                          <h3>Endereço</h3>
-                          <p>Ilhéus, BA - Brasil</p>
-                      </div>
-                  </div>
-                  <div class="contact-item">
-                      <i class="fas fa-clock"></i> <div>
-                          <h3>Horário de Atendimento</h3>
-                          <p>Segunda a Sexta, 09h às 18h</p>
-                      </div>
-                  </div>
-              </div>
+  <section class="our-location">
+      <div class="container">
+          <h2>Nossa Localização</h2>
+          <div class="map-placeholder">
+              <iframe src="https://www.google.com/maps/d/u/4/embed?mid=1SBcgjqHLSVhuwDc9CgL5jYg9BBSp1H8&ehbc=2E312F&noprof=1" width="640" height="480"></iframe>
           </div>
-      </section>
-
-      <section class="our-location">
-          <div class="container">
-              <h2>Nossa Localização</h2>
-              <div class="map-placeholder">
-                  <iframe src="https://www.google.com/maps/d/u/4/embed?mid=1SBcgjqHLSVhuwDc9CgL5jYg9BBSp1H8&ehbc=2E312F&noprof=1" width="640" height="480"></iframe>
-              </div>
-          </div>
-      </section>
+      </div>
   </section>
 <app-footer></app-footer>

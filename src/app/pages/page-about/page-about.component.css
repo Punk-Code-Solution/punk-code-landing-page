@@ -1,14 +1,7 @@
 /* Definindo variáveis de cor para facilitar a manutenção, baseadas na imagem. */
 
-:host {
-  display: block;
-  font-family: Arial, sans-serif;
-  /* Use a fonte do seu projeto */
-}
-
 /* --- Seção Hero (Cabeçalho Verde Escuro) --- */
 .about-hero {
-  background: linear-gradient(9deg, rgba(13, 67, 24, 1) 0%, rgba(13, 115, 47, 1) 50%, rgba(6, 78, 59, 1) 100%);
   color: var(--text-color-light);
   padding: 6rem 2rem;
   /* Espaçamento interno (superior/inferior e laterais) */

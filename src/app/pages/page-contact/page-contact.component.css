@@ -1,5 +1,5 @@
+
 .about-hero {
-  background: linear-gradient(9deg, rgba(13, 67, 24, 1) 0%, rgba(13, 115, 47, 1) 50%, rgba(6, 78, 59, 1) 100%);
   color: var(--text-color-light);
   /* Refers to --text-color-light in :root */
   padding: 6rem 2rem;
