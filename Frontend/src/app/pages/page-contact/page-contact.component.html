@@ -15,39 +15,39 @@
       <div class="container contact-grid">
           <div class="solicite-proposta">
               <h2>Solicite sua Proposta</h2>
-              <form>
+              <form (ngSubmit)="enviarProposta()">
                   <div class="form-row">
                       <div class="form-group">
                           <label for="nome">Nome Completo *</label>
-                          <input type="text" id="nome" name="nome" placeholder="Carlos Fernando de Nascimento" required>
+                          <input type="text" id="nome" [(ngModel)]="nome" name="nome" placeholder="Carlos Fernando de Nascimento" required>
                       </div>
                       <div class="form-group">
                           <label for="email">E-mail *</label>
-                          <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+                          <input type="email" id="email" [(ngModel)]="email" name="email" placeholder="seu@email.com" required>
                       </div>
                   </div>
                   <div class="form-row">
                       <div class="form-group">
                           <label for="telefone">Telefone</label>
-                          <input type="tel" id="telefone" name="telefone" placeholder="+55 (71) 0000-0000">
+                          <input type="tel" id="telefone" [(ngModel)]="telefone" name="telefone" placeholder="+55 (71) 0000-0000">
                       </div>
                       <div class="form-group">
                           <label for="empresa">Empresa</label>
-                          <input type="text" id="empresa" name="empresa" placeholder="Nome da empresa">
+                          <input type="text" id="empresa" [(ngModel)]="empresa" name="empresa" placeholder="Nome da empresa">
                       </div>
                   </div>
                   <div class="form-group">
                       <label for="servico">Serviço de Interesse *</label>
-                      <select id="servico" name="servico" required>
+                      <select id="servico" [(ngModel)]="servico" name="servico" required>
                           <option value="web">Desenvolvimento Web</option>
                           <option value="mobile">Desenvolvimento Mobile</option>
                       </select>
                   </div>
                   <div class="form-group">
                       <label for="mensagem">Mensagem *</label>
-                      <textarea id="mensagem" name="mensagem" rows="5" placeholder="Conte-nos mais sobre seu projeto..." required></textarea>
+                      <textarea id="mensagem" [(ngModel)]="mensagem" name="mensagem" rows="5" placeholder="Conte-nos mais sobre seu projeto..." required></textarea>
                   </div>
-                  <button type="submit" class="service-action-btn">
+                  <button  type="submit" class="service-action-btn">
                     <i class="fas fa-paper-plane"></i> Solicitar proposta
                   </button>
               </form>
