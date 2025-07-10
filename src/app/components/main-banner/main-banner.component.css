@@ -23,12 +23,13 @@
 
       color: var(--light-green);
 
-      &>button {
+      &>.button {
         padding: 10px 20px;
-
+        color: var(--light-green);
         font-size: clamp(1.3rem, 80vw, 1.5rem)1.;
         font-family: var(--quantico-font);
-
+        background: #F2F6EE;
+        color: #0D4318;
         border-radius: 20px 0 20px 0;
         border: 1px solid var(--light-green);
 

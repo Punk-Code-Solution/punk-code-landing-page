@@ -34,6 +34,9 @@ li {
   --quantico-font: "Quantico", sans-serif;
 
   --background: linear-gradient(9deg, rgba(13, 67, 24, 1) 0%, rgba(13, 115, 47, 1) 50%, rgba(6, 78, 59, 1) 100%);
+
+  --light-background: linear-gradient(9deg, #F2F6EE 0%, #0D4318 50%, #F2F6EE 100%);
+
 }
 
 .default {

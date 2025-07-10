@@ -158,6 +158,7 @@
   justify-content: center;
   gap: 2rem;
   flex-wrap: wrap;
+  margin-bottom: 4rem;
 }
 
 .value-item {

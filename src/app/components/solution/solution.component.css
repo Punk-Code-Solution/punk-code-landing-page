@@ -1,5 +1,6 @@
 :host {
   display: block;
+  margin-top: 4rem;
 
   &>.solutions-section {
     background: var(--light-green);

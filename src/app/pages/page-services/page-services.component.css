@@ -25,6 +25,7 @@
   padding: 2rem;
   max-width: 1200px;
   margin: 0 auto;
+  margin-top: 4rem;
 }
 
 .services-hero h1 {
@@ -101,6 +102,7 @@
   /* Permite que os itens quebrem para a linha de baixo em telas menores */
   max-width: 1200px;
   margin: 0 auto;
+  margin-bottom: 4rem;
 }
 
 .step {

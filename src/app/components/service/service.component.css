@@ -101,7 +101,7 @@
         font-family: var(--quantico-font);
         border-radius: 20px 0 20px 0;
         border: 2px solid var(--dark-green);
-        background: var(--dark-green);
+        background: var(--background);
         color: var(--light-green);
         font-weight: 700;
         transition: filter 0.2s, box-shadow 0.2s;

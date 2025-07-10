@@ -21,8 +21,10 @@
 }
 
 .logo-section img {
+  align-items: center;
   max-width: 70px;
   margin-bottom: 0.2rem;
+  margin-left: 8%;
 }
 
 .logo-name {
