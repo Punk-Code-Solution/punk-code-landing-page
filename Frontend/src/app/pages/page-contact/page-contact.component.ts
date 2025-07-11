@@ -4,6 +4,7 @@ import { FooterComponent } from "../../components/footer/footer.component";
 import { GoogleMapsModule } from '@angular/google-maps';
 import { NgFor } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import  Swal from 'sweetalert2';
 
 interface Imarker { // Renomeado para seguir a convenção
   position: google.maps.LatLngLiteral; // Use LatLngLiteral para facilitar
@@ -46,10 +47,27 @@ export class PageContactComponent {
         servico: this.servico,
       }),
     })
-    .then(response => response.json())
-      .catch(error => {
-        console.error('Erro ao enviar proposta:', error);
-      });
+    .then(response => {
+      console.log('E-mail enviado com sucesso!');
+      Swal.fire({
+        title: 'Email Enviado',
+        text: 'Em algumas horas entraremos em contato, Nos vemos já',
+        icon: 'success',
+        confirmButtonText: 'Ok',
+        confirmButtonColor: '#0D4318'
+      })
+    })
+    .catch(error => {
+      console.error('Erro ao enviar proposta:', error);
+      Swal.fire({
+        title: 'Eita!!',
+        text: 'Algo não ocorreu como esperado, tente novamente em alguns instantes',
+        icon: 'error',
+        confirmButtonText: 'Ok',
+        confirmButtonColor: '#d33'
+      })
+    });
+
   }
 
   // Defina as coordenadas como um objeto literal
