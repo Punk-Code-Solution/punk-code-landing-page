@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { NavbarComponent } from '../../components/navbar/navbar.component';
 import { FooterComponent } from "../../components/footer/footer.component";
 import { GoogleMapsModule } from '@angular/google-maps';
-import { NgFor } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import  Swal from 'sweetalert2';
 
@@ -17,7 +16,6 @@ interface Imarker { // Renomeado para seguir a convenção
     NavbarComponent,
     FooterComponent,
     GoogleMapsModule,
-    NgFor,
     FormsModule
   ],
   templateUrl: './page-contact.component.html',
