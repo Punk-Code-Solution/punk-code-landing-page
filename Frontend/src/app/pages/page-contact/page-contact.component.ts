@@ -1,41 +1,65 @@
 import { Component } from '@angular/core';
 import { NavbarComponent } from '../../components/navbar/navbar.component';
 import { FooterComponent } from "../../components/footer/footer.component";
-import { GoogleMapsModule } from '@angular/google-maps';
 import { FormsModule } from '@angular/forms';
-import  Swal from 'sweetalert2';
-
-interface Imarker { // Renomeado para seguir a convenção
-  position: google.maps.LatLngLiteral; // Use LatLngLiteral para facilitar
-}
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'page-contact',
   standalone: true,
-  imports: [
-    NavbarComponent,
-    FooterComponent,
-    GoogleMapsModule,
-    FormsModule
-  ],
+  imports: [NavbarComponent, FooterComponent, FormsModule],
   templateUrl: './page-contact.component.html',
-  styleUrl: './page-contact.component.css'
+  styleUrl: './page-contact.component.css',
 })
 export class PageContactComponent {
+  nome = '';
+  email = '';
+  mensagem = '';
+  telefone = '';
+  empresa = '';
+  servico = '';
+  isLoading = false;
 
-  nome: string = '';
-  email: string = '';
-  mensagem: string = '';
-  telefone: string = '';
-  empresa: string = '';
-  servico: string = '';
+  private requiredFields = [
+    { key: 'nome', label: 'Nome' },
+    { key: 'email', label: 'Email' },
+    { key: 'mensagem', label: 'Mensagem' },
+    { key: 'telefone', label: 'Telefone' },
+    { key: 'servico', label: 'Serviço' },
+  ];
+
+  private getMissingFields(): string[] {
+    return this.requiredFields
+      .filter(field => !(this as any)[field.key])
+      .map(field => field.label);
+  }
+
+  private showAlert(title: string, text: string, icon: 'success' | 'error') {
+    Swal.fire({
+      title,
+      text,
+      icon,
+      confirmButtonText: 'Ok',
+      confirmButtonColor: icon === 'success' ? '#0D4318' : '#d33',
+    });
+  }
 
   enviarProposta() {
+    if (this.isLoading) return;
+    const missingFields = this.getMissingFields();
+    if (missingFields.length) {
+      this.showAlert(
+        'Opa!',
+        `Alguns campos estão faltando: ${missingFields.join(', ')}`,
+        'error'
+      );
+      return;
+    }
+
+    this.isLoading = true;
     fetch('http://localhost:3001/send-proposta', {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         nome: this.nome,
         email: this.email,
@@ -45,44 +69,39 @@ export class PageContactComponent {
         servico: this.servico,
       }),
     })
-    .then(response => {
-      console.log('E-mail enviado com sucesso!');
-      Swal.fire({
-        title: 'Email Enviado',
-        text: 'Em algumas horas entraremos em contato, Nos vemos já',
-        icon: 'success',
-        confirmButtonText: 'Ok',
-        confirmButtonColor: '#0D4318'
+      .then(response => {
+        this.isLoading = false;
+        if (response.ok) {
+          this.showAlert(
+            'Email Enviado',
+            'Em algumas horas entraremos em contato, Nos vemos já',
+            'success'
+          );
+          this.resetForm();
+        } else {
+          this.showAlert(
+            'Eita!!',
+            'Algo não ocorreu como esperado, tente novamente em alguns instantes',
+            'error'
+          );
+        }
       })
-    })
-    .catch(error => {
-      console.error('Erro ao enviar proposta:', error);
-      Swal.fire({
-        title: 'Eita!!',
-        text: 'Algo não ocorreu como esperado, tente novamente em alguns instantes',
-        icon: 'error',
-        confirmButtonText: 'Ok',
-        confirmButtonColor: '#d33'
-      })
-    });
-
+      .catch(() => {
+        this.isLoading = false;
+        this.showAlert(
+          'Eita!!',
+          'Algo não ocorreu como esperado, tente novamente em alguns instantes',
+          'error'
+        );
+      });
   }
 
-  // Defina as coordenadas como um objeto literal
-  myLatLng: google.maps.LatLngLiteral = { lat: -14.837320895671775, lng: -39.026881435959844 };
-
-  // Opções do mapa, incluindo o Map ID
-  mapOptions: google.maps.MapOptions = {
-    // 👇 **IMPORTANTE:** Substitua 'YOUR_MAP_ID' pelo seu ID do Mapa do Google Cloud
-    mapId: 'YOUR_MAP_ID',
-    // Você pode desabilitar a UI padrão se quiser um mapa mais limpo
-    disableDefaultUI: true
-  };
-
-  // Defina o marcador usando o objeto literal
-  marker: Imarker = {
-    position: this.myLatLng
-  };
-
-  markers = [ this.marker ];
+  private resetForm() {
+    this.nome = '';
+    this.email = '';
+    this.mensagem = '';
+    this.telefone = '';
+    this.empresa = '';
+    this.servico = '';
+  }
 }

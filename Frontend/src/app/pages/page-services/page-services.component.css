@@ -19,13 +19,14 @@
 }
 
 .service-list-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 2rem;
   padding: 2rem;
   max-width: 1200px;
   margin: 0 auto;
   margin-top: 4rem;
+  justify-content: center; /* Centraliza os itens mesmo com número ímpar */
 }
 
 .services-hero h1 {
