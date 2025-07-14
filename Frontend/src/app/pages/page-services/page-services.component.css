@@ -1,0 +1,190 @@
+/* Definindo variáveis de cor para facilitar a manutenção, baseadas na imagem. */
+
+/* --- Seção Hero (Cabeçalho Verde Escuro) --- */
+.services-hero {
+
+  color: var(--text-color-light);
+  padding: 6rem 2rem;
+  /* Espaçamento interno (superior/inferior e laterais) */
+  text-align: center;
+  /* Alinha todo o texto ao centro */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-content {
+  max-width: 800px;
+  /* Largura máxima para o conteúdo */
+}
+
+.service-list-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 4rem;
+  justify-content: center; /* Centraliza os itens mesmo com número ímpar */
+}
+
+.services-hero h1 {
+  font-size: 2.8rem;
+  /* Tamanho da fonte para o título principal */
+  font-weight: 700;
+  /* Peso da fonte (negrito) */
+  margin-bottom: 1rem;
+  /* Margem inferior para separar do parágrafo */
+  color: var(--light-green);
+}
+
+.services-hero p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  /* Altura da linha para melhor legibilidade */
+  color: var(--light-green);
+}
+
+/* --- Seção de Soluções (Fundo Claro) --- */
+.solutions-section {
+  background: linear-gradient(9deg, rgba(13, 67, 24, 1) 0%, rgba(13, 115, 47, 1) 50%, rgba(6, 78, 59, 1) 100%);
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.solutions-header {
+  margin-bottom: 3.5rem;
+  /* Espaço abaixo do cabeçalho da seção */
+}
+
+.solutions-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--dark-green);
+  margin-bottom: 0.8rem;
+}
+
+.solutions-subtitle {
+  font-size: 1rem;
+  color: var(--text-color-medium);
+  max-width: 600px;
+  margin: 0 auto;
+  /* Centraliza o parágrafo */
+}
+
+/* --- Seção "Como Trabalhamos" --- */
+.how-we-work-section {
+  background-color: var(--light-green);
+  /* Fundo branco para esta seção específica */
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.how-we-work-section h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--dark-green);
+  margin-bottom: 0.8rem;
+}
+
+.how-we-work-section>p {
+  font-size: 1rem;
+  color: var(--text-color-medium);
+  margin-bottom: 3.5rem;
+}
+
+.steps-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  /* Espaço entre os itens */
+  flex-wrap: wrap;
+  /* Permite que os itens quebrem para a linha de baixo em telas menores */
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-bottom: 4rem;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  /* Organiza os itens (ícone, título, texto) em uma coluna */
+  align-items: center;
+  /* Alinha os itens ao centro horizontalmente */
+  max-width: 240px;
+  /* Largura máxima para cada passo */
+}
+
+.step-icon-container {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: linear-gradient(9deg, rgba(13, 67, 24, 1) 0%, rgba(13, 115, 47, 1) 50%, rgba(6, 78, 59, 1) 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+  font-size: 2.0rem;
+  /* Icon size */
+}
+
+.step h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--dark-green);
+  margin-bottom: 0.7rem;
+}
+
+.step p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--text-color-dark);
+}
+
+/* --- Media Queries para Responsividade --- */
+
+/* Telas de tablet */
+@media (max-width: 1024px) {
+  .services-hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .solutions-title,
+  .how-we-work-section h2 {
+    font-size: 1.8rem;
+  }
+}
+
+/* Telas de celular */
+@media (max-width: 768px) {
+  .services-hero {
+    padding: 4rem 1rem;
+  }
+
+  .services-hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .services-hero p {
+    font-size: 1rem;
+  }
+
+  .solutions-section,
+  .how-we-work-section {
+    padding: 3rem 1rem;
+  }
+
+  .solutions-title,
+  .how-we-work-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .steps-container {
+    flex-direction: column;
+    /* Empilha os passos verticalmente */
+    align-items: center;
+    gap: 2.5rem;
+  }
+}

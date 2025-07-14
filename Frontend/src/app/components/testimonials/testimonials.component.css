@@ -1,0 +1,60 @@
+:host {
+  width: 100%;
+
+  background-color: var(--light-green);
+  margin-top: 7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &>section {
+    padding: 50px 0;
+
+    &>#carousel {
+      width: 100%;
+
+      & .carousel-items {
+        flex: none;
+
+        display: none;
+
+        &>p {
+          text-align: justify;
+        }
+
+        &>b {
+          font-size: 1rem;
+        }
+
+        &>span {
+          font-size: 0.8rem;
+        }
+
+        &.active {
+          display: block;
+          animation: fadeIn 2s;
+        }
+      }
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 1000px) {
+  :host {
+    &>section {
+      &>header {
+        text-align: center;
+      }
+    }
+  }
+}
