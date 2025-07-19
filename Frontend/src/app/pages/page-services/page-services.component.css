@@ -14,7 +14,7 @@
 }
 
 .hero-content {
-  max-width: 800px;
+  max-width: 100%;
   /* Largura máxima para o conteúdo */
 }
 
@@ -155,6 +155,21 @@
   .how-we-work-section h2 {
     font-size: 1.8rem;
   }
+  .steps-container {
+
+    display: flex;
+      justify-content: center;
+      /* Espaço entre os itens */
+      flex-wrap: wrap;
+      /* Permite que os itens quebrem para a linha de baixo em telas menores */
+      max-width: 1200px;
+      margin: 0 auto;
+      margin-bottom: 4rem;
+      
+  }
+  .step {
+    width: 20%;
+  }
 }
 
 /* Telas de celular */
@@ -181,10 +196,59 @@
     font-size: 1.5rem;
   }
 
+  .step-icon-container {
+
+    width: 60px;
+    height: 60px;
+
+  }
+
   .steps-container {
-    flex-direction: column;
     /* Empilha os passos verticalmente */
     align-items: center;
     gap: 2.5rem;
   }
+
+  @media (max-width: 425px) {
+    .services-hero {
+      padding: 4rem 1rem;
+    }
+
+    .services-hero h1 {
+      font-size: 1.8rem;
+    }
+
+    .services-hero p {
+      font-size: 1rem;
+    }
+
+    .solutions-section,
+    .how-we-work-section {
+      padding: 3rem 1rem;
+    }
+
+    .solutions-title,
+    .how-we-work-section h2 {
+      font-size: 1.5rem;
+    }
+
+    .steps-container {
+      /* Empilha os passos verticalmente */
+      align-items: center;
+      gap: 2.5rem;
+    }
+
+    .step-icon-container {
+
+      width: 60px;
+      height: 60px;
+
+    }
+
+    .step {
+      width: 40%;
+    }
+
+  }
+
 }

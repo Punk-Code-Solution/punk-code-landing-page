@@ -42,6 +42,11 @@ hr {
   border-bottom: 1px solid var(--black);
 }
 
+h2 {
+  font-size: 3rem;
+  color: var(--dark-green);
+}
+
 .faq-cta {
   margin-top: 3rem;
 }
@@ -69,4 +74,22 @@ p {
       filter: brightness(0.95);
       box-shadow: 0 4px 16px rgba(13, 67, 24, 0.15);
     }
+  
+}
+
+@media (max-width: 1024px) {
+
+  h2 {
+      font-size: 2rem;
+      color: var(--dark-green);
+    }
+
+}
+
+@media (max-width: 768px) {
+
+}
+
+@media (max-width: 425px) {
+  
 }

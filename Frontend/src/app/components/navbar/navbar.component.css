@@ -115,7 +115,7 @@
   }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1024px) {
   :host {
     &>header {
       width: 100%;
@@ -125,7 +125,7 @@
       &>div#logo {
         position: absolute;
         top: 50%;
-        left: 50%;
+        left: 10%;
 
         transform: translate(-50%, -50%);
       }
@@ -151,6 +151,7 @@
 
         &>ul {
           background-color: var(--dark-green);
+          width: 100%;
 
           &>li {
             width: 100%;
@@ -183,4 +184,31 @@
       }
     }
   }
+}
+
+@media (max-width: 768px) {
+
+  .container {
+    margin-right: 50px;
+    margin-inline-end: auto;
+  }
+
+    &>div#button_menu_and_close {
+      width: 100%;
+      
+    }
+  
+
+  &>div#logo {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+  
+      transform: translate(-50%, -50%);
+    }
+
+}
+
+@media (max-width: 420px) {
+  
 }
