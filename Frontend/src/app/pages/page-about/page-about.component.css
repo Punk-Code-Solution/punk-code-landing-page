@@ -279,9 +279,9 @@
     gap: 1rem;
   }
 
-    .history-content {
-      max-width: 80%;
-    }
+  .history-content {
+    max-width: 80%;
+  }
 
   .stat-item h4 {
     font-size: 2.5rem;
@@ -327,6 +327,12 @@
   .stat-item h4 {
     font-size: 2rem;
   }
+  
+  .value-icon-container {
+
+    width: 60px;
+    height: 60px;
+  }
 
   .values-container,
   .steps-container {
@@ -340,7 +346,15 @@
   }
 }
 
-@media (max-width: 425px) {}
+@media (max-width: 425px) {
+
+  .value-icon-container {
+  
+    width: 60px;
+    height: 60px;
+  }
+
+}
 
 /* Define some basic color variables if not already defined globally */
 :root {

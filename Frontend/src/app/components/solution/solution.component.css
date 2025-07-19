@@ -98,7 +98,11 @@
       &>.solutions-grid {
         max-width: 100%;
         gap: 1.5rem;
-      }      
+      }
+      
+      &>.solutions-title {
+        font-size: 2rem;
+      }
 
     }
 
@@ -120,10 +124,10 @@
         gap: 1.5rem;
       }
 
-    }
+      .solution {
+        padding: 0rem;
+      }
 
-    &>.solutions {
-      padding: 0rem 0rem 0rem 0rem;
     }
 
   }

@@ -82,6 +82,10 @@
 }
 
 @media (max-width: 768px) {
+
+  #logo {
+    margin-left: -4%;
+  }
   
 }
 
@@ -94,9 +98,9 @@
   .logo-section {
     flex: 1;
     align-items: center;
-    max-width: 70px;
+    min-width: 280px;
     margin-bottom: 0.2rem;
-    margin-left: 35%;
+    margin-left: 1%;
   }
 
   .logo-section p {
