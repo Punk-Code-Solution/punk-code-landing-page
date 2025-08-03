@@ -9,6 +9,7 @@
 }
 
 .footer-content {
+
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
@@ -81,15 +82,35 @@
 }
 
 @media (max-width: 768px) {
-  .footer-content {
-    flex-direction: column;
+
+  #logo {
+    margin-left: -4%;
+  }
+  
+}
+
+@media (max-width: 1024px) {
+  
+}
+
+@media (max-width: 425px) {
+
+  .logo-section {
+    flex: 1;
+    align-items: center;
+    min-width: 280px;
+    margin-bottom: 0.2rem;
+    margin-left: 1%;
   }
 
-  .links-section {
-    flex-direction: column;
+  .logo-section p {
+    margin-left: 3%;
   }
 
   .links-column {
-    min-width: 100%;
+    flex: 1;
+    min-width: 100px;
+    margin-left: 4%;
   }
+
 }
