@@ -2,6 +2,17 @@
   display: block;
   margin-top: 2rem;
   margin-bottom: 3rem;
+  
+  .solutions-section {
+    transition: opacity 2.0s ease-out, transform 2.0s ease-out;
+    opacity: 0;
+    transform: translateY(80px);
+  }
+
+  .solutions-section.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
 
   &>.solutions-section {
     background: var(--light-green);
