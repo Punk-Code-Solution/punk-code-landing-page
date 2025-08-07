@@ -1,33 +1,21 @@
 <section class="solutions-section" [ngClass]="{'fade-in': isAnimated}">
-    <h1 class="solutions-title">Criamos Soluções para o Futuro</h1>
+    <h1 class="solutions-title" [ngClass]="{'spiral-in': isAnimated}">Criamos Soluções para o Futuro</h1>
     <div class="solutions-grid">
 
-      <section>
-        <div class="solution">
-          <i icon="fa-hand-holding-usd" ></i>
-          <h3>Design que vende</h3>
-          <p>Criamos designs modernos e estratégicos, focados em converter visitantes em clientes</p>
+      <div class="solution-card" 
+           *ngFor="let solution of solutions; let i = index"
+           [ngClass]="{
+             'card-appear': animatedCards[i],
+             'card-hover': true
+           }"
+           [style.animation-delay]="(i * 0.3) + 's'">
+        <div class="solution-icon" [ngClass]="{'icon-spin': animatedCards[i]}">
+          <i [class]="solution.icon"></i>
         </div>
-      </section>
-
-      <section>
-        <div class="solution">
-          <i icon="fa-tv"></i>
-          <h3>Sistema sob medida</h3>
-          <p>Desenvolvemos soluções personalizadas, feitas exclusivamente para alavancar o seu negócio</p>
+        <h3 class="solution-title">{{ solution.title }}</h3>
+        <p class="solution-description">{{ solution.description }}</p>
+        <div class="card-glow"></div>
         </div>
-      </section>
-
-      <section>
-        <div class="solution">
-          <div>
-            <i icon="fa-clock"></i>
-          </div>
-          <h3> Suporte sem enrolação</h3>
-          <p>Time técnico disponível para solucionar seu problema sem perda de tempo, sem enrolação.</p>
-        </div>
-      </section>
 
     </div>
-
   </section>

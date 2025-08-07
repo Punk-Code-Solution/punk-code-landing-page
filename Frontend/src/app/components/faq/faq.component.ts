@@ -11,6 +11,7 @@ import { CommonModule, isPlatformBrowser } from '@angular/common';
 export class FaqComponent implements OnInit {
 
   isAnimated = false;
+  animatedItems: boolean[] = [];
 
   constructor(
     private el: ElementRef,
@@ -19,6 +20,8 @@ export class FaqComponent implements OnInit {
 
   ngOnInit() {
     this.checkScroll();
+    // Initialize animated items array
+    this.animatedItems = new Array(this.faqs.length).fill(false);
   }
 
   @HostListener('window:scroll', ['$event'])
@@ -34,7 +37,17 @@ export class FaqComponent implements OnInit {
 
     if (scrollPosition > componentPosition) {
       this.isAnimated = true;
+      // Animate items with staggered delay
+      this.animateItems();
     }
+  }
+
+  animateItems() {
+    this.faqs.forEach((_, index) => {
+      setTimeout(() => {
+        this.animatedItems[index] = true;
+      }, index * 200); // 200ms delay between each item
+    });
   }
 
   faqs = [

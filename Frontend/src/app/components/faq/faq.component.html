@@ -1,30 +1,34 @@
 <section class="faq-section container" [ngClass]="{'fade-in': isAnimated}">
-  <h2>Perguntas Frequentes</h2>
-  <p class="subtitle">Encontre respostas para as perguntas mais comuns</p>
+  <h2 class="faq-title" [ngClass]="{'slide-in-left': isAnimated}">Perguntas Frequentes</h2>
+  <p class="subtitle" [ngClass]="{'slide-in-right': isAnimated}">Encontre respostas para as perguntas mais comuns</p>
 
   <div class="faq-list">
     <div
       class="faq-item"
       *ngFor="let faq of faqs; let i = index"
       (click)="toggle(i)"
+      [ngClass]="{
+        'slide-in-up': animatedItems[i],
+        'faq-item-hover': true
+      }"
     >
-      <div class="faq-question">
+      <div class="faq-question" [ngClass]="{'question-hover': faq.open}">
         <strong>{{ faq.question }}</strong>
-        <span [class.open]="faq.open">&#9660;</span>
+        <span class="arrow" [class.open]="faq.open">&#9660;</span>
       </div>
 
       <div class="faq-answer" *ngIf="faq.open">
         <p>{{ faq.answer }}</p>
       </div>
 
-      <hr />
+      <hr class="faq-divider" />
     </div>
   </div>
 
-  <div class="faq-cta">
+  <div class="faq-cta" [ngClass]="{'bounce-in': isAnimated}">
     <h2>Ainda tem dúvidas?</h2>
     <p>Nossa equipe irá te ajudar</p>
     <br/>
-    <a href="/contact" class="cta-button">Fale conosco</a>
+    <a href="/contact" class="cta-button pulse-button">Fale conosco</a>
   </div>
 </section>

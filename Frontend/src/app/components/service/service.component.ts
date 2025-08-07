@@ -12,6 +12,25 @@ import { CommonModule, isPlatformBrowser } from '@angular/common';
 export class ServiceComponent implements OnInit {
 
   isAnimated = false;
+  animatedElements: {
+    title: boolean;
+    description: boolean;
+    list: boolean;
+    button: boolean;
+    image: boolean;
+  } = {
+    title: false,
+    description: false,
+    list: false,
+    button: false,
+    image: false
+  };
+
+  services = [
+    'Desenvolvimento de Software Personalizado',
+    'Manutenção e Suporte',
+    'Integração de Sistemas'
+  ];
 
   constructor(
     private el: ElementRef,
@@ -35,7 +54,35 @@ export class ServiceComponent implements OnInit {
 
     if (scrollPosition > componentPosition) {
       this.isAnimated = true;
+      this.animateElements();
     }
+  }
+
+  animateElements() {
+    // Animate title first
+    setTimeout(() => {
+      this.animatedElements.title = true;
+    }, 200);
+
+    // Animate description
+    setTimeout(() => {
+      this.animatedElements.description = true;
+    }, 400);
+
+    // Animate list items
+    setTimeout(() => {
+      this.animatedElements.list = true;
+    }, 600);
+
+    // Animate button
+    setTimeout(() => {
+      this.animatedElements.button = true;
+    }, 800);
+
+    // Animate image last
+    setTimeout(() => {
+      this.animatedElements.image = true;
+    }, 1000);
   }
 }
 
