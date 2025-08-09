@@ -1,7 +1,7 @@
 /* FAQ Section Styles */
 .faq-section {
   padding: 4rem 0;
-  background: var(--background);
+  background: #F2F6EE;
   color: var(--light-green);
   min-height: 100vh;
   display: flex;
@@ -32,12 +32,16 @@
   opacity: 0;
   transform: translateX(100px);
   transition: all 0.8s ease-out 0.2s;
-  color: var(--light-green);
+  color: #0D4318;
 }
 
 .slide-in-right {
   opacity: 1 !important;
   transform: translateX(0) !important;
+}
+
+h2{
+  color: #0D4318;
 }
 
 /* FAQ List Styles */
@@ -48,7 +52,8 @@
 }
 
 .faq-item {
-  background: rgba(242, 246, 238, 0.1);
+  background: var(--background);
+  box-shadow: #0D4318 0 50px 30px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   margin-bottom: 1rem;
   padding: 1.5rem;
@@ -67,9 +72,16 @@
 }
 
 .faq-item:hover {
+  color: #F2F6EE;
   background: rgba(242, 246, 238, 0.2);
   transform: translateY(-5px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  .faq-question {
+    color: #0D4318;
+  }
+  .faq-answer {
+    color: #0D4318;
+  }
 }
 
 .faq-question {
@@ -78,24 +90,25 @@
   align-items: center;
   font-size: 1.1rem;
   transition: all 0.3s ease;
-  color: #0D4318;
+  color: #F2F6EE;
 }
 
 .question-hover {
-  color: var(--light-green);
+  color: #F2F6EE;
   transform: scale(1.02);
+  
 }
 
 .arrow {
   font-size: 1.2rem;
   transition: all 0.3s ease;
   display: inline-block;
-  color: var(--light-green);
+  color: #0D4318;
 }
 
 .arrow.open {
   transform: rotate(180deg);
-  color: var(--light-green);
+  color: #0D4318;
 }
 
 .faq-answer {
@@ -103,7 +116,7 @@
   padding-top: 1rem;
   border-top: 1px solid rgba(242, 246, 238, 0.2);
   animation: slideDown 0.5s ease-out;
-  color: var(--light-green);
+  color: #F2F6EE;
 }
 
 @keyframes slideDown {
@@ -128,6 +141,7 @@
 
 /* CTA Section */
 .faq-cta {
+  
   text-align: center;
   margin-top: 3rem;
   padding: 2rem;
@@ -148,8 +162,8 @@
 .cta-button {
   display: inline-block;
   padding: 1rem 2rem;
-  background: var(--light-green);
-  color: var(--dark-green);
+  background: linear-gradient(45deg, #0D4318, rgba(13, 115, 47, 1));
+  color: #F2F6EE;
   text-decoration: none;
   border-radius: 50px;
   font-weight: bold;
@@ -177,7 +191,8 @@
 }
 
 .cta-button:hover {
-  transform: translateY(-3px);
+  color: #0D4318;
+  transform: translateY(-5px);
   box-shadow: 0 10px 30px rgba(13, 67, 24, 0.6);
   background: var(--light-green);
 }

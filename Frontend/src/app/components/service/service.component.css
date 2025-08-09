@@ -154,6 +154,10 @@
   transition: transform 0.3s ease;
 }
 
+.pulse-button {
+  animation: pulse 2s infinite;
+}
+
 .service-action-btn:hover i {
   transform: translateX(5px) rotate(15deg);
 }
