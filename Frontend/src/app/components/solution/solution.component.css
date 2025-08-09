@@ -7,8 +7,9 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  position: relative;
   overflow: hidden;
+  position: relative;
+  z-index: 0;
 }
 
 .solutions-section::before {
@@ -21,6 +22,8 @@
   background: radial-gradient(circle at 20% 80%, rgba(13, 67, 24, 0.1) 0%, transparent 50%),
               radial-gradient(circle at 80% 20%, rgba(13, 115, 47, 0.1) 0%, transparent 50%);
   animation: backgroundShift 10s ease-in-out infinite;
+  pointer-events: none;
+  z-index: -1;
 }
 
 @keyframes backgroundShift {
@@ -176,6 +179,10 @@
 
 .solution-card:hover .solution-title {
   color: var(--light-green);
+  transform: scale(1.05);
+}
+
+.solution-card:hover .solution-description {
   transform: scale(1.05);
 }
 

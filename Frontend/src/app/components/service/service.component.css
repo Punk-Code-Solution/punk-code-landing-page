@@ -30,6 +30,7 @@
 
 /* Services Content */
 .services-content {
+  background: #F2F6EE;
   flex: 1;
   max-width: 600px;
   z-index: 2;
@@ -104,8 +105,7 @@
 }
 
 .service-item:hover::before {
-  
-  background: #F2F6EE;
+  background: var(--background);
   left: 100%;
 }
 
@@ -144,6 +144,42 @@
   transform: translateY(0) scale(1) !important;
 }
 
+.pulse-button .btn-inner {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  animation: pulseScale 2s infinite;
+}
+
+@keyframes pulseScale {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.06);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* existing pulse (box-shadow) can remain for subtle glow */
+.pulse-button {
+  animation: pulseScale 2s infinite !important;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 8px 25px rgba(13, 67, 24, 0.7);
+  }
+  50% {
+    box-shadow: 0 12px 40px rgba(13, 67, 24, 0.95);
+  }
+  100% {
+    box-shadow: 0 8px 25px rgba(13, 67, 24, 0.7);
+  }
+}
+
 .service-action-btn:hover {
   transform: translateY(-5px) scale(1.05);
   box-shadow: 0 15px 35px #0D4318;
@@ -152,10 +188,6 @@
 
 .service-action-btn i {
   transition: transform 0.3s ease;
-}
-
-.pulse-button {
-  animation: pulse 2s infinite;
 }
 
 .service-action-btn:hover i {

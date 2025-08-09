@@ -82,6 +82,9 @@ h2{
   .faq-answer {
     color: #0D4318;
   }
+  .arrow {
+    color: #0D4318;
+  }
 }
 
 .faq-question {
@@ -103,12 +106,12 @@ h2{
   font-size: 1.2rem;
   transition: all 0.3s ease;
   display: inline-block;
-  color: #0D4318;
+  color: #F2F6EE;
 }
 
 .arrow.open {
   transform: rotate(180deg);
-  color: #0D4318;
+  color: #F2F6EE;
 }
 
 .faq-answer {
@@ -190,12 +193,6 @@ h2{
   }
 }
 
-.cta-button:hover {
-  color: #0D4318;
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(13, 67, 24, 0.6);
-  background: var(--light-green);
-}
 
 /* Responsive Design */
 @media (max-width: 768px) {
