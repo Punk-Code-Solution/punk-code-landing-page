@@ -37,6 +37,12 @@ export class PageServicesComponent {
       title: 'Soluções em Nuvem',
       description: 'Infraestrutura escalável e segura na nuvem para suas aplicações e dados.',
       features: ['Arquitetura serverless', 'Bancos de dados gerenciados', 'CI/CD', 'Monitoramento 24/7']
+    },
+    {
+      icon: 'fa-solid fa-bug',
+      title: 'Teste de Software',
+      description: 'Consultoria em testes de software e automação de testes.',
+      features: ['Testes automatizados', 'Testes de unidade', 'Testes de integração', 'Testes de sistema']
     }
 
   ]
