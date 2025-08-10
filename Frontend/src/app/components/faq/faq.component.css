@@ -71,22 +71,6 @@ h2{
   transform: translateY(0) !important;
 }
 
-.faq-item:hover {
-  color: #F2F6EE;
-  background: rgba(242, 246, 238, 0.2);
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  .faq-question {
-    color: #0D4318;
-  }
-  .faq-answer {
-    color: #0D4318;
-  }
-  .arrow {
-    color: #0D4318;
-  }
-}
-
 .faq-question {
   display: flex;
   justify-content: space-between;
@@ -99,7 +83,7 @@ h2{
 .question-hover {
   color: #F2F6EE;
   transform: scale(1.02);
-  
+
 }
 
 .arrow {
@@ -211,4 +195,8 @@ h2{
   .faq-question {
     font-size: 1rem;
   }
+}
+
+@media (max-width: 1024px) {
+  
 }

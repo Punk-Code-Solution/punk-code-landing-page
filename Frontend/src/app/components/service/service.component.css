@@ -226,8 +226,13 @@
 @media (max-width: 1024px) {
   .services-container {
     flex-direction: column;
-    text-align: center;
+    text-align: left;
     padding: 3rem 1rem;
+    min-height: 50vh;
+  }
+
+  h1 {
+    text-align: center;
   }
   
   .service-title {
@@ -253,6 +258,10 @@
     font-size: 2rem;
   }
   
+  .services-image {
+    display: none;
+  }	
+
   .services-description {
     font-size: 1rem;
   }
