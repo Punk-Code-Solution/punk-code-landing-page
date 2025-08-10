@@ -57,7 +57,6 @@ li {
   background: linear-gradient(9deg, rgba(13, 67, 24, 1) 0%, rgba(13, 115, 47, 1) 50%, rgba(6, 78, 59, 1) 100%);
   background-size: 600% 600%;
   animation: gradientShift 15s ease infinite;
-  z-index: 0;
 }
 
 .gradient-background::before {
@@ -68,7 +67,6 @@ li {
   width: 200%;
   height: 200%;
   pointer-events: none;
-  z-index: 0;
 
   background-image:
     repeating-linear-gradient(
