@@ -2,16 +2,16 @@
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "/server.js"
+      "destination": "/server.mjs"
     }
   ],
   "builds": [
     {
-      "src": "server.ts",
+      "src": "Frontend/server.ts",
       "use": "@vercel/node",
       "config": {
         "includeFiles": [
-          "dist/punk-code-solution-leading-page/**"
+          "Frontend/dist/punk-code-solution-leading-page/**"
         ]
       }
     }
