@@ -2,19 +2,13 @@
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "/server/server.mjs"
+      "destination": "/dist/punk-code-solution-leading-page/server/server.mjs"
     }
   ],
   "builds": [
     {
-      "src": "Frontend/server.ts",
-      "use": "@vercel/node",
-      "config": {
-        "includeFiles": [
-          "Frontend/dist/punk-code-solution-leading-page/browser/**",
-          "Frontend/dist/punk-code-solution-leading-page/server/**"
-        ]
-      }
+      "src": "server.ts",
+      "use": "@vercel/node"
     }
   ]
 }
