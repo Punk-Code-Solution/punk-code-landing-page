@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "dist/punk-code-solution-leading-page/browser/index.html"
+      "destination": "/index.html"
     }
   ]
 }
