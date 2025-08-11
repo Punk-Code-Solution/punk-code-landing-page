@@ -1,12 +1,12 @@
 /* Services Container */
 .services-container {
-  background: #F2F6EE;
+  background: var(--light-green);
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 4rem 2rem;
   min-height: 100vh;
-  color: #0D4318;
+  color: var(--dark-green);
   position: relative;
   overflow: hidden;
 }
@@ -30,7 +30,7 @@
 
 /* Services Content */
 .services-content {
-  background: #F2F6EE;
+  background: var(--light-green);
   flex: 1;
   max-width: 600px;
   z-index: 2;
@@ -42,7 +42,7 @@
   font-size: 3.5rem;
   margin-bottom: 2rem;
   font-weight: bold;
-  background: #0D4318;
+  background: var(--dark-green);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -105,7 +105,6 @@
 }
 
 .service-item:hover::before {
-  background: var(--background);
   left: 100%;
 }
 
@@ -126,14 +125,14 @@
   align-items: center;
   gap: 0.5rem;
   padding: 1.2rem 2.5rem;
-  background: #0D4318;
+  background: var(--dark-green);
   color: white;
   text-decoration: none;
   border-radius: 50px;
   font-weight: bold;
   font-size: 1.1rem;
   transition: all 0.3s ease;
-  box-shadow: 0 8px 25px #0D4318;
+  box-shadow: 0 8px 25px var(--dark-green);
   opacity: 0;
   transform: translateY(50px) scale(0.8);
   transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -144,46 +143,20 @@
   transform: translateY(0) scale(1) !important;
 }
 
-.pulse-button .btn-inner {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  animation: pulseScale 2s infinite;
-}
-
-@keyframes pulseScale {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.06);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-/* existing pulse (box-shadow) can remain for subtle glow */
 .pulse-button {
   animation: pulseScale 2s infinite !important;
 }
 
-@keyframes pulse {
-  0% {
-    box-shadow: 0 8px 25px rgba(13, 67, 24, 0.7);
-  }
-  50% {
-    box-shadow: 0 12px 40px rgba(13, 67, 24, 0.95);
-  }
-  100% {
-    box-shadow: 0 8px 25px rgba(13, 67, 24, 0.7);
-  }
+@keyframes pulseScale {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.06); }
+  100% { transform: scale(1); }
 }
 
 .service-action-btn:hover {
   transform: translateY(-5px) scale(1.05);
-  box-shadow: 0 15px 35px #0D4318;
-  background: linear-gradient(45deg, #0D4318, rgba(13, 115, 47, 1));
+  box-shadow: 0 15px 35px var(--dark-green);
+  background: linear-gradient(45deg, var(--dark-green), rgba(13, 115, 47, 1));
 }
 
 .service-action-btn i {
@@ -231,21 +204,13 @@
     min-height: 50vh;
   }
 
-  h1 {
-    text-align: center;
-  }
+  h1 { text-align: center; }
   
-  .service-title {
-    font-size: 2.5rem;
-  }
+  .service-title { font-size: 2.5rem; }
   
-  .services-description {
-    font-size: 1.1rem;
-  }
+  .services-description { font-size: 1.1rem; }
   
-  .service-item {
-    font-size: 1rem;
-  }
+  .service-item { font-size: 1rem; }
   
   .services-image {
     margin-top: 2rem;
@@ -254,17 +219,11 @@
 }
 
 @media (max-width: 768px) {
-  .service-title {
-    font-size: 2rem;
-  }
+  .service-title { font-size: 2rem; }
   
-  .services-image {
-    display: none;
-  }	
+  .services-image { display: none; }
 
-  .services-description {
-    font-size: 1rem;
-  }
+  .services-description { font-size: 1rem; }
   
   .service-action-btn {
     padding: 1rem 2rem;

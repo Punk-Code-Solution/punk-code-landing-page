@@ -29,7 +29,8 @@ export class ServiceComponent implements OnInit {
   services = [
     'Desenvolvimento de Software Personalizado',
     'Manutenção e Suporte',
-    'Integração de Sistemas'
+    'Integração de Sistemas',
+    'Teste de Software'
   ];
 
   constructor(
