@@ -1,18 +1,24 @@
-<section class="services-container">
+<section class="services-container" [ngClass]="{'fade-in': isAnimated}">
     <div class="services-content">
-        <h1>Nossos Serviços</h1>
-        <p class="services-description">
+        <h1 class="service-title" [ngClass]="{'zoom-in': animatedElements.title}">Nossos Serviços</h1>
+        <p class="services-description" [ngClass]="{'slide-up': animatedElements.description}">
             Oferecemos soluções tecnológicas inovadoras para impulsionar seu negócio ao próximo nível.
         </p>
-        <ul class="services-list">
-            <li>Desenvolvimento de Software Personalizado</li>
-            <!-- <li>Consultoria em Tecnologia</li> -->
-            <li>Manutenção e Suporte</li>
-            <li>Integração de Sistemas</li>
+        <ul class="services-list" [ngClass]="{'stagger-in': animatedElements.list}">
+            <li *ngFor="let service of services; let i = index" 
+                class="service-item"
+                [ngClass]="{'item-appear': animatedElements.list}"
+                [style.animation-delay]="(i * 0.2) + 's'">
+                {{ service }}
+            </li>
         </ul>
-        <a href="/contact" class="service-action-btn"><i class="fas fa-paper-plane"></i> Solicitar proposta</a>
+        <a href="/contact" 
+           class="service-action-btn pulse-button" 
+           [ngClass]="{'bounce-in': animatedElements.button}">
+           <span class="btn-inner"><i class="fas fa-paper-plane"></i> Solicitar proposta</span>
+        </a>
     </div>
-    <div class="services-image">
+    <div class="services-image" [ngClass]="{'float-in': animatedElements.image}">
         <img src="images/freepik__background__14412.png" alt="Ilustração de serviços tecnológicos">
     </div>
 </section>
