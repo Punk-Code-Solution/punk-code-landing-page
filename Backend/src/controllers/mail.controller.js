@@ -5,8 +5,8 @@ exports.sendProposal = async (req, res) => {
 
   try {
     await transporter.sendMail({
-      from: process.env.CLIENT_USER,
-      to: process.env.CLIENT_USER,
+      from: process.env.CLIENT_USER ,
+      to: process.env.CLIENT_USER ,
       replyTo: email,
       subject: 'Nova proposta recebida de ' + `${nome}`,
       text: mensagem,
