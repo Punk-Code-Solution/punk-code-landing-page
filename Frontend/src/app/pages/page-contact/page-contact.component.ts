@@ -57,7 +57,7 @@ export class PageContactComponent {
     }
 
     this.isLoading = true;
-    fetch('http://localhost:3001/send-proposta', {
+    fetch(process.env['API'] + '/send-proposta', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
