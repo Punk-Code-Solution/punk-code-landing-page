@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavbarComponent } from '../../components/navbar/navbar.component';
 import { FooterComponent } from "../../components/footer/footer.component";
+import { environment } from '../../../environment/environment.prod';
 import { FormsModule } from '@angular/forms';
 import Swal from 'sweetalert2';
 
@@ -57,7 +58,7 @@ export class PageContactComponent {
     }
 
     this.isLoading = true;
-    fetch(process.env['API'] + '/send-proposta', {
+    fetch(`${environment.apiUrl}/send-proposta`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
