@@ -30,7 +30,6 @@
 
 .container {
   max-width: 1200px;
-  margin: 0 auto;
   padding: 0 1px;
 }
 
@@ -244,7 +243,6 @@
 
   .contact-grid {
     grid-template-columns: 1fr;
-    margin: 0 20px;
   }
 
   .form-row {
