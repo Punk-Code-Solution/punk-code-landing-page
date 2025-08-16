@@ -32,12 +32,12 @@ export class PageServicesComponent {
     //   description: 'Aplicações nativas e híbridas para Android e iOS, focadas na experiência do usuário.',
     //   features: ['Interface intuitiva', 'Notificações push', 'Integração com APIs', 'Publicação nas lojas']
     // },
-    {
-      icon: 'fa fa-cloud',
-      title: 'Soluções em Nuvem',
-      description: 'Infraestrutura escalável e segura na nuvem para suas aplicações e dados.',
-      features: ['Arquitetura serverless', 'Bancos de dados gerenciados', 'CI/CD', 'Monitoramento 24/7']
-    },
+    // {
+    //   icon: 'fa fa-cloud',
+    //   title: 'Soluções em Nuvem',
+    //   description: 'Infraestrutura escalável e segura na nuvem para suas aplicações e dados.',
+    //   features: ['Arquitetura serverless', 'Bancos de dados gerenciados', 'CI/CD', 'Monitoramento 24/7']
+    // },
     {
       icon: 'fa-solid fa-bug',
       title: 'Teste de Software',
