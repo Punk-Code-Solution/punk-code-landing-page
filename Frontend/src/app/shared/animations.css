@@ -1,0 +1,128 @@
+/* Shared Animations and Common Styles */
+
+/* Common Animation Classes */
+.hero-animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.title-animate {
+  opacity: 1 !important;
+  transform: scale(1) !important;
+}
+
+.subtitle-animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.section-animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.text-appear {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.form-animate {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+
+.field-appear {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.button-animate {
+  opacity: 1 !important;
+  transform: translateY(0) scale(1) !important;
+}
+
+.contact-info-animate {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+
+.item-appear {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.map-animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.map-appear {
+  opacity: 1 !important;
+  transform: scale(1) !important;
+}
+
+.footer-animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.card-appear {
+  opacity: 1 !important;
+  transform: translateY(0) scale(1) !important;
+}
+
+.step-appear {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+
+.values-animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.value-appear {
+  opacity: 1 !important;
+  transform: translateY(0) scale(1) !important;
+}
+
+/* Common Animation Keyframes */
+@keyframes cardsFloat {
+  0% { transform: translateY(20px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes stepsSlide {
+  0% { transform: translateX(-20px); }
+  100% { transform: translateX(0); }
+}
+
+/* Common Transition Classes */
+.transition-smooth {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.transition-fast {
+  transition: all 0.3s ease;
+}
+
+.transition-slow {
+  transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Common Hover Effects */
+.hover-lift {
+  transition: transform 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+}
+
+.hover-scale {
+  transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
