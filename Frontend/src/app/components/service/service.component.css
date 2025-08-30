@@ -113,11 +113,11 @@
   transform: translateX(0) !important;
 }
 
-.service-item:hover {
+/* .service-item:hover {
   background: rgba(255, 255, 255, 0.2);
   transform: translateX(10px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-}
+} */
 
 /* Button Animation */
 .service-action-btn {
@@ -164,7 +164,7 @@
 }
 
 .service-action-btn:hover i {
-  transform: translateX(5px) rotate(15deg);
+  transform: translateX(2px) rotate(15deg);
 }
 
 /* Image Animation */
@@ -205,13 +205,13 @@
   }
 
   h1 { text-align: center; }
-  
+
   .service-title { font-size: 2.5rem; }
-  
+
   .services-description { font-size: 1.1rem; }
-  
+
   .service-item { font-size: 1rem; }
-  
+
   .services-image {
     margin-top: 2rem;
     transform: translateX(0) rotate(0deg);
@@ -220,11 +220,11 @@
 
 @media (max-width: 768px) {
   .service-title { font-size: 2rem; }
-  
+
   .services-image { display: none; }
 
   .services-description { font-size: 1rem; }
-  
+
   .service-action-btn {
     padding: 1rem 2rem;
     font-size: 1rem;

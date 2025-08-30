@@ -147,6 +147,14 @@
   }
 }
 
+.service-action-btn i {
+  transition: transform 0.3s ease;
+}
+
+.service-action-btn:hover i {
+  transform: translateX(2px) rotate(15deg);
+}
+
 .submit-button:hover {
   background-color: var(--button-hover-bg);
   transform: translateY(-2px);
@@ -236,6 +244,15 @@
 
 /* Responsividade Básica (exemplo) */
 @media (max-width: 768px) {
+
+  .service-action-btn i {
+    transition: transform 0.3s ease;
+  }
+
+  .service-action-btn:hover i {
+    transform: translateX(2px) rotate(15deg);
+  }
+
   .header-content {
     flex-direction: column;
     text-align: center;
@@ -271,4 +288,172 @@
   .our-location h2 {
     font-size: 1.8em;
   }
+}
+
+/* --- Animações --- */
+
+/* Hero Section */
+.about-hero {
+  opacity: 0;
+  transform: translateY(-50px);
+  transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.hero-animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.about-hero h1 {
+  opacity: 0;
+  transform: scale(0.5);
+  transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.title-animate {
+  opacity: 1 !important;
+  transform: scale(1) !important;
+}
+
+.about-hero p {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease-out 0.2s;
+}
+
+.subtitle-animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* Contact Form Section */
+.contact-form-section {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.section-animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* Form Animation */
+.solicite-proposta {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 0.8s ease-out;
+}
+
+.form-animate {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+
+/* Form Fields */
+.form-group {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+}
+
+.field-appear {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* Button Animation */
+.service-action-btn {
+  opacity: 0;
+  transform: translateY(50px) scale(0.8);
+  transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.button-animate {
+  opacity: 1 !important;
+  transform: translateY(0) scale(1) !important;
+}
+
+/* Contact Info */
+.informacoes-contato {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all 0.8s ease-out;
+}
+
+.contact-info-animate {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+
+/* Contact Items */
+.contact-item {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+}
+
+.item-appear {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* Map Section */
+.our-location {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.map-animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.map-placeholder {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: all 0.8s ease-out 0.2s;
+}
+
+.map-appear {
+  opacity: 1 !important;
+  transform: scale(1) !important;
+}
+
+/* Footer */
+app-footer {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.footer-animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* Efeitos hover melhorados */
+.form-group:hover {
+  transform: translateY(-2px);
+  transition: transform 0.3s ease;
+}
+
+.contact-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.service-action-btn:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 15px 35px rgba(13, 67, 24, 0.3);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Transições suaves */
+.form-group,
+.contact-item,
+.service-action-btn {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }

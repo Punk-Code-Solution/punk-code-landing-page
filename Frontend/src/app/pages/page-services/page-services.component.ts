@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, Inject, PLATFORM_ID, HostListener, OnInit } from '@angular/core';
 import { NavbarComponent } from '../../components/navbar/navbar.component';
 import { ServiceSolutionComponent } from '../../components/service-solution/service-solution.component';
 import { FooterComponent } from '../../components/footer/footer.component';
-import { NgFor } from '@angular/common'
+import { NgClass, NgFor } from '@angular/common';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'page-services',
@@ -11,15 +12,31 @@ import { NgFor } from '@angular/common'
     NavbarComponent,
     ServiceSolutionComponent,
     FooterComponent,
-    NgFor
+    NgFor,
+    NgClass,
+    CommonModule
   ],
   templateUrl: './page-services.component.html',
   styleUrl: './page-services.component.css'
 })
-export class PageServicesComponent {
+export class PageServicesComponent implements OnInit {
+
+  isAnimated = false;
+  animatedElements: {
+    hero: boolean;
+    cards: boolean;
+    section: boolean;
+    steps: boolean;
+    footer: boolean;
+  } = {
+    hero: false,
+    cards: false,
+    section: false,
+    steps: false,
+    footer: false
+  };
 
   services = [
-
     {
       icon: 'fa fa-code', // Exemplo de classe de ícone
       title: 'Desenvolvimento Web',
@@ -44,8 +61,98 @@ export class PageServicesComponent {
       description: 'Consultoria em testes de software e automação de testes.',
       features: ['Testes automatizados', 'Testes de unidade', 'Testes de integração', 'Testes de sistema']
     }
+  ];
 
-  ]
+  constructor(
+    private el: ElementRef,
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) {}
 
+  ngOnInit() {
+    // Executa as animações automaticamente ao carregar a página
+    setTimeout(() => {
+      this.isAnimated = true;
+      this.animateElements();
+    }, 100); // Pequeno delay para garantir que o DOM esteja renderizado
+  }
+
+  @HostListener('window:scroll', ['$event'])
+  @HostListener('window:resize', ['$event'])
+  checkScroll() {
+    // Check if we're in a browser environment
+    if (!isPlatformBrowser(this.platformId)) {
+      return;
+    }
+
+    // Se já foi animado, não executa novamente
+    if (this.isAnimated) {
+      return;
+    }
+
+    const componentPosition = this.el.nativeElement.offsetTop;
+    const scrollPosition = window.scrollY + window.innerHeight;
+
+    if (scrollPosition > componentPosition) {
+      this.isAnimated = true;
+      this.animateElements();
+    }
+  }
+
+  animateElements() {
+    // Animate hero first
+    setTimeout(() => {
+      this.animatedElements.hero = true;
+    }, 200);
+
+    // Animate service cards
+    setTimeout(() => {
+      this.animatedElements.cards = true;
+    }, 400);
+
+    // Animate how we work section
+    setTimeout(() => {
+      this.animatedElements.section = true;
+    }, 600);
+
+    // Animate steps
+    setTimeout(() => {
+      this.animatedElements.steps = true;
+    }, 800);
+
+    // Animate footer
+    setTimeout(() => {
+      this.animatedElements.footer = true;
+    }, 1000);
+  }
+
+  getStepIcon(index: number): string {
+    const icons = [
+      'fa-solid fa-magnifying-glass-chart',
+      'fa-solid fa-list-check',
+      'fa-solid fa-code',
+      'fa-solid fa-rocket'
+    ];
+    return icons[index] || '';
+  }
+
+  getStepTitle(index: number): string {
+    const titles = [
+      '1. Análise',
+      '2. Planejamento',
+      '3. Desenvolvimento',
+      '4. Entrega'
+    ];
+    return titles[index] || '';
+  }
+
+  getStepDescription(index: number): string {
+    const descriptions = [
+      'Entendemos profundamente suas necessidades e objetivos de negócio.',
+      'Criamos uma estratégia detalhada e cronograma de desenvolvimento.',
+      'Codificamos sua solução com as melhores práticas e tecnologias.',
+      'Implementamos, testamos e colocamos sua solução em produção.'
+    ];
+    return descriptions[index] || '';
+  }
 }
 

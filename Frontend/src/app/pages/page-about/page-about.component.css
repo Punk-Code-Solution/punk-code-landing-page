@@ -306,7 +306,7 @@
   .stat-item h4 {
     font-size: 2rem;
   }
-  
+
   .value-icon-container {
     width: 60px;
     height: 60px;
@@ -322,4 +322,151 @@
   .step {
     max-width: 40%;
   }
+}
+
+/* --- Animações --- */
+
+/* Hero Section */
+.about-hero {
+  opacity: 0;
+  transform: translateY(-50px);
+  transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.hero-animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.about-hero h1 {
+  opacity: 0;
+  transform: scale(0.5);
+  transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.title-animate {
+  opacity: 1 !important;
+  transform: scale(1) !important;
+}
+
+.about-hero p {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease-out 0.2s;
+}
+
+.subtitle-animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* History Section */
+.about-history {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.section-animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.about-history h3 {
+  opacity: 0;
+  transform: scale(0.5);
+  transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.about-history p {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+}
+
+.text-appear {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* Values Section */
+.about-values {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.about-values h3 {
+  opacity: 0;
+  transform: scale(0.5);
+  transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.about-values p {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out 0.2s;
+}
+
+.values-container {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease-out 0.3s;
+}
+
+.values-animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* Value Items */
+.value-item {
+  opacity: 0;
+  transform: translateY(50px) scale(0.9);
+  transition: all 0.6s ease-out;
+}
+
+.value-appear {
+  opacity: 1 !important;
+  transform: translateY(0) scale(1) !important;
+}
+
+/* Value Icons */
+.value-icon-container {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* .value-item:hover .value-icon-container {
+  transform: scale(1.1) rotate(5deg);
+} */
+
+/* Footer */
+app-footer {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.footer-animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* Efeitos hover melhorados */
+/* .value-item:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+} */
+
+.about-history p:hover {
+  transform: translateY(-2px);
+  transition: transform 0.3s ease;
+}
+
+/* Transições suaves */
+.value-item,
+.value-icon-container,
+.about-history p {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }

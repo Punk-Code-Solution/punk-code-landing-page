@@ -1,8 +1,8 @@
 <section class="solutions-section" [ngClass]="{'fade-in': isAnimated}">
-    <h1 class="solutions-title" [ngClass]="{'spiral-in': isAnimated}">Criamos Soluções para o Futuro</h1>
+    <h1 class="solutions-title" [ngClass]="{'spiral-in-opcity': isAnimated}">Criamos Soluções para o Futuro</h1>
     <div class="solutions-grid">
 
-      <div class="solution-card" 
+      <div class="solution-card"
            *ngFor="let solution of solutions; let i = index"
            [ngClass]="{
              'card-appear': animatedCards[i],
