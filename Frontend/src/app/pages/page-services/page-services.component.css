@@ -29,6 +29,12 @@
   justify-content: center; /* Centraliza os itens mesmo com número ímpar */
 }
 
+.service-card {
+  flex: 1;
+  min-width: 300px;
+  max-width: 400px;
+}
+
 .services-hero h1 {
   font-size: 2.8rem;
   /* Tamanho da fonte para o título principal */
@@ -165,7 +171,7 @@
       max-width: 1200px;
       margin: 0 auto;
       margin-bottom: 4rem;
-      
+
   }
   .step {
     width: 20%;
@@ -210,6 +216,11 @@
   }
 
   @media (max-width: 425px) {
+
+    .service-list-container{
+      display: grid;
+    }
+
     .services-hero {
       padding: 4rem 1rem;
     }
@@ -251,4 +262,155 @@
 
   }
 
+}
+
+/* --- Animações --- */
+
+/* Hero Section */
+.services-hero {
+  opacity: 0;
+  transform: translateY(-50px);
+  transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.hero-animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.services-hero h1 {
+  opacity: 0;
+  transform: scale(0.5);
+  transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.title-animate {
+  opacity: 1 !important;
+  transform: scale(1) !important;
+}
+
+.services-hero p {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease-out 0.2s;
+}
+
+.subtitle-animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* Service Cards */
+.service-card {
+  opacity: 0;
+  transform: translateY(50px) scale(0.9);
+  transition: all 0.6s ease-out;
+}
+
+.card-appear {
+  opacity: 1 !important;
+  transform: translateY(0) scale(1) !important;
+}
+
+/* Cards Container */
+.service-list-container {
+  transition: all 0.3s ease;
+}
+
+.cards-animate {
+  animation: cardsFloat 0.8s ease-out;
+}
+
+@keyframes cardsFloat {
+  0% { transform: translateY(20px); }
+  100% { transform: translateY(0); }
+}
+
+/* How We Work Section */
+.how-we-work-section {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.section-animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.how-we-work-section h2 {
+  opacity: 0;
+  transform: scale(0.5);
+  transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.how-we-work-section > p {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out 0.2s;
+}
+
+/* Steps */
+.step {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: all 0.6s ease-out;
+}
+
+.step-appear {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+
+.steps-container {
+  transition: all 0.3s ease;
+}
+
+.steps-animate {
+  animation: stepsSlide 0.8s ease-out;
+}
+
+@keyframes stepsSlide {
+  0% { transform: translateX(-20px); }
+  100% { transform: translateX(0); }
+}
+
+/* Step Icons */
+.step-icon-container {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* .step:hover .step-icon-container {
+  transform: scale(1.1) rotate(5deg);
+} */
+
+/* Footer */
+app-footer {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.footer-animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* Efeitos hover melhorados */
+.service-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.service-card:hover .step-icon-container {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+/* Transições suaves */
+.service-card,
+.step,
+.step-icon-container {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }

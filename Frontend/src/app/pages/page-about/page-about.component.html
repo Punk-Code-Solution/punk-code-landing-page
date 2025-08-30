@@ -2,24 +2,24 @@
   <div class="default">
     <navbar></navbar>
 
-    <section class="about-hero">
+    <section class="about-hero" [ngClass]="{'hero-animate': animatedElements.hero}">
       <div class="hero-content">
-        <h1>Sobre Nós</h1>
-        <p>Somos uma empresa de tecnologia apaixonada por transformar ideias em soluções digitais inovadoras</p>
+        <h1 [ngClass]="{'title-animate': animatedElements.hero}">Sobre Nós</h1>
+        <p [ngClass]="{'subtitle-animate': animatedElements.hero}">Somos uma empresa de tecnologia apaixonada por transformar ideias em soluções digitais inovadoras</p>
       </div>
     </section>
 
   </div>
 
-  <section class="about-history">
+  <section class="about-history" [ngClass]="{'section-animate': animatedElements.history}">
     <div class="history-content">
-      <h3>Nossa História</h3>
-      <p>Fundada em 2024, a PunkCode nasceu da visão de democratizar o acesso à tecnologia de qualidade para empresas de todos os tamanhos. Começamos como uma pequena equipe de desenvolvimento apaixonados por criar soluções que realmente fazem a diferença.</p>
-      <p>
+      <h3 [ngClass]="{'title-animate': animatedElements.history}">Nossa História</h3>
+      <p [ngClass]="{'text-appear': animatedElements.history}" [style.animation-delay]="'0.1s'">Fundada em 2024, a PunkCode nasceu da visão de democratizar o acesso à tecnologia de qualidade para empresas de todos os tamanhos. Começamos como uma pequena equipe de desenvolvimento apaixonados por criar soluções que realmente fazem a diferença.</p>
+      <p [ngClass]="{'text-appear': animatedElements.history}" [style.animation-delay]="'0.2s'">
         Crescemos e evoluímos, sempre mantendo nosso compromisso com a excelência técnica e o atendimento personalizado.
         Hoje, somos uma referência em desenvolvimento de software e soluções digitais personalizadas.
       </p>
-      <p>
+      <p [ngClass]="{'text-appear': animatedElements.history}" [style.animation-delay]="'0.3s'">
         Nossa missão é simples: transformar desafios tecnológicos em oportunidades de
         crescimento para nossos clientes, utilizando as melhores práticas
         e tecnologias mais modernas do mercado.
@@ -54,33 +54,41 @@
     </div>
   </section> -->
 
-  <section class="about-values">
+  <section class="about-values" [ngClass]="{'section-animate': animatedElements.values}">
     <div class="values-content">
-      <h3>Nossos Valores</h3>
-      <p>Os princípios que guiam nossa empresa e definem nossa cultura organizacional</p>
-      <div class="values-container">
-        <div class="value-item">
+      <h3 [ngClass]="{'title-animate': animatedElements.values}">Nossos Valores</h3>
+      <p [ngClass]="{'subtitle-animate': animatedElements.values}">Os princípios que guiam nossa empresa e definem nossa cultura organizacional</p>
+      <div class="values-container" [ngClass]="{'values-animate': animatedElements.values}">
+        <div class="value-item" 
+             [ngClass]="{'value-appear': animatedElements.values}" 
+             [style.animation-delay]="'0.1s'">
           <div class="value-icon-container">
             <i class="fa-solid fa-lightbulb"></i>
           </div>
           <h4>Foco no Cliente</h4>
           <p>Colocamos as necessidades dos nossos clientes no centro de tudo que fazemos.</p>
         </div>
-        <div class="value-item">
+        <div class="value-item" 
+             [ngClass]="{'value-appear': animatedElements.values}" 
+             [style.animation-delay]="'0.2s'">
           <div class="value-icon-container">
             <i class="fa-solid fa-people-group"></i>
           </div>
           <h4>Trabalho em Equipe</h4>
           <p>Acreditamos que os melhores resultados são alcançados através da sinergia da equipe.</p>
         </div>
-        <div class="value-item">
+        <div class="value-item" 
+             [ngClass]="{'value-appear': animatedElements.values}" 
+             [style.animation-delay]="'0.3s'">
           <div class="value-icon-container">
             <i class="fa-solid fa-code-branch"></i>
           </div>
           <h4>Inovação Constante</h4>
           <p>Estamos sempre buscando novas tecnologias e abordagens para entregar o melhor.</p>
         </div>
-        <div class="value-item">
+        <div class="value-item" 
+             [ngClass]="{'value-appear': animatedElements.values}" 
+             [style.animation-delay]="'0.4s'">
           <div class="value-icon-container">
             <i class="fa-solid fa-handshake"></i>
           </div>
@@ -91,4 +99,4 @@
     </div>
   </section>
 
-<app-footer></app-footer>
+<app-footer [ngClass]="{'footer-animate': animatedElements.footer}"></app-footer>

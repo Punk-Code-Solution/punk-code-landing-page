@@ -1,18 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, Inject, PLATFORM_ID, HostListener, OnInit } from '@angular/core';
 import { NavbarComponent } from '../../components/navbar/navbar.component';
 import { FooterComponent } from "../../components/footer/footer.component";
 import { environment } from '../../../environment/environment.prod';
 import { FormsModule } from '@angular/forms';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { NgClass } from '@angular/common';
 import Swal from 'sweetalert2';
 
 @Component({
   selector: 'page-contact',
   standalone: true,
-  imports: [NavbarComponent, FooterComponent, FormsModule],
+  imports: [NavbarComponent, FooterComponent, FormsModule, CommonModule, NgClass],
   templateUrl: './page-contact.component.html',
   styleUrl: './page-contact.component.css',
 })
-export class PageContactComponent {
+export class PageContactComponent implements OnInit {
   nome = '';
   email = '';
   mensagem = '';
@@ -20,6 +22,90 @@ export class PageContactComponent {
   empresa = '';
   servico = '';
   isLoading = false;
+
+  isAnimated = false;
+  animatedElements: {
+    button: boolean;
+    hero: boolean;
+    form: boolean;
+    contactInfo: boolean;
+    map: boolean;
+    footer: boolean;
+  } = {
+    button: false,
+    hero: false,
+    form: false,
+    contactInfo: false,
+    map: false,
+    footer: false
+  };
+
+  constructor(
+    private el: ElementRef,
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) {}
+
+  ngOnInit() {
+    // Executa as animações automaticamente ao carregar a página
+    setTimeout(() => {
+      this.isAnimated = true;
+      this.animateElements();
+    }, 100); // Pequeno delay para garantir que o DOM esteja renderizado
+  }
+
+  @HostListener('window:scroll', ['$event'])
+  @HostListener('window:resize', ['$event'])
+  checkScroll() {
+    // Check if we're in a browser environment
+    if (!isPlatformBrowser(this.platformId)) {
+      return;
+    }
+
+    // Se já foi animado, não executa novamente
+    if (this.isAnimated) {
+      return;
+    }
+
+    const componentPosition = this.el.nativeElement.offsetTop;
+    const scrollPosition = window.scrollY + window.innerHeight;
+
+    if (scrollPosition > componentPosition) {
+      this.isAnimated = true;
+      this.animateElements();
+    }
+  }
+
+  animateElements() {
+
+    setTimeout(() => {
+      this.animatedElements.button = true;
+    }, 100);
+
+    // Animate hero first
+    setTimeout(() => {
+      this.animatedElements.hero = true;
+    }, 200);
+
+    // Animate form
+    setTimeout(() => {
+      this.animatedElements.form = true;
+    }, 400);
+
+    // Animate contact info
+    setTimeout(() => {
+      this.animatedElements.contactInfo = true;
+    }, 600);
+
+    // Animate map
+    setTimeout(() => {
+      this.animatedElements.map = true;
+    }, 800);
+
+    // Animate footer
+    setTimeout(() => {
+      this.animatedElements.footer = true;
+    }, 1000);
+  }
 
   private requiredFields = [
     { key: 'nome', label: 'Nome' },

@@ -2,61 +2,45 @@
   <div class="default">
     <navbar></navbar>
 
-
-    <section class="services-hero">
+    <section class="services-hero" [ngClass]="{'hero-animate': animatedElements.hero}">
       <div class="hero-content">
-        <h1>Nossos Serviços</h1>
-        <p>Oferecemos soluções digitais completas para transformar sua empresa e acelerar seus resultados</p>
+        <h1 [ngClass]="{'title-animate': animatedElements.hero}">Nossos Serviços</h1>
+        <p [ngClass]="{'subtitle-animate': animatedElements.hero}">Oferecemos soluções digitais completas para transformar sua empresa e acelerar seus resultados</p>
       </div>
     </section>
   </div>
 
-   <section class="service-list-container">
-    <service-solution
-      *ngFor="let service of services"
-      [icon]="service.icon"
-      [title]="service.title"
-      [description]="service.description"
-      [features]="service.features">
-    </service-solution>
+  <section class="service-list-container" [ngClass]="{'cards-animate': animatedElements.cards}">
+    <div class="service-card"
+         *ngFor="let service of services; let i = index"
+         [ngClass]="{'card-appear': animatedElements.cards}"
+         [style.animation-delay]="(i * 0.2) + 's'">
+
+      <service-solution
+        [icon]="service.icon"
+        [title]="service.title"
+        [description]="service.description"
+        [features]="service.features">
+      </service-solution>
+    </div>
   </section>
 
-  <section class="how-we-work-section">
-  <h2>Como Trabalhamos</h2>
-  <p>Nosso processo é transparente e focado</p>
+  <section class="how-we-work-section" [ngClass]="{'section-animate': animatedElements.section}">
+    <h2 [ngClass]="{'title-animate': animatedElements.section}">Como Trabalhamos</h2>
+    <p [ngClass]="{'subtitle-animate': animatedElements.section}">Nosso processo é transparente e focado</p>
 
-  <div class="steps-container">
-    <div class="step">
-      <div class="step-icon-container">
-        <i class="fa-solid fa-magnifying-glass-chart"></i>
+    <div class="steps-container" [ngClass]="{'steps-animate': animatedElements.steps}">
+      <div class="step" 
+           *ngFor="let step of [1,2,3,4]; let i = index"
+           [ngClass]="{'step-appear': animatedElements.steps}"
+           [style.animation-delay]="(i * 0.2) + 's'">
+        <div class="step-icon-container">
+          <i [class]="getStepIcon(i)"></i>
+        </div>
+        <h3>{{getStepTitle(i)}}</h3>
+        <p>{{getStepDescription(i)}}</p>
       </div>
-      <h3>1. Análise</h3>
-      <p>Entendemos profundamente suas necessidades e objetivos de negócio.</p>
     </div>
-
-    <div class="step">
-      <div class="step-icon-container">
-        <i class="fa-solid fa-list-check"></i>
-      </div>
-      <h3>2. Planejamento</h3>
-      <p>Criamos uma estratégia detalhada e cronograma de desenvolvimento.</p>
-    </div>
-
-    <div class="step">
-      <div class="step-icon-container">
-        <i class="fa-solid fa-code"></i>
-      </div>
-      <h3>3. Desenvolvimento</h3>
-      <p>Codificamos sua solução com as melhores práticas e tecnologias.</p>
-    </div>
-
-    <div class="step">
-      <div class="step-icon-container">
-        <i class="fa-solid fa-rocket"></i>
-      </div>
-      <h3>4. Entrega</h3>
-      <p>Implementamos, testamos e colocamos sua solução em produção.</p>
-    </div>
-  </div>
   </section>
-<app-footer></app-footer>
+
+  <app-footer [ngClass]="{'footer-animate': animatedElements.footer}"></app-footer>
