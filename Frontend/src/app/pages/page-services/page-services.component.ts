@@ -1,9 +1,11 @@
-import { Component, ElementRef, Inject, PLATFORM_ID, HostListener, OnInit } from '@angular/core';
+import { Component, ElementRef, Inject, PLATFORM_ID, HostListener, OnInit, OnDestroy } from '@angular/core';
+import { Title, Meta } from '@angular/platform-browser';
 import { NavbarComponent } from '../../components/navbar/navbar.component';
 import { ServiceSolutionComponent } from '../../components/service-solution/service-solution.component';
 import { FooterComponent } from '../../components/footer/footer.component';
 import { NgClass, NgFor } from '@angular/common';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { SchemaService } from '../../services/schema.services';
 
 @Component({
   selector: 'page-services',
@@ -63,17 +65,60 @@ export class PageServicesComponent implements OnInit {
     }
   ];
 
+  private schemaId = 'service-schema';
+
   constructor(
     private el: ElementRef,
-    @Inject(PLATFORM_ID) private platformId: Object
+    @Inject(PLATFORM_ID) private platformId: Object,
+    private titleService: Title, // <-- ADICIONE ESTA LINHA
+    private metaService: Meta,
+    private schemaService: SchemaService
   ) {}
 
   ngOnInit() {
+
+    const pageTitle = 'Desenvolvimento Web | Teste de Software | Punk Code Solution';
+    const pageDescription = 'Oferecemos soluções digitais completas, incluindo Desenvolvimento Web e Teste de Software, para transformar sua empresa.';
+    
+    this.titleService.setTitle(pageTitle);
+    this.metaService.updateTag({ name: 'description', content: pageDescription });
+
+    // Gera o JSON-LD para os Serviços
+    const serviceSchema = {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "itemListElement": this.services.map((service, index) => ({
+        "@type": "Service",
+        "position": index + 1,
+        "name": service.title,
+        "description": service.description,
+        "provider": {
+          "@type": "Organization",
+          "name": "Punk Code Solution"
+        }
+      }))
+    };
+
+    // Adiciona o script de Schema na <head>
+    if (isPlatformBrowser(this.platformId)) {
+      const script = document.createElement('script');
+      script.type = 'application/ld+json';
+      script.text = JSON.stringify(serviceSchema);
+      document.head.appendChild(script);
+    }
+
+    this.schemaService.addSchema(this.schemaId, serviceSchema);
+
     // Executa as animações automaticamente ao carregar a página
     setTimeout(() => {
       this.isAnimated = true;
       this.animateElements();
     }, 100); // Pequeno delay para garantir que o DOM esteja renderizado
+  }
+
+  OnDestroy(): void {
+    // Remove o schema específico desta página ao sair
+    this.schemaService.removeSchema(this.schemaId);
   }
 
   @HostListener('window:scroll', ['$event'])

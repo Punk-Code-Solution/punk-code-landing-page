@@ -1,0 +1,7 @@
+# Permite que todos os robôs (como o Googlebot) rastreiem o site
+User-agent: *
+Allow: /
+
+# !! IMPORTANTE !! 
+# Substitua "https://www.punkcodesolution.com.br" pelo seu domínio real
+Sitemap: https://www.punkcodesolution.com.br/sitemap.xml
