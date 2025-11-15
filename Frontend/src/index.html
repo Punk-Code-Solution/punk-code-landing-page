@@ -7,12 +7,52 @@
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "name": "PunkCode Solution",
+        "url": "https://www.punkcodesolution.com.br/",
+        "logo": "https://www.punkcodesolution.com.br/images/logo-light.svg",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+55-73-99834-8081",
+          "contactType": "Customer Service",
+          "email": "punkcodesolution@gmail.com",
+          "areaServed": "BR",
+          "availableLanguage": "Portuguese"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Ilhéus",
+          "addressRegion": "BA",
+          "addressCountry": "BR"
+        },
+        "sameAs": [
+          "https://www.instagram.com/punkcodesolution/",
+          "https://www.linkedin.com/in/punk-code-solution-0868ba369/"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "name": "PunkCode Solution",
+        "url": "https://www.punkcodesolution.com.br",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://www.punkcodesolution.com.br/search?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      }
+    ]
+  }
+  </script>
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-    rel="stylesheet">
-</head>
+  </head>
 
 <body>
   <app-root></app-root>

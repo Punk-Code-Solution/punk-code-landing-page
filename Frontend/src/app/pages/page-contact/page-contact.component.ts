@@ -1,5 +1,6 @@
 import { Component, ElementRef, Inject, PLATFORM_ID, HostListener, OnInit } from '@angular/core';
 import { NavbarComponent } from '../../components/navbar/navbar.component';
+import { Title, Meta } from '@angular/platform-browser';
 import { FooterComponent } from "../../components/footer/footer.component";
 import { environment } from '../../../environment/environment.prod';
 import { FormsModule } from '@angular/forms';
@@ -42,10 +43,26 @@ export class PageContactComponent implements OnInit {
 
   constructor(
     private el: ElementRef,
-    @Inject(PLATFORM_ID) private platformId: Object
+    @Inject(PLATFORM_ID) private platformId: Object,
+    private titleService: Title, // <-- ADICIONE ESTA LINHA
+    private metaService: Meta
   ) {}
 
   ngOnInit() {
+
+    const pageTitle = 'Contado | Punk Code Solution';
+    const pageDescription = 'Contate a Punk Code Solution para soluções digitais personalizadas. Estamos prontos para transformar suas ideias em realidade.';
+    
+    this.titleService.setTitle(pageTitle);
+    this.metaService.updateTag({ name: 'description', content: pageDescription });
+
+    // Adiciona o script de Schema na <head>
+    if (isPlatformBrowser(this.platformId)) {
+      const script = document.createElement('script');
+      script.type = 'application/ld+json';
+      document.head.appendChild(script);
+    }
+
     // Executa as animações automaticamente ao carregar a página
     setTimeout(() => {
       this.isAnimated = true;

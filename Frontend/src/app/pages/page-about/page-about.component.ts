@@ -1,5 +1,6 @@
 import { Component, ElementRef, Inject, PLATFORM_ID, HostListener, OnInit } from '@angular/core';
 import { NavbarComponent } from '../../components/navbar/navbar.component';
+import { Title, Meta } from '@angular/platform-browser';
 import { FooterComponent } from '../../components/footer/footer.component';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { NgClass } from '@angular/common';
@@ -33,10 +34,26 @@ export class PageAboutComponent implements OnInit {
 
   constructor(
     private el: ElementRef,
-    @Inject(PLATFORM_ID) private platformId: Object
+    @Inject(PLATFORM_ID) private platformId: Object,
+    private titleService: Title, // <-- ADICIONE ESTA LINHA
+    private metaService: Meta
   ) {}
 
   ngOnInit() {
+
+    const pageTitle = 'Sobre nós | Punk Code Solution';
+    const pageDescription = 'Conheça a Punk Code Solution, sua parceira em soluções digitais inovadoras. Transformamos ideias em realidade com expertise em desenvolvimento web e tecnologia.';
+    
+    this.titleService.setTitle(pageTitle);
+    this.metaService.updateTag({ name: 'description', content: pageDescription });
+
+    // Adiciona o script de Schema na <head>
+    if (isPlatformBrowser(this.platformId)) {
+      const script = document.createElement('script');
+      script.type = 'application/ld+json';
+      document.head.appendChild(script);
+    }
+
     // Executa as animações automaticamente ao carregar a página
     setTimeout(() => {
       this.isAnimated = true;
