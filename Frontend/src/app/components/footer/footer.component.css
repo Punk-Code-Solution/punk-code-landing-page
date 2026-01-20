@@ -81,6 +81,17 @@
   opacity: 0.7;
 }
 
+.copyright p {
+  margin: 0.5rem 0;
+}
+
+.company-info {
+  font-size: 0.85rem;
+  opacity: 0.8;
+  line-height: 1.6;
+  margin-top: 0.75rem;
+}
+
 @media (max-width: 768px) {
 
   #logo {
