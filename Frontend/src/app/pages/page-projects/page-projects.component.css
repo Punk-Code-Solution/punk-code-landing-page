@@ -1,3 +1,9 @@
+:host {
+  display: block;
+  overflow-x: clip;
+  max-width: 100%;
+}
+
 .projects-hero {
   color: var(--text-color-light);
   padding: var(--section-padding, 6rem 2rem);
@@ -36,6 +42,7 @@
 .projects-list {
   background: var(--light-green);
   padding: 4rem 2rem 6rem;
+  overflow-x: clip;
 }
 
 /* Card inteiro — alterna esquerda / direita */
@@ -52,12 +59,12 @@
   box-shadow: 0 12px 32px rgba(13, 67, 24, 0.1);
   color: var(--dark-green);
   opacity: 0;
-  transform: translate3d(-90px, 0, 0);
+  transform: translate3d(0, 48px, 0);
   transition: opacity 0.85s ease, transform 0.85s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .project-row--from-right {
-  transform: translate3d(90px, 0, 0);
+  transform: translate3d(0, 48px, 0);
 }
 
 .project-row.card-visible {
@@ -81,15 +88,16 @@
 .project-media {
   position: relative;
   min-height: 360px;
+  overflow: hidden;
   opacity: 0;
-  transform: translate3d(-60px, 0, 0);
+  transform: translate3d(0, 24px, 0);
   transition: opacity 0.75s ease 0.2s, transform 0.75s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.2s;
 }
 
 .project-content {
   color: var(--dark-green);
   opacity: 0;
-  transform: translate3d(60px, 0, 0);
+  transform: translate3d(0, 24px, 0);
   transition: opacity 0.75s ease 0.3s, transform 0.75s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s;
 }
 
@@ -118,6 +126,14 @@
 .project-row--reversed .media-accent {
   left: auto;
   right: 2rem;
+}
+
+.media-stack {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  min-height: 360px;
+  overflow: hidden;
 }
 
 .media-stack:has(.media-image--single) {
@@ -258,7 +274,7 @@
   font-size: 0.95rem;
   line-height: 1.5;
   opacity: 0;
-  transform: translate3d(30px, 0, 0);
+  transform: translate3d(0, 12px, 0);
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
