@@ -1,0 +1,35 @@
+<div class="default">
+  <navbar></navbar>
+
+  <section class="blog-hero" [ngClass]="{ 'hero-animate': animatedHero }">
+    <div class="hero-content">
+      <h1 [ngClass]="{ 'title-animate': animatedHero }">Blog</h1>
+      <p [ngClass]="{ 'subtitle-animate': animatedHero }">
+        Insights sobre tecnologia, desenvolvimento e inovação digital
+      </p>
+    </div>
+  </section>
+</div>
+
+<section class="blog-content">
+  <div class="blog-cta" [class.cta-visible]="animatedCta">
+    <div class="blog-cta-card">
+      <div class="cta-icon"><i class="fas fa-pen-nib"></i></div>
+      <h2>Em breve</h2>
+      <p>
+        Estamos preparando conteúdos sobre desenvolvimento web, testes de software,
+        cases de projetos e tendências do mercado digital.
+      </p>
+      <p>
+        Enquanto isso, conheça nossos <a routerLink="/projects">projetos</a> ou
+        <a routerLink="/contact">entre em contato</a> para conversar sobre sua ideia.
+      </p>
+      <div class="cta-actions">
+        <a routerLink="/projects" class="cta-btn cta-btn--outline">Ver projetos</a>
+        <a routerLink="/contact" class="cta-btn cta-btn--primary">Entrar em contato</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-footer class="blog-footer" [ngClass]="{ 'footer-animate': animatedFooter }"></app-footer>

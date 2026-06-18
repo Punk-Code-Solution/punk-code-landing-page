@@ -1,0 +1,76 @@
+<div class="default">
+  <navbar></navbar>
+
+  <section class="projects-hero" [ngClass]="{ 'hero-animate': animatedHero }">
+    <div class="hero-content">
+      <h1 [ngClass]="{ 'title-animate': animatedHero }">Nossos Projetos</h1>
+      <p [ngClass]="{ 'subtitle-animate': animatedHero }">
+        Soluções digitais que transformamos em produtos reais — do conceito à entrega
+      </p>
+    </div>
+  </section>
+</div>
+
+<section class="projects-list">
+  <article
+    *ngFor="let project of projects; let i = index"
+    class="project-row"
+    [class.project-row--reversed]="isReversed(i)"
+    [class.project-row--from-right]="isFromRight(i)"
+    [class.card-visible]="isProjectVisible(i)"
+    [attr.data-project-index]="i"
+  >
+    <div class="project-media" [ngClass]="{ 'media-visible': isProjectVisible(i) }">
+      <div class="media-accent"></div>
+
+      <div class="media-stack" *ngIf="project.images.length; else mediaPlaceholder">
+        <img
+          *ngFor="let image of project.images; let imgIndex = index"
+          class="media-image"
+          [class.media-image--secondary]="imgIndex === 1"
+          [class.media-image--single]="project.images.length === 1"
+          [src]="image.src"
+          [alt]="image.alt"
+          loading="lazy"
+        />
+      </div>
+
+      <ng-template #mediaPlaceholder>
+        <div class="media-placeholder">
+          <i class="fas fa-laptop-code"></i>
+          <span>Imagens do sistema em breve</span>
+        </div>
+      </ng-template>
+    </div>
+
+    <div class="project-content" [ngClass]="{ 'content-visible': isProjectVisible(i) }">
+      <span class="project-index">0{{ i + 1 }}</span>
+      <h2>{{ project.name }}</h2>
+      <p class="project-tagline">{{ project.tagline }}</p>
+
+      <div class="project-stack">
+        <span class="stack-chip" *ngFor="let tech of project.stack">{{ tech }}</span>
+      </div>
+
+      <p
+        class="project-text"
+        *ngFor="let paragraph of project.description; let p = index"
+        [style.transition-delay]="isProjectVisible(i) ? (0.35 + p * 0.1) + 's' : '0s'"
+      >
+        {{ paragraph }}
+      </p>
+
+      <ul class="project-features" [class.features-visible]="isProjectVisible(i)">
+        <li
+          *ngFor="let feature of project.features; let f = index"
+          [style.transition-delay]="isProjectVisible(i) ? (0.5 + f * 0.08) + 's' : '0s'"
+        >
+          <i class="fas fa-check-circle"></i>
+          <span>{{ feature }}</span>
+        </li>
+      </ul>
+    </div>
+  </article>
+</section>
+
+<app-footer class="projects-footer" [ngClass]="{ 'footer-animate': animatedFooter }"></app-footer>

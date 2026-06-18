@@ -3,6 +3,8 @@ import { PageHomeComponent } from './pages/page-home/page-home.component';
 import { PageServicesComponent } from './pages/page-services/page-services.component';
 import { PageContactComponent } from './pages/page-contact/page-contact.component';
 import { PageAboutComponent } from './pages/page-about/page-about.component';
+import { PageProjectsComponent } from './pages/page-projects/page-projects.component';
+import { PageBlogComponent } from './pages/page-blog/page-blog.component';
 
 export const routes: Routes = [
   {
@@ -12,6 +14,14 @@ export const routes: Routes = [
   {
     path: "services",
     component: PageServicesComponent
+  },
+  {
+    path: "projects",
+    component: PageProjectsComponent
+  },
+  {
+    path: "blog",
+    component: PageBlogComponent
   },
   {
     path: "contact",

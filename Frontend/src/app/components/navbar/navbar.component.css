@@ -10,15 +10,18 @@
   align-items: center;
 
   &>header {
-    display: flex !important;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    display: grid !important;
+    grid-template-columns: 1fr auto 1fr;
     align-items: center;
+    gap: 1rem;
+    width: 100%;
 
     position: absolute;
     z-index: 1000;
 
     &>div#logo {
+      grid-column: 1;
+      justify-self: start;
       width: calc(10vh * 0.8);
       height: calc(10vh * 0.8);
 
@@ -37,33 +40,39 @@
     }
 
     &>div#button_menu_and_close {
+      grid-column: 3;
+      justify-self: end;
       display: none;
     }
 
     &>nav {
-      width: 70%;
+      grid-column: 2;
+      justify-self: center;
+      width: auto;
 
       &>ul {
-        width: 60%;
+        width: auto;
 
         display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
+        flex-wrap: nowrap;
+        justify-content: center;
         align-items: center;
+        gap: clamp(0.75rem, 1.5vw, 1.75rem);
 
         &>li {
-          flex: 0 1 auto;
-          width: 25%;
+          flex: 0 0 auto;
+          width: auto;
 
           &>a {
-            width: 100%;
+            width: auto;
             height: 100%;
 
-            padding: 5px 2px;
+            padding: 5px 4px;
+            white-space: nowrap;
 
             color: var(--light-green);
 
-            font-size: 1.1rem;
+            font-size: clamp(0.85rem, 1vw, 1.05rem);
 
             display: flex;
             flex-direction: column;
@@ -81,7 +90,7 @@
             }
 
             &:hover {
-              font-size: 1.2rem;
+              font-size: clamp(0.9rem, 1.05vw, 1.1rem);
 
               &>.animation_bar {
                 animation: bar_fill 0.3s linear 0s 1 normal forwards;
@@ -119,6 +128,7 @@
 @media (max-width: 1024px) {
   :host {
     &>header {
+      display: block !important;
       width: 100%;
       height: 10vh;
       z-index: 1000vh;
@@ -146,6 +156,8 @@
       }
 
       &>nav {
+        grid-column: unset;
+        justify-self: unset;
         width: 100%;
         height: 90vh;
 
@@ -160,6 +172,8 @@
         &>ul {
           background-color: var(--dark-green);
           width: 100%;
+          flex-direction: column;
+          justify-content: flex-start;
 
           &>li {
             width: 100%;

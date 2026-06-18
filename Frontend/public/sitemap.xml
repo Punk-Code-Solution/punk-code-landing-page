@@ -14,6 +14,18 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
+    <loc>https://www.punkcodesolution.com.br/projects</loc>
+    <lastmod>2026-04-26T00:00:00+00:00</lastmod>
+    <priority>0.85</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.punkcodesolution.com.br/blog</loc>
+    <lastmod>2026-04-26T00:00:00+00:00</lastmod>
+    <priority>0.75</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
     <loc>https://www.punkcodesolution.com.br/contact</loc>
     <lastmod>2024-05-20T00:00:00+00:00</lastmod>
     <priority>0.80</priority>
