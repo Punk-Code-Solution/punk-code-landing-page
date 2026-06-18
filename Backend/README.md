@@ -6,15 +6,31 @@
    ```
    npm install
    ```
-2. Crie um arquivo `.env` na raiz do backend com:
+2. Copie `.env.example` para `.env` e preencha:
    ```
-   EMAIL_USER=seu_email@gmail.com
-   EMAIL_PASS=sua_senha_de_app
+   CLIENT_EMAIL=punkcodesolution@gmail.com
+   CLIENT_PASS=senha_de_app_do_gmail
    ```
+   Use uma **senha de app** do Gmail (Conta Google → Segurança → Verificação em duas etapas → Senhas de app).
 3. Inicie o servidor:
    ```
    npm start
    ```
+
+## Deploy na Vercel
+
+No painel do projeto `punk-code-api`, configure as variáveis de ambiente:
+
+- `CLIENT_EMAIL`
+- `CLIENT_PASS`
+
+Depois do deploy, verifique:
+
+```
+GET https://punk-code-api.vercel.app/health
+```
+
+A resposta deve incluir `"mailConfigured": true`. Se for `false`, o formulário de contato retornará erro 503/500.
 
 ## Estrutura
 - `src/config/mailer.js`: configuração do Nodemailer

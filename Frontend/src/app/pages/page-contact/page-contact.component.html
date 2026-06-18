@@ -1,7 +1,6 @@
 
 <div class="default">
   <navbar></navbar>
-  <script src="sweetalert2.all.min.js"></script>
   <section class="about-hero" [ngClass]="{'hero-animate': animatedElements.hero}">
     <div class="hero-content">
       <h1 [ngClass]="{'title-animate': animatedElements.hero}">Entre em Contato</h1>
@@ -93,7 +92,14 @@
       <div class="container">
           <h2 [ngClass]="{'title-animate': animatedElements.map}">Nossa Localização</h2>
           <div class="map-placeholder" [ngClass]="{'map-appear': animatedElements.map}">
-              <iframe src="https://www.google.com/maps/d/u/4/embed?mid=1SBcgjqHLSVhuwDc9CgL5jYg9BBSp1H8&ehbc=2E312F&noprof=1" width="100%" height="480"></iframe>
+              <iframe
+                title="Mapa da Punk Code Solution em Ilhéus, BA"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                src="https://www.google.com/maps/d/u/4/embed?mid=1SBcgjqHLSVhuwDc9CgL5jYg9BBSp1H8&ehbc=2E312F&noprof=1"
+                width="100%"
+                height="480">
+              </iframe>
           </div>
       </div>
   </section>
