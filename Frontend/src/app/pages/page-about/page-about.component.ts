@@ -1,9 +1,9 @@
-import { Component, ElementRef, Inject, PLATFORM_ID, HostListener, OnInit } from '@angular/core';
+import { Component, ElementRef, Inject, PLATFORM_ID, HostListener, OnInit, OnDestroy } from '@angular/core';
 import { NavbarComponent } from '../../components/navbar/navbar.component';
 import { Title, Meta } from '@angular/platform-browser';
 import { FooterComponent } from '../../components/footer/footer.component';
-import { CommonModule, isPlatformBrowser } from '@angular/common';
-import { NgClass } from '@angular/common';
+import { CommonModule, isPlatformBrowser, NgClass } from '@angular/common';
+import { SchemaService } from '../../services/schema.services';
 
 @Component({
   selector: 'page-about',
@@ -17,7 +17,8 @@ import { NgClass } from '@angular/common';
   templateUrl: './page-about.component.html',
   styleUrl: './page-about.component.css'
 })
-export class PageAboutComponent implements OnInit {
+export class PageAboutComponent implements OnInit, OnDestroy {
+  private readonly schemaId = 'about-schema';
 
   isAnimated = false;
   animatedElements: {
@@ -35,42 +36,48 @@ export class PageAboutComponent implements OnInit {
   constructor(
     private el: ElementRef,
     @Inject(PLATFORM_ID) private platformId: Object,
-    private titleService: Title, // <-- ADICIONE ESTA LINHA
-    private metaService: Meta
+    private titleService: Title,
+    private metaService: Meta,
+    private schemaService: SchemaService
   ) {}
 
   ngOnInit() {
-
     const pageTitle = 'Sobre nós | Punk Code Solution';
-    const pageDescription = 'Conheça a Punk Code Solution, sua parceira em soluções digitais inovadoras. Transformamos ideias em realidade com expertise em desenvolvimento web e tecnologia.';
-    
+    const pageDescription =
+      'Conheça a Punk Code Solution, sua parceira em soluções digitais inovadoras. Transformamos ideias em realidade com expertise em desenvolvimento web e tecnologia.';
+
     this.titleService.setTitle(pageTitle);
     this.metaService.updateTag({ name: 'description', content: pageDescription });
 
-    // Adiciona o script de Schema na <head>
     if (isPlatformBrowser(this.platformId)) {
-      const script = document.createElement('script');
-      script.type = 'application/ld+json';
-      document.head.appendChild(script);
+      this.schemaService.addSchema(this.schemaId, {
+        '@context': 'https://schema.org',
+        '@type': 'AboutPage',
+        name: pageTitle,
+        description: pageDescription,
+        url: 'https://www.punkcodesolution.com.br/about',
+        mainEntity: {
+          '@type': 'Organization',
+          name: 'Punk Code Solution',
+          url: 'https://www.punkcodesolution.com.br/',
+        },
+      });
     }
 
-    // Executa as animações automaticamente ao carregar a página
     setTimeout(() => {
       this.isAnimated = true;
       this.animateElements();
-    }, 100); // Pequeno delay para garantir que o DOM esteja renderizado
+    }, 100);
   }
 
-  @HostListener('window:scroll', ['$event'])
-  @HostListener('window:resize', ['$event'])
-  checkScroll() {
-    // Check if we're in a browser environment
-    if (!isPlatformBrowser(this.platformId)) {
-      return;
-    }
+  ngOnDestroy(): void {
+    this.schemaService.removeSchema(this.schemaId);
+  }
 
-    // Se já foi animado, não executa novamente
-    if (this.isAnimated) {
+  @HostListener('window:scroll')
+  @HostListener('window:resize')
+  checkScroll() {
+    if (!isPlatformBrowser(this.platformId) || this.isAnimated) {
       return;
     }
 
@@ -84,22 +91,18 @@ export class PageAboutComponent implements OnInit {
   }
 
   animateElements() {
-    // Animate hero first
     setTimeout(() => {
       this.animatedElements.hero = true;
     }, 200);
 
-    // Animate history section
     setTimeout(() => {
       this.animatedElements.history = true;
     }, 400);
 
-    // Animate values section
     setTimeout(() => {
       this.animatedElements.values = true;
     }, 600);
 
-    // Animate footer
     setTimeout(() => {
       this.animatedElements.footer = true;
     }, 800);

@@ -52,8 +52,10 @@
                   </div>
                   <button id="btnSubmit" type="submit"
                     class="service-action-btn"
+                    [disabled]="isLoading"
                     [ngClass]="{'button-animate': animatedElements.form}">
-                    <i class="fas fa-paper-plane"></i> Solicitar proposta
+                    <i class="fas fa-paper-plane"></i>
+                    {{ isLoading ? 'Enviando...' : 'Solicitar proposta' }}
                   </button>
               </form>
           </div>

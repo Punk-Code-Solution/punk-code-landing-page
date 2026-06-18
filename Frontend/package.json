@@ -22,7 +22,6 @@
     "@angular/router": "^18.2.0",
     "@angular/ssr": "^18.2.19",
     "express": "^4.21.2",
-    "nodemailer": "^7.0.5",
     "rxjs": "~7.8.0",
     "sweetalert2": "^11.22.2",
     "tslib": "^2.3.0",

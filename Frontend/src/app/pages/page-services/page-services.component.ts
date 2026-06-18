@@ -21,7 +21,7 @@ import { SchemaService } from '../../services/schema.services';
   templateUrl: './page-services.component.html',
   styleUrl: './page-services.component.css'
 })
-export class PageServicesComponent implements OnInit {
+export class PageServicesComponent implements OnInit, OnDestroy {
 
   isAnimated = false;
   animatedElements: {
@@ -99,15 +99,10 @@ export class PageServicesComponent implements OnInit {
       }))
     };
 
-    // Adiciona o script de Schema na <head>
+    // Adiciona o schema de serviços na <head>
     if (isPlatformBrowser(this.platformId)) {
-      const script = document.createElement('script');
-      script.type = 'application/ld+json';
-      script.text = JSON.stringify(serviceSchema);
-      document.head.appendChild(script);
+      this.schemaService.addSchema(this.schemaId, serviceSchema);
     }
-
-    this.schemaService.addSchema(this.schemaId, serviceSchema);
 
     // Executa as animações automaticamente ao carregar a página
     setTimeout(() => {
@@ -116,13 +111,13 @@ export class PageServicesComponent implements OnInit {
     }, 100); // Pequeno delay para garantir que o DOM esteja renderizado
   }
 
-  OnDestroy(): void {
+  ngOnDestroy(): void {
     // Remove o schema específico desta página ao sair
     this.schemaService.removeSchema(this.schemaId);
   }
 
-  @HostListener('window:scroll', ['$event'])
-  @HostListener('window:resize', ['$event'])
+  @HostListener('window:scroll')
+  @HostListener('window:resize')
   checkScroll() {
     // Check if we're in a browser environment
     if (!isPlatformBrowser(this.platformId)) {
