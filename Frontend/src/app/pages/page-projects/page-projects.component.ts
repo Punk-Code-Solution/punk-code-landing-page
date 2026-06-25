@@ -130,6 +130,27 @@ export class PageProjectsComponent implements OnInit, OnDestroy, AfterViewInit {
         { src: 'images/projects/financas-news-preview.png', alt: 'Portal Finanças News' },
       ],
     },
+    {
+      id: 'cs-league',
+      name: 'CS League',
+      tagline: 'Plataforma de análise e gerenciamento de ligas CS2',
+      stack: ['Angular 19', 'Express', 'PostgreSQL', 'Redis', 'Python'],
+      description: [
+        'Plataforma completa para comunidades de Counter-Strike 2: criação de ligas e times, chaveamentos automáticos, registro de resultados e upload de demos para análise estatística.',
+        'O worker Python processa arquivos .dem e extrai métricas como K/D, ADR, HS% e KAST — com dashboard pessoal, rankings e perfis públicos de jogadores.',
+      ],
+      features: [
+        'Gerenciamento de ligas, times e chaveamentos',
+        'Upload e análise automática de demos CS2',
+        'Dashboard com K/D, Rating, KAST e ADR',
+        'Rankings e perfis públicos por Steam ID',
+        'Fila de processamento com Redis e worker Python',
+      ],
+      images: [
+        { src: 'images/projects/cs-league-logo.png', alt: 'Logo CS League' },
+        { src: 'images/projects/cs-league-preview.png', alt: 'Dashboard de estatísticas do CS League' },
+      ],
+    },
   ];
 
   constructor(
@@ -146,7 +167,7 @@ export class PageProjectsComponent implements OnInit, OnDestroy, AfterViewInit {
 
     const pageTitle = 'Projetos | Punk Code Solution';
     const pageDescription =
-      'Conheça os projetos desenvolvidos pela Punk Code Solution: App Pronto, Studio & Style, Igreja 4.0 e Finanças News.';
+      'Conheça os projetos desenvolvidos pela Punk Code Solution: App Pronto, Studio & Style, Igreja 4.0, Finanças News e CS League.';
 
     this.titleService.setTitle(pageTitle);
     this.metaService.updateTag({ name: 'description', content: pageDescription });
