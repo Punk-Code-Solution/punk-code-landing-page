@@ -21,9 +21,69 @@
   </url>
   <url>
     <loc>https://www.punkcodesolution.com.br/blog</loc>
-    <lastmod>2026-04-26T00:00:00+00:00</lastmod>
-    <priority>0.75</priority>
+    <lastmod>2026-07-16T00:00:00+00:00</lastmod>
+    <priority>0.85</priority>
     <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.punkcodesolution.com.br/blog/site-institucional-ainda-converte-2026</loc>
+    <lastmod>2026-07-10T00:00:00+00:00</lastmod>
+    <priority>0.70</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.punkcodesolution.com.br/blog/angular-ou-react-para-seu-negocio</loc>
+    <lastmod>2026-07-08T00:00:00+00:00</lastmod>
+    <priority>0.70</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.punkcodesolution.com.br/blog/validar-ideia-sistema-antes-investir</loc>
+    <lastmod>2026-07-05T00:00:00+00:00</lastmod>
+    <priority>0.70</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.punkcodesolution.com.br/blog/checklist-seo-tecnico-sites-empresa</loc>
+    <lastmod>2026-07-02T00:00:00+00:00</lastmod>
+    <priority>0.70</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.punkcodesolution.com.br/blog/testes-automatizados-o-que-importa-pme</loc>
+    <lastmod>2026-06-28T00:00:00+00:00</lastmod>
+    <priority>0.70</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.punkcodesolution.com.br/blog/mvp-ao-produto-erros-que-atrasam</loc>
+    <lastmod>2026-06-22T00:00:00+00:00</lastmod>
+    <priority>0.70</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.punkcodesolution.com.br/blog/o-que-aprendemos-construindo-plataformas</loc>
+    <lastmod>2026-06-15T00:00:00+00:00</lastmod>
+    <priority>0.70</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.punkcodesolution.com.br/blog/radar-angular-v19-e-alem</loc>
+    <lastmod>2026-07-12T00:00:00+00:00</lastmod>
+    <priority>0.65</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.punkcodesolution.com.br/blog/radar-web-vitals-experiencia</loc>
+    <lastmod>2026-07-01T00:00:00+00:00</lastmod>
+    <priority>0.65</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.punkcodesolution.com.br/blog/radar-seguranca-basica-apps-web</loc>
+    <lastmod>2026-06-18T00:00:00+00:00</lastmod>
+    <priority>0.65</priority>
+    <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.punkcodesolution.com.br/contact</loc>

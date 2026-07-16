@@ -131,24 +131,24 @@ export class PageProjectsComponent implements OnInit, OnDestroy, AfterViewInit {
       ],
     },
     {
-      id: 'cs-league',
-      name: 'CS League',
-      tagline: 'Plataforma de análise e gerenciamento de ligas CS2',
-      stack: ['Angular 19', 'Express', 'PostgreSQL', 'Redis', 'Python'],
+      id: 'gamers-league',
+      name: 'Gamers League',
+      tagline: 'Ligas, partidas e analytics de performance em um só lugar',
+      stack: ['Angular 19', 'Node.js', 'PostgreSQL', 'Redis', 'Python'],
       description: [
-        'Plataforma completa para comunidades de Counter-Strike 2: criação de ligas e times, chaveamentos automáticos, registro de resultados e upload de demos para análise estatística.',
-        'O worker Python processa arquivos .dem e extrai métricas como K/D, ADR, HS% e KAST — com dashboard pessoal, rankings e perfis públicos de jogadores.',
+        'Plataforma que une organização de ligas e análise de performance — com foco inicial em Counter-Strike 2 e arquitetura preparada para outros jogos.',
+        'Organizadores gerenciam times, chaveamentos, veto de mapas e resultados; jogadores enviam demos e recebem rating, radar de skills, evolução e dicas acionáveis vinculadas à competição.',
       ],
       features: [
-        'Gerenciamento de ligas, times e chaveamentos',
-        'Upload e análise automática de demos CS2',
-        'Dashboard com K/D, Rating, KAST e ADR',
-        'Rankings e perfis públicos por Steam ID',
-        'Fila de processamento com Redis e worker Python',
+        'Ligas em mata-mata, grupos + playoffs, 1v1 e pickup',
+        'Veto de mapas e séries BO1/BO3',
+        'Upload de demos CS2 com worker Python + Redis',
+        'Analytics: rating, mira, posicionamento e utilitários',
+        'Rankings, perfis por Steam ID e painel admin',
       ],
       images: [
-        { src: 'images/projects/cs-league-logo.png', alt: 'Logo CS League' },
-        { src: 'images/projects/cs-league-preview.png', alt: 'Dashboard de estatísticas do CS League' },
+        { src: 'images/projects/gamers-league-logo.jpg', alt: 'Logo Gamers League' },
+        { src: 'images/projects/gamers-league-preview.png', alt: 'Dashboard de estatísticas do Gamers League' },
       ],
     },
   ];
@@ -167,7 +167,7 @@ export class PageProjectsComponent implements OnInit, OnDestroy, AfterViewInit {
 
     const pageTitle = 'Projetos | Punk Code Solution';
     const pageDescription =
-      'Conheça os projetos desenvolvidos pela Punk Code Solution: App Pronto, Studio & Style, Igreja 4.0, Finanças News e CS League.';
+      'Conheça os projetos desenvolvidos pela Punk Code Solution: App Pronto, Studio & Style, Igreja 4.0, Finanças News e Gamers League.';
 
     this.titleService.setTitle(pageTitle);
     this.metaService.updateTag({ name: 'description', content: pageDescription });

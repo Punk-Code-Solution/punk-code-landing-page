@@ -1,0 +1,242 @@
+import { BlogPost } from '../models/blog-post.model';
+
+/**
+ * Conteúdo editorial da Punk Code.
+ * - original: expertise e cases (maioria)
+ * - radar: comentário próprio + link para fonte oficial (sem republicar full text)
+ */
+export const BLOG_POSTS: BlogPost[] = [
+  {
+    slug: 'site-institucional-ainda-converte-2026',
+    title: 'Por que um site institucional bem feito ainda converte em 2026',
+    excerpt:
+      'Redes sociais trazem alcance, mas o site da empresa é onde a confiança e o contato acontecem. Veja o que realmente importa.',
+    type: 'original',
+    publishedAt: '2026-07-10',
+    tags: ['Sites', 'Conversão', 'Negócios'],
+    readingMinutes: 6,
+    body: [
+      'Muita empresa ainda trata o site como cartão de visita estático — enquanto o Instagram e o WhatsApp concentram o atendimento. O problema não é usar esses canais; é depender só deles para explicar o que você faz, para quem e por quê alguém deveria escolher você.',
+      'Um site institucional bem estruturado responde às dúvidas do visitante antes da conversa comercial: serviços, provas (projetos, depoimentos), posicionamento e um caminho claro para pedir proposta. Isso reduz atrito e qualifica o lead.',
+      'Na Punk Code, desenhamos páginas com uma composição clara no primeiro viewport, hierarquia tipográfica e CTAs objetivos — sem “dashboard” de marketing lotado de badges. O objetivo é simples: o visitante entende a oferta e sabe o próximo passo.',
+      'SEO técnico e conteúdo útil aumentam a chance de alguém chegar pelo Google com intenção real. Redes sociais geram descoberta; o site sustenta a decisão.',
+    ],
+    takeaways: [
+      'Site e redes se complementam — um não substitui o outro',
+      'Primeiro viewport: marca, promessa, CTA e prova visual',
+      'Cada seção deve ter um único objetivo',
+      'Página de contato e projetos precisam ser fáceis de achar',
+    ],
+  },
+  {
+    slug: 'angular-ou-react-para-seu-negocio',
+    title: 'Angular ou React: como escolher a stack certa para o seu negócio',
+    excerpt:
+      'A escolha de framework não é moda — é custo de manutenção, contratação e velocidade de entrega. Um guia prático para quem decide investimento.',
+    type: 'original',
+    publishedAt: '2026-07-08',
+    tags: ['Angular', 'React', 'Arquitetura'],
+    readingMinutes: 7,
+    body: [
+      'Cliente raramente pergunta “Angular ou React?” no primeiro contato — ele pergunta prazo, custo e se o sistema vai aguentar crescer. A stack entra nessa conta porque define velocidade de entrega, facilidade de manutenção e o perfil de profissionais que você vai precisar no futuro.',
+      'Angular brilha em sistemas com muitas telas, formulários, papéis de acesso e padrão de equipe: tipagem forte, CLI, roteamento e estrutura opinativa reduzem decisões ad hoc. É a base que usamos em produtos como Studio & Style, Igreja 4.0 e Gamers League.',
+      'React costuma ser excelente para interfaces muito customizadas, ecossistema amplo e times já acostumados ao modelo de componentes livres. No mobile, React Native também entra no jogo — como no App Pronto.',
+      'A decisão certa parte do produto: complexidade do domínio, prazo, integrações e quem vai manter. Nós ajudamos a escolher com base nisso — não em hype de rede social.',
+    ],
+    takeaways: [
+      'Priorize domínio e manutenção, não popularidade',
+      'Angular: sistemas internos e painéis robustos',
+      'React/RN: UI flexível e apps mobile',
+      'Documente a decisão para o time futuro',
+    ],
+  },
+  {
+    slug: 'validar-ideia-sistema-antes-investir',
+    title: 'Como validar uma ideia de sistema antes de investir pesado',
+    excerpt:
+      'MVP não é “versão feia do produto final”. É o menor caminho para aprender se o problema e a solução fazem sentido.',
+    type: 'original',
+    publishedAt: '2026-07-05',
+    tags: ['MVP', 'Produto', 'Estratégia'],
+    readingMinutes: 6,
+    body: [
+      'O erro clássico é pedir um sistema completo no dia um: cadastros, relatórios, app, painel admin e integrações. Sem validar o fluxo principal, você paga por features que ninguém usa.',
+      'Validação começa com três perguntas: qual dor é urgente, quem paga e qual resultado mensurável importa. Depois, desenhamos o caminho feliz mínimo — do login à ação que gera valor.',
+      'Protótipo navegável ou um MVP com uma única jornada bem feita costuma custar menos e ensinar mais do que um escopo “completo” atrasado. Em projetos nossos, isso evita retrabalho e alinha expectativa.',
+      'Quando a hipótese se confirma, aí sim expandimos módulos. Quando não confirma, o ajuste é barato — e o budget sobra para o que realmente importa.',
+    ],
+    takeaways: [
+      'Defina a métrica de sucesso antes de codar',
+      'MVP = uma jornada crítica, bem feita',
+      'Evite “só mais um módulo” sem evidência',
+      'Combine discovery com estimativa realista',
+    ],
+  },
+  {
+    slug: 'checklist-seo-tecnico-sites-empresa',
+    title: 'Checklist de SEO técnico para sites de empresa',
+    excerpt:
+      'Conteúdo bom sem base técnica some no Google. Um checklist objetivo para títulos, performance, sitemap e dados estruturados.',
+    type: 'original',
+    publishedAt: '2026-07-02',
+    tags: ['SEO', 'Performance', 'Marketing'],
+    readingMinutes: 5,
+    body: [
+      'SEO técnico não substitui conteúdo útil, mas sem ele o Google (e o visitante) sofrem: páginas lentas, títulos genéricos, URLs confusas e zero sinal de o que a página oferece.',
+      'No mínimo, cada página importante precisa de title e description únicos, hierarquia de headings coerente, imagens com alt, sitemap atualizado e HTTPS. Dados estruturados (Organization, Blog, Service) ajudam a máquina a entender o site.',
+      'Performance também é SEO: Core Web Vitals ruins derrubam experiência e ranqueamento. Compressão de imagens, lazy loading e menos JavaScript desnecessário fazem diferença real.',
+      'Na Punk Code, tratamos SEO como parte da entrega do site — não como um “extra depois do lançamento”.',
+    ],
+    takeaways: [
+      'Title/description únicos por página',
+      'Sitemap e robots.txt alinhados',
+      'Imagens leves e com texto alternativo',
+      'Meça LCP/INP no mobile real',
+    ],
+  },
+  {
+    slug: 'testes-automatizados-o-que-importa-pme',
+    title: 'Testes automatizados: o que realmente importa para PME',
+    excerpt:
+      'Cobertura de 100% é mito caro. O que protege o negócio é testar o que quebra receita e confiança.',
+    type: 'original',
+    publishedAt: '2026-06-28',
+    tags: ['Qualidade', 'Testes', 'Engenharia'],
+    readingMinutes: 6,
+    body: [
+      'PME não precisa de uma pirâmide de testes acadêmica no primeiro sprint. Precisa de segurança para mudar o sistema sem medo de derrubar agendamento, pagamento ou login.',
+      'Priorize testes no caminho crítico: autenticação, criação de pedido/agendamento, cálculo financeiro e integrações externas. Unitários rápidos nas regras de negócio; e2e enxutos no fluxo principal.',
+      'Em produtos que mantemos, a disciplina de teste reduz regressão e acelera release — especialmente quando o time cresce ou o cliente pede mudança urgente.',
+      'Comece pequeno, automatize o que dói, e só então amplie. Qualidade é investimento contínuo, não um checklist de go-live.',
+    ],
+    takeaways: [
+      'Teste o que gera ou perde dinheiro',
+      'E2E poucos e estáveis > muitos frágeis',
+      'CI rodando a cada PR evita surpresa',
+      'Documente o que é crítico para o negócio',
+    ],
+  },
+  {
+    slug: 'mvp-ao-produto-erros-que-atrasam',
+    title: 'Do MVP ao produto: 5 erros que atrasam projetos digitais',
+    excerpt:
+      'Escopo inchado, falta de prioridade e “só mais um ajuste” são os vilões silenciosos do prazo. Como evitá-los.',
+    type: 'original',
+    publishedAt: '2026-06-22',
+    tags: ['Gestão', 'MVP', 'Entrega'],
+    readingMinutes: 5,
+    body: [
+      'Projetos atrasam menos por “falta de código” e mais por decisão: mudar requisito no meio, não priorizar, ou misturar discovery com produção sem buffer.',
+      'Erro 1: tratar protótipo como contrato de todas as telas. Erro 2: pular definição de papéis e permissões. Erro 3: integrar pagamentos/WhatsApp sem ambiente de teste. Erro 4: zero critério de aceite. Erro 5: acumular dívida técnica “para depois”.',
+      'O antídoto é ritual simples: backlog priorizado, demos curtas, critérios de aceite escritos e um canal único de mudança de escopo.',
+      'Com isso, o time entrega valor visível cedo — e o cliente vê progresso real, não só status report.',
+    ],
+    takeaways: [
+      'Aceite escrito antes de desenvolver',
+      'Demo frequente com stakeholders',
+      'Mudança de escopo tem custo explícito',
+      'Reserve tempo para débito técnico',
+    ],
+  },
+  {
+    slug: 'o-que-aprendemos-construindo-plataformas',
+    title: 'O que aprendemos construindo plataformas de verdade',
+    excerpt:
+      'De marketplace a ligas de esports: padrões que se repetem quando o software precisa operar no mundo real.',
+    type: 'original',
+    publishedAt: '2026-06-15',
+    tags: ['Cases', 'Produto', 'Arquitetura'],
+    readingMinutes: 7,
+    relatedProjectIds: ['app-pronto', 'studio-style', 'gamers-league'],
+    body: [
+      'Construir produto real ensina o que tutorial não mostra: filas que travam, upload grande, permissões confusas e o usuário que ignora o “fluxo ideal”.',
+      'No App Pronto, o desafio foi orquestrar agendamento, chat, pagamento e vídeo sem transformar o app em labirinto. No Studio & Style e Igreja 4.0, o painel precisa dar visão executiva sem sobrecarregar quem opera no dia a dia.',
+      'No Gamers League, demos e estatísticas exigem processamento assíncrono, feedback claro de status e analytics que o jogador entenda — não só números crus.',
+      'O padrão comum: modelar bem o domínio, separar o que é síncrono do que pode esperar, e desenhar a interface para a tarefa — não para a vaidade do layout.',
+    ],
+    takeaways: [
+      'Domínio claro > features soltas',
+      'Jobs assíncronos pedem status na UI',
+      'Permissões desde o dia um',
+      'Cases reais aceleram decisões de produto',
+    ],
+  },
+  {
+    slug: 'radar-angular-v19-e-alem',
+    title: 'Radar: o que acompanhar no ecossistema Angular',
+    excerpt:
+      'Lançamentos e diretrizes oficiais do Angular mudam o jeito de entregar frontends corporativos. Nosso comentário + link para a fonte.',
+    type: 'radar',
+    publishedAt: '2026-07-12',
+    tags: ['Radar', 'Angular'],
+    readingMinutes: 3,
+    aiAssisted: true,
+    source: {
+      name: 'Angular Blog (oficial)',
+      url: 'https://blog.angular.dev/',
+    },
+    radarComment:
+      'Para times que mantêm sistemas Angular (como vários produtos que entregamos), acompanhar o blog oficial evita surpresa em breaking changes, SSR e tooling. Na prática, isso reduz custo de upgrade e melhora performance percebida no painel do cliente.',
+    body: [
+      'Este post é uma curadoria: não republicamos artigos do Angular. Apontamos a fonte oficial e comentamos o impacto para empresas que investem em sistemas web de longo prazo.',
+      'Se o seu painel ainda está em versão antiga, planejar upgrade com testes no fluxo crítico costuma ser mais barato do que empurrar a dívida por mais um ano.',
+    ],
+    takeaways: [
+      'Leia sempre a fonte oficial (link acima)',
+      'Planeje upgrades com janela de teste',
+      'SSR e performance afetam SEO e conversão',
+    ],
+  },
+  {
+    slug: 'radar-web-vitals-experiencia',
+    title: 'Radar: por que Core Web Vitals importam para o seu site',
+    excerpt:
+      'Métricas de experiência do Chrome/Google influenciam SEO e percepção de qualidade. Comentário Punk Code + material oficial.',
+    type: 'radar',
+    publishedAt: '2026-07-01',
+    tags: ['Radar', 'Performance', 'SEO'],
+    readingMinutes: 3,
+    aiAssisted: true,
+    source: {
+      name: 'web.dev — Core Web Vitals',
+      url: 'https://web.dev/articles/vitals',
+    },
+    radarComment:
+      'Para sites institucionais e landing pages, LCP e interatividade ruim afastam lead antes do formulário. Otimizar imagem, fonte e JavaScript no primeiro viewport é investimento direto em conversão — não só “nota no Lighthouse”.',
+    body: [
+      'Não copiamos o guia do web.dev: resumimos a relevância de negócio e linkamos a documentação oficial para quem quiser o detalhe técnico completo.',
+      'Na Punk Code, medimos essas métricas em projetos de site e ajustamos o que impacta a primeira impressão do visitante.',
+    ],
+    takeaways: [
+      'Foque no mobile real do seu público',
+      'Imagem hero leve e bem dimensionada',
+      'Menos JS no carregamento inicial',
+    ],
+  },
+  {
+    slug: 'radar-seguranca-basica-apps-web',
+    title: 'Radar: higiene de segurança que todo sistema web precisa',
+    excerpt:
+      'Headers, autenticação e dependências: o mínimo que evita susto. Comentário prático + referência OWASP.',
+    type: 'radar',
+    publishedAt: '2026-06-18',
+    tags: ['Radar', 'Segurança'],
+    readingMinutes: 4,
+    aiAssisted: true,
+    source: {
+      name: 'OWASP Top Ten',
+      url: 'https://owasp.org/www-project-top-ten/',
+    },
+    radarComment:
+      'Para PMEs, o risco mais comum não é “hacker cinematográfico” — é formulário sem rate limit, senha fraca, dependência vulnerável ou API aberta demais. Tratar o Top Ten como checklist de revisão periódica evita incidente caro.',
+    body: [
+      'Este radar não reproduz o conteúdo OWASP. Indicamos a referência e traduzimos para decisões de produto: autenticação, validação de input, controle de acesso e atualização de pacotes.',
+      'Em todo backend que entregamos, headers de segurança, validação e princípio do menor privilégio entram como padrão — não como opcional.',
+    ],
+    takeaways: [
+      'Atualize dependências com rotina',
+      'Nunca confie só na validação do front',
+      'Revise permissões e logs de acesso',
+    ],
+  },
+];

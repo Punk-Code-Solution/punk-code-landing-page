@@ -5,6 +5,7 @@ import { PageContactComponent } from './pages/page-contact/page-contact.componen
 import { PageAboutComponent } from './pages/page-about/page-about.component';
 import { PageProjectsComponent } from './pages/page-projects/page-projects.component';
 import { PageBlogComponent } from './pages/page-blog/page-blog.component';
+import { PageBlogPostComponent } from './pages/page-blog-post/page-blog-post.component';
 
 export const routes: Routes = [
   {
@@ -22,6 +23,10 @@ export const routes: Routes = [
   {
     path: "blog",
     component: PageBlogComponent
+  },
+  {
+    path: "blog/:slug",
+    component: PageBlogPostComponent
   },
   {
     path: "contact",

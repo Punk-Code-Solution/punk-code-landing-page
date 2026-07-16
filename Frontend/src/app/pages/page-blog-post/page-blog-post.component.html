@@ -1,0 +1,89 @@
+<div class="default" *ngIf="post as p">
+  <navbar></navbar>
+
+  <section class="post-hero" [ngClass]="{ 'hero-animate': animatedHero }">
+    <div class="hero-content">
+      <a class="back-link" routerLink="/blog">
+        <i class="fas fa-arrow-left" aria-hidden="true"></i>
+        Voltar ao blog
+      </a>
+      <div class="hero-meta">
+        <span class="post-type" [class.post-type--radar]="p.type === 'radar'">{{ typeLabel(p.type) }}</span>
+        <time [attr.datetime]="p.publishedAt">{{ formatDate(p.publishedAt) }}</time>
+        <span>{{ p.readingMinutes }} min de leitura</span>
+      </div>
+      <h1 [ngClass]="{ 'title-animate': animatedHero }">{{ p.title }}</h1>
+      <p class="hero-excerpt" [ngClass]="{ 'subtitle-animate': animatedHero }">{{ p.excerpt }}</p>
+    </div>
+  </section>
+</div>
+
+<article class="post-article" *ngIf="post as p" [class.article-visible]="animatedBody">
+  <div class="article-inner">
+    <aside class="radar-box" *ngIf="p.type === 'radar' && p.source">
+      <h2>Fonte</h2>
+      <p *ngIf="p.radarComment">{{ p.radarComment }}</p>
+      <a class="source-link" [href]="p.source.url" target="_blank" rel="noopener noreferrer">
+        Ler na fonte: {{ p.source.name }}
+        <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+      </a>
+      <p class="source-note">Não republicamos o texto original. O link acima leva ao material oficial.</p>
+    </aside>
+
+    <div class="article-body" *ngIf="p.type !== 'radar'">
+      <p *ngFor="let paragraph of p.body">{{ paragraph }}</p>
+    </div>
+
+    <section class="takeaways" *ngIf="p.takeaways?.length">
+      <h2>Para levar</h2>
+      <ul>
+        <li *ngFor="let item of p.takeaways">
+          <i class="fas fa-check-circle" aria-hidden="true"></i>
+          <span>{{ item }}</span>
+        </li>
+      </ul>
+    </section>
+
+    <div class="article-tags">
+      <span class="tag-chip" *ngFor="let tag of p.tags">{{ tag }}</span>
+    </div>
+
+    <section class="post-cta">
+      <h2>Pronto para tirar o projeto do papel?</h2>
+      <p>
+        Conversamos sobre site, sistema ou produto digital com o mesmo critério que usamos nos nossos cases.
+      </p>
+      <div class="cta-actions">
+        <a routerLink="/projects" class="cta-btn cta-btn--outline">Conhecer projetos</a>
+        <a routerLink="/contact" class="cta-btn cta-btn--primary">Falar com a Punk Code</a>
+      </div>
+    </section>
+
+    <section class="related" *ngIf="related.length">
+      <h2>Continue lendo</h2>
+      <div class="related-grid">
+        <a class="related-item" *ngFor="let item of related" [routerLink]="['/blog', item.slug]">
+          <span class="related-type">{{ typeLabel(item.type) }}</span>
+          <strong>{{ item.title }}</strong>
+        </a>
+      </div>
+    </section>
+
+    <div class="disclosure disclosure--footer" *ngIf="p.type === 'radar' && p.body?.length">
+      <i class="fas fa-info-circle" aria-hidden="true"></i>
+      <div class="disclosure-text">
+        <p *ngFor="let paragraph of p.body">{{ paragraph }}</p>
+      </div>
+    </div>
+
+    <div class="disclosure disclosure--footer" *ngIf="p.aiAssisted">
+      <i class="fas fa-info-circle" aria-hidden="true"></i>
+      <p>
+        Este texto teve assistência de IA na redação e foi revisado pela equipe Punk Code.
+        Em posts Radar, não republicamos o conteúdo da fonte — apenas comentamos e linkamos.
+      </p>
+    </div>
+  </div>
+</article>
+
+<app-footer class="blog-post-footer" [ngClass]="{ 'footer-animate': animatedFooter }"></app-footer>
