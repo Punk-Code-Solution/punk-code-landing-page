@@ -1,5 +1,62 @@
 [
   {
+    "slug": "radar-angular-ia-e-testes-reais-para-evolucao-de-sistemas",
+    "title": "Radar Angular: IA e Testes Reais para Evolução de Sistemas",
+    "excerpt": "O Angular Blog destaca avanços em engenharia comunitária, codificação agente (IA) e testes de componentes com usuários reais. Inovações que impactam diretamente a qualidade e eficiência de aplicações.",
+    "type": "radar",
+    "publishedAt": "2026-07-16",
+    "tags": [
+      "Radar",
+      "Angular",
+      "Inteligência Artificial",
+      "Desenvolvimento de Software",
+      "PMEs"
+    ],
+    "readingMinutes": 3,
+    "body": [
+      "O universo do desenvolvimento de software está em constante evolução, e o Angular, um dos frameworks mais populares para aplicações web, acompanha essa tendência. O último post do Angular Blog aponta para direções promissoras: a engenharia comunitária, que fortalece o ecossistema, a codificação agente, impulsionada por Inteligência Artificial, e testes de componentes com dados de usuários reais. Essas frentes de trabalho visam otimizar o processo de desenvolvimento e aprimorar a qualidade final dos produtos.",
+      "A incorporação de IA na geração de código e a validação de componentes com interações de usuários reais são pontos cruciais. Para empresas que buscam otimizar seus sites e sistemas, isso se traduz em maior eficiência no desenvolvimento, redução de bugs e uma experiência de usuário mais fluida e confiável. Uma aplicação que funciona sem falhas e atende às expectativas dos usuários é um fator decisivo para manter o engajamento e incentivar o contato."
+    ],
+    "takeaways": [
+      "IA na codificação: Acelera o desenvolvimento e pode reduzir erros iniciais.",
+      "Testes com usuários reais: Garante que os componentes funcionem como esperado em cenários práticos.",
+      "Foco na qualidade: Sistemas mais confiáveis levam a uma melhor experiência do usuário e maior conversão."
+    ],
+    "source": {
+      "name": "Angular Blog",
+      "url": "https://blog.angular.dev/community-engineering-agentic-coding-and-real-user-component-testing-%EF%B8%8F-15c768142043?source=rss----447683c3d9a3---4"
+    },
+    "radarComment": "Para PMEs e negócios online, a integração de IA na codificação e testes com usuários reais significa sistemas mais robustos e menos erros. Isso se traduz em uma experiência do usuário superior, aumentando a confiança e, consequentemente, a probabilidade de conversão de visitantes em clientes. Investir em ferramentas e metodologias que agilizam o desenvolvimento e aprimoram a qualidade é fundamental para se destacar.",
+    "aiAssisted": true
+  },
+  {
+    "slug": "radar-angular-v19-e-alem",
+    "title": "Radar: o que acompanhar no ecossistema Angular",
+    "excerpt": "Lançamentos e diretrizes oficiais do Angular mudam o jeito de entregar frontends corporativos. Nosso comentário + link para a fonte.",
+    "type": "radar",
+    "publishedAt": "2026-07-12",
+    "tags": [
+      "Radar",
+      "Angular"
+    ],
+    "readingMinutes": 3,
+    "aiAssisted": true,
+    "source": {
+      "name": "Angular Blog (oficial)",
+      "url": "https://blog.angular.dev/"
+    },
+    "radarComment": "Para times que mantêm sistemas Angular (como vários produtos que entregamos), acompanhar o blog oficial evita surpresa em breaking changes, SSR e tooling. Na prática, isso reduz custo de upgrade e melhora performance percebida no painel do cliente.",
+    "body": [
+      "Este post é uma curadoria: não republicamos artigos do Angular. Apontamos a fonte oficial e comentamos o impacto para empresas que investem em sistemas web de longo prazo.",
+      "Se o seu painel ainda está em versão antiga, planejar upgrade com testes no fluxo crítico costuma ser mais barato do que empurrar a dívida por mais um ano."
+    ],
+    "takeaways": [
+      "Leia sempre a fonte oficial (link acima)",
+      "Planeje upgrades com janela de teste",
+      "SSR e performance afetam SEO e conversão"
+    ]
+  },
+  {
     "slug": "site-institucional-ainda-converte-2026",
     "title": "Por que um site institucional bem feito ainda converte em 2026",
     "excerpt": "Redes sociais trazem alcance, mas o site da empresa é onde a confiança e o contato acontecem. Veja o que realmente importa.",
@@ -100,6 +157,34 @@
     ]
   },
   {
+    "slug": "radar-web-vitals-experiencia",
+    "title": "Radar: por que Core Web Vitals importam para o seu site",
+    "excerpt": "Métricas de experiência do Chrome/Google influenciam SEO e percepção de qualidade. Comentário Punk Code + material oficial.",
+    "type": "radar",
+    "publishedAt": "2026-07-01",
+    "tags": [
+      "Radar",
+      "Performance",
+      "SEO"
+    ],
+    "readingMinutes": 3,
+    "aiAssisted": true,
+    "source": {
+      "name": "web.dev — Core Web Vitals",
+      "url": "https://web.dev/articles/vitals"
+    },
+    "radarComment": "Para sites institucionais e landing pages, LCP e interatividade ruim afastam lead antes do formulário. Otimizar imagem, fonte e JavaScript no primeiro viewport é investimento direto em conversão — não só “nota no Lighthouse”.",
+    "body": [
+      "Não copiamos o guia do web.dev: resumimos a relevância de negócio e linkamos a documentação oficial para quem quiser o detalhe técnico completo.",
+      "Na Punk Code, medimos essas métricas em projetos de site e ajustamos o que impacta a primeira impressão do visitante."
+    ],
+    "takeaways": [
+      "Foque no mobile real do seu público",
+      "Imagem hero leve e bem dimensionada",
+      "Menos JS no carregamento inicial"
+    ]
+  },
+  {
     "slug": "testes-automatizados-o-que-importa-pme",
     "title": "Testes automatizados: o que realmente importa para PME",
     "excerpt": "Cobertura de 100% é mito caro. O que protege o negócio é testar o que quebra receita e confiança.",
@@ -150,6 +235,33 @@
     ]
   },
   {
+    "slug": "radar-seguranca-basica-apps-web",
+    "title": "Radar: higiene de segurança que todo sistema web precisa",
+    "excerpt": "Headers, autenticação e dependências: o mínimo que evita susto. Comentário prático + referência OWASP.",
+    "type": "radar",
+    "publishedAt": "2026-06-18",
+    "tags": [
+      "Radar",
+      "Segurança"
+    ],
+    "readingMinutes": 4,
+    "aiAssisted": true,
+    "source": {
+      "name": "OWASP Top Ten",
+      "url": "https://owasp.org/www-project-top-ten/"
+    },
+    "radarComment": "Para PMEs, o risco mais comum não é “hacker cinematográfico” — é formulário sem rate limit, senha fraca, dependência vulnerável ou API aberta demais. Tratar o Top Ten como checklist de revisão periódica evita incidente caro.",
+    "body": [
+      "Este radar não reproduz o conteúdo OWASP. Indicamos a referência e traduzimos para decisões de produto: autenticação, validação de input, controle de acesso e atualização de pacotes.",
+      "Em todo backend que entregamos, headers de segurança, validação e princípio do menor privilégio entram como padrão — não como opcional."
+    ],
+    "takeaways": [
+      "Atualize dependências com rotina",
+      "Nunca confie só na validação do front",
+      "Revise permissões e logs de acesso"
+    ]
+  },
+  {
     "slug": "o-que-aprendemos-construindo-plataformas",
     "title": "O que aprendemos construindo plataformas de verdade",
     "excerpt": "De marketplace a ligas de esports: padrões que se repetem quando o software precisa operar no mundo real.",
@@ -177,88 +289,6 @@
       "Jobs assíncronos pedem status na UI",
       "Permissões desde o dia um",
       "Cases reais aceleram decisões de produto"
-    ]
-  },
-  {
-    "slug": "radar-angular-v19-e-alem",
-    "title": "Radar: o que acompanhar no ecossistema Angular",
-    "excerpt": "Lançamentos e diretrizes oficiais do Angular mudam o jeito de entregar frontends corporativos. Nosso comentário + link para a fonte.",
-    "type": "radar",
-    "publishedAt": "2026-07-12",
-    "tags": [
-      "Radar",
-      "Angular"
-    ],
-    "readingMinutes": 3,
-    "aiAssisted": true,
-    "source": {
-      "name": "Angular Blog (oficial)",
-      "url": "https://blog.angular.dev/"
-    },
-    "radarComment": "Para times que mantêm sistemas Angular (como vários produtos que entregamos), acompanhar o blog oficial evita surpresa em breaking changes, SSR e tooling. Na prática, isso reduz custo de upgrade e melhora performance percebida no painel do cliente.",
-    "body": [
-      "Este post é uma curadoria: não republicamos artigos do Angular. Apontamos a fonte oficial e comentamos o impacto para empresas que investem em sistemas web de longo prazo.",
-      "Se o seu painel ainda está em versão antiga, planejar upgrade com testes no fluxo crítico costuma ser mais barato do que empurrar a dívida por mais um ano."
-    ],
-    "takeaways": [
-      "Leia sempre a fonte oficial (link acima)",
-      "Planeje upgrades com janela de teste",
-      "SSR e performance afetam SEO e conversão"
-    ]
-  },
-  {
-    "slug": "radar-web-vitals-experiencia",
-    "title": "Radar: por que Core Web Vitals importam para o seu site",
-    "excerpt": "Métricas de experiência do Chrome/Google influenciam SEO e percepção de qualidade. Comentário Punk Code + material oficial.",
-    "type": "radar",
-    "publishedAt": "2026-07-01",
-    "tags": [
-      "Radar",
-      "Performance",
-      "SEO"
-    ],
-    "readingMinutes": 3,
-    "aiAssisted": true,
-    "source": {
-      "name": "web.dev — Core Web Vitals",
-      "url": "https://web.dev/articles/vitals"
-    },
-    "radarComment": "Para sites institucionais e landing pages, LCP e interatividade ruim afastam lead antes do formulário. Otimizar imagem, fonte e JavaScript no primeiro viewport é investimento direto em conversão — não só “nota no Lighthouse”.",
-    "body": [
-      "Não copiamos o guia do web.dev: resumimos a relevância de negócio e linkamos a documentação oficial para quem quiser o detalhe técnico completo.",
-      "Na Punk Code, medimos essas métricas em projetos de site e ajustamos o que impacta a primeira impressão do visitante."
-    ],
-    "takeaways": [
-      "Foque no mobile real do seu público",
-      "Imagem hero leve e bem dimensionada",
-      "Menos JS no carregamento inicial"
-    ]
-  },
-  {
-    "slug": "radar-seguranca-basica-apps-web",
-    "title": "Radar: higiene de segurança que todo sistema web precisa",
-    "excerpt": "Headers, autenticação e dependências: o mínimo que evita susto. Comentário prático + referência OWASP.",
-    "type": "radar",
-    "publishedAt": "2026-06-18",
-    "tags": [
-      "Radar",
-      "Segurança"
-    ],
-    "readingMinutes": 4,
-    "aiAssisted": true,
-    "source": {
-      "name": "OWASP Top Ten",
-      "url": "https://owasp.org/www-project-top-ten/"
-    },
-    "radarComment": "Para PMEs, o risco mais comum não é “hacker cinematográfico” — é formulário sem rate limit, senha fraca, dependência vulnerável ou API aberta demais. Tratar o Top Ten como checklist de revisão periódica evita incidente caro.",
-    "body": [
-      "Este radar não reproduz o conteúdo OWASP. Indicamos a referência e traduzimos para decisões de produto: autenticação, validação de input, controle de acesso e atualização de pacotes.",
-      "Em todo backend que entregamos, headers de segurança, validação e princípio do menor privilégio entram como padrão — não como opcional."
-    ],
-    "takeaways": [
-      "Atualize dependências com rotina",
-      "Nunca confie só na validação do front",
-      "Revise permissões e logs de acesso"
     ]
   }
 ]
