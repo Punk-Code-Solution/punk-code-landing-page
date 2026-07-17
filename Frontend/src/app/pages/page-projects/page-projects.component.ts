@@ -112,22 +112,22 @@ export class PageProjectsComponent implements OnInit, OnDestroy, AfterViewInit {
     {
       id: 'financas-news',
       name: 'Finanças News',
-      tagline: 'Portal de notícias financeiras com curadoria inteligente',
-      stack: ['Python', 'FastAPI', 'Turso/SQLite', 'Jinja2', 'Google Gemini'],
+      tagline: 'Portal de análises financeiras com dados de mercado em tempo real',
+      stack: ['Python', 'FastAPI', 'Turso', 'Tailwind CSS', 'Render'],
       description: [
-        'Portal que agrega e publica notícias do mercado financeiro com categorias como Cripto, Economia, Dólar e Ações.',
-        'O sistema consome feeds RSS de fontes confiáveis, cruza informações com dados do Banco Central e gera resumos editoriais com IA.',
+        'Portal de análises do mercado brasileiro — Cripto, Economia, Dólar, Ações e mais — com contexto macroeconômico e orientação prática ao leitor, sempre com crédito e link para a fonte original.',
+        'Cruza cotações e indicadores do Banco Central (Selic, IPCA, câmbio) com o cenário do dia, publicando matérias completas, gráficos e destaques editoriais em um site responsivo otimizado para SEO.',
       ],
       features: [
-        'Agregação de RSS de múltiplas fontes',
-        'Ticker de mercado em tempo real',
-        'Categorização automática de notícias',
-        'Resumos gerados com Google Gemini',
-        'Interface responsiva com modo escuro',
+        'Análises com impacto no bolso e cenário projetado',
+        'Ticker de cotações e evidência de mercado (BCB)',
+        '10 categorias do mercado financeiro brasileiro',
+        'Gráficos e indicadores em cada matéria',
+        'Link transparente à fonte e publicação contínua',
       ],
       images: [
         { src: 'images/projects/financas-news-logo.png', alt: 'Logo Finanças News' },
-        { src: 'images/projects/financas-news-preview.png', alt: 'Portal Finanças News' },
+        { src: 'images/projects/financas-news-preview.png', alt: 'Homepage do portal Finanças News com ticker de cotações e análises em destaque' },
       ],
     },
     {
