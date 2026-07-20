@@ -45,12 +45,12 @@ export class PageServicesComponent implements OnInit, OnDestroy {
       description: 'Sites institucionais, e-commerces e aplicações web modernas e responsivas.',
       features: ['Design responsivo', 'SEO otimizado', 'Performance alta', 'Segurança avançada']
     },
-    // {
-    //   icon: 'fa fa-mobile',
-    //   title: 'Desenvolvimento Mobile',
-    //   description: 'Aplicações nativas e híbridas para Android e iOS, focadas na experiência do usuário.',
-    //   features: ['Interface intuitiva', 'Notificações push', 'Integração com APIs', 'Publicação nas lojas']
-    // },
+    {
+      icon: 'fa fa-mobile',
+      title: 'Desenvolvimento Mobile',
+      description: 'Aplicações nativas e híbridas para Android e iOS, focadas na experiência do usuário.',
+      features: ['Interface intuitiva', 'Notificações push', 'Integração com APIs', 'Publicação nas lojas']
+    },
     // {
     //   icon: 'fa fa-cloud',
     //   title: 'Soluções em Nuvem',

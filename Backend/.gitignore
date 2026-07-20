@@ -27,4 +27,4 @@ yarn-error.log
 !.vscode/extensions.json
 .history/*
 .env
-.env.example
+*env.example
