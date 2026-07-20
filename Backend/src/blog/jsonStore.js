@@ -1,6 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 
+const { sortByNewest } = require('./utils');
+
 const DATA_PATH = path.join(__dirname, '../../data/blog-posts.json');
 
 function readJsonStore() {
@@ -21,9 +23,7 @@ function writeJsonStore(posts) {
 }
 
 function sortPosts(posts) {
-  return [...posts].sort(
-    (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
-  );
+  return [...posts].sort(sortByNewest);
 }
 
 module.exports = {

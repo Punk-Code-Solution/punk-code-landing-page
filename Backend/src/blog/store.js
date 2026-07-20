@@ -95,9 +95,9 @@ async function listPosts() {
     try {
       await ensureTursoSchema(client);
       const result = await client.execute(
-        'SELECT * FROM blog_posts ORDER BY published_at DESC'
+        'SELECT * FROM blog_posts ORDER BY published_at DESC, rowid DESC'
       );
-      const posts = result.rows.map(rowToPost);
+      const posts = sortPosts(result.rows.map(rowToPost));
       if (posts.length > 0) {
         return posts;
       }

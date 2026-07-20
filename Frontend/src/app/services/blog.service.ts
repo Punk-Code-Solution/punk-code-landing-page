@@ -11,9 +11,28 @@ export class BlogService {
   private cache$?: Observable<BlogPost[]>;
 
   private sortPosts(posts: BlogPost[]): BlogPost[] {
-    return [...posts].sort(
-      (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
-    );
+    return [...posts].sort((a, b) => {
+      const byDate = this.publishedAtTime(b.publishedAt) - this.publishedAtTime(a.publishedAt);
+      if (byDate !== 0) {
+        return byDate;
+      }
+      const byUpdated =
+        this.publishedAtTime(b.updatedAt || b.publishedAt) -
+        this.publishedAtTime(a.updatedAt || a.publishedAt);
+      if (byUpdated !== 0) {
+        return byUpdated;
+      }
+      return b.slug.localeCompare(a.slug);
+    });
+  }
+
+  private publishedAtTime(value?: string): number {
+    const raw = String(value || '');
+    if (/^\d{4}-\d{2}-\d{2}$/.test(raw)) {
+      return new Date(`${raw}T12:00:00`).getTime();
+    }
+    const time = new Date(raw).getTime();
+    return Number.isFinite(time) ? time : 0;
   }
 
   private fallbackPosts(): BlogPost[] {
@@ -84,7 +103,10 @@ export class BlogService {
   }
 
   formatDate(isoDate: string): string {
-    const date = new Date(`${isoDate}T12:00:00`);
+    const raw = String(isoDate || '');
+    const date = /^\d{4}-\d{2}-\d{2}$/.test(raw)
+      ? new Date(`${raw}T12:00:00`)
+      : new Date(raw);
     return date.toLocaleDateString('pt-BR', {
       day: 'numeric',
       month: 'long',

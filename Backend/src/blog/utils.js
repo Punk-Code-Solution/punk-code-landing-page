@@ -37,6 +37,34 @@ function todayIso() {
   return new Date().toISOString().slice(0, 10);
 }
 
+/** Timestamp completo ISO — garante ordem correta entre posts do mesmo dia. */
+function nowIso() {
+  return new Date().toISOString();
+}
+
+function publishedAtTime(value) {
+  const raw = String(value || '');
+  if (/^\d{4}-\d{2}-\d{2}$/.test(raw)) {
+    return new Date(`${raw}T12:00:00`).getTime();
+  }
+  const time = new Date(raw).getTime();
+  return Number.isFinite(time) ? time : 0;
+}
+
+function sortByNewest(a, b) {
+  const byDate = publishedAtTime(b.publishedAt) - publishedAtTime(a.publishedAt);
+  if (byDate !== 0) {
+    return byDate;
+  }
+  const byUpdated =
+    publishedAtTime(b.updatedAt || b.publishedAt) -
+    publishedAtTime(a.updatedAt || a.publishedAt);
+  if (byUpdated !== 0) {
+    return byUpdated;
+  }
+  return String(b.slug || '').localeCompare(String(a.slug || ''));
+}
+
 function extractJsonObject(text) {
   const trimmed = String(text || '').trim();
   const fenced = trimmed.match(/```(?:json)?\s*([\s\S]*?)```/i);
@@ -54,5 +82,8 @@ module.exports = {
   slugify,
   uniqueSlug,
   todayIso,
+  nowIso,
+  publishedAtTime,
+  sortByNewest,
   extractJsonObject,
 };

@@ -1,6 +1,6 @@
 const Parser = require('rss-parser');
 const { RSS_FEEDS, MAX_ITEMS_PER_FEED, MAX_NEW_POSTS_PER_RUN } = require('./feeds');
-const { stripHtml, slugify, uniqueSlug, todayIso } = require('./utils');
+const { stripHtml, slugify, uniqueSlug, nowIso } = require('./utils');
 const { generateRadarDraft } = require('./cursor');
 const { listPosts, addPosts, sourceUrlExists } = require('./store');
 
@@ -69,7 +69,8 @@ function normalizeDraft(draft, item, existingSlugs) {
     title,
     excerpt: String(draft.excerpt || item.title).trim().slice(0, 220),
     type: 'radar',
-    publishedAt: todayIso(),
+    publishedAt: nowIso(),
+    updatedAt: nowIso(),
     tags: tags.slice(0, 5),
     readingMinutes: 3,
     body,

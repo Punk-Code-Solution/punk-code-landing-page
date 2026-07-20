@@ -226,10 +226,18 @@ export class PageBlogComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   private applyFilter(scrollToList: boolean): void {
-    this.filteredPosts =
+    const filtered =
       this.filter === 'all'
         ? this.allPosts
         : this.allPosts.filter(post => post.type === this.filter);
+
+    // Garante notícia mais recente primeiro também após filtro
+    this.filteredPosts = [...filtered].sort(
+      (a, b) =>
+        new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime() ||
+        (b.updatedAt || b.publishedAt).localeCompare(a.updatedAt || a.publishedAt) ||
+        b.slug.localeCompare(a.slug)
+    );
 
     this.totalPages = Math.max(1, Math.ceil(this.filteredPosts.length / this.pageSize));
     if (this.currentPage > this.totalPages) {
