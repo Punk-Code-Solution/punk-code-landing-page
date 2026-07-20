@@ -146,7 +146,11 @@ async function runRadar({ maxNew = MAX_NEW_POSTS_PER_RUN } = {}) {
     skippedCount: skipped.length,
     skipped,
     errors,
-    storage: process.env.TURSO_DATABASE_URL ? 'turso+json' : 'json',
+    storage: process.env.TURSO_DATABASE_URL
+      ? process.env.VERCEL
+        ? 'turso'
+        : 'turso+json'
+      : 'json',
   };
 }
 

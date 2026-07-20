@@ -5,6 +5,11 @@ function hasTurso() {
   return Boolean(process.env.TURSO_DATABASE_URL && process.env.TURSO_AUTH_TOKEN);
 }
 
+/** Na Vercel o filesystem é somente leitura — JSON só é espelho em ambiente local. */
+function canWriteJsonStore() {
+  return !process.env.VERCEL;
+}
+
 function getTursoClient() {
   let url = process.env.TURSO_DATABASE_URL || '';
   if (url.startsWith('wss://')) {
@@ -149,21 +154,30 @@ async function upsertTurso(client, post) {
 }
 
 async function savePosts(posts) {
+  const sorted = sortPosts(posts);
+
   if (hasTurso()) {
     const client = getTursoClient();
     try {
       await ensureTursoSchema(client);
-      for (const post of posts) {
+      for (const post of sorted) {
         await upsertTurso(client, post);
       }
     } finally {
       client.close();
     }
+  } else if (!canWriteJsonStore()) {
+    throw new Error(
+      'Sem Turso na Vercel: configure TURSO_DATABASE_URL e TURSO_AUTH_TOKEN para persistir posts'
+    );
   }
 
-  // Sempre espelha no JSON (útil em local / commit / fallback)
-  writeJsonStore(sortPosts(posts));
-  return sortPosts(posts);
+  // Espelha no JSON só em local (filesystem da Vercel é read-only)
+  if (canWriteJsonStore()) {
+    writeJsonStore(sorted);
+  }
+
+  return sorted;
 }
 
 async function addPosts(newPosts) {
