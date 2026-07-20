@@ -50,6 +50,7 @@ export class PageBlogPostComponent implements OnInit, OnDestroy, AfterViewInit {
   ) {}
 
   ngOnInit() {
+    this.blogService.refresh();
     this.routeSub = this.route.paramMap
       .pipe(
         switchMap(params => {

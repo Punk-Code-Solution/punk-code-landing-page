@@ -80,6 +80,7 @@ export class PageBlogComponent implements OnInit, OnDestroy, AfterViewInit {
       this.cdr.markForCheck();
     });
 
+    this.blogService.refresh();
     this.postsSub = this.blogService.getAll$().subscribe(posts => {
       this.allPosts = posts;
       this.applyFilter(false);

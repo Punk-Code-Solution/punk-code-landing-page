@@ -1,14 +1,22 @@
-const { listPosts, getPostBySlug } = require('../blog/store');
+const { listPosts, getPostBySlug, hasTurso } = require('../blog/store');
 const { runRadar } = require('../blog/radar');
+
+function setBlogCacheHeaders(res) {
+  res.set('Cache-Control', 'no-store, max-age=0');
+}
 
 async function getPosts(req, res) {
   try {
+    setBlogCacheHeaders(res);
     const type = req.query.type;
     let posts = await listPosts();
     if (type === 'original' || type === 'radar') {
       posts = posts.filter(p => p.type === type);
     }
-    res.json({ posts });
+    res.json({
+      posts,
+      storage: hasTurso() ? 'turso' : 'json',
+    });
   } catch (error) {
     console.error('[blog] getPosts', error);
     res.status(500).json({ error: 'Falha ao listar posts do blog' });
@@ -17,11 +25,15 @@ async function getPosts(req, res) {
 
 async function getPost(req, res) {
   try {
+    setBlogCacheHeaders(res);
     const post = await getPostBySlug(req.params.slug);
     if (!post) {
       return res.status(404).json({ error: 'Post não encontrado' });
     }
-    res.json({ post });
+    res.json({
+      post,
+      storage: hasTurso() ? 'turso' : 'json',
+    });
   } catch (error) {
     console.error('[blog] getPost', error);
     res.status(500).json({ error: 'Falha ao buscar post' });
