@@ -26,15 +26,14 @@ const RSS_FEEDS = [
   },
 ];
 
-const GEMINI_MODELS = [
-  'gemini-2.5-flash-lite',
-  'gemini-2.0-flash',
-  'gemini-2.5-flash',
+const CURSOR_MODELS = [
+  'composer-2.5',
+  'gpt-5.6-sol-medium',
 ];
 
 module.exports = {
   RSS_FEEDS,
-  GEMINI_MODELS,
+  CURSOR_MODELS,
   MAX_ITEMS_PER_FEED: 2,
   MAX_NEW_POSTS_PER_RUN: 3,
   RSS_SNIPPET_MAX_CHARS: 1200,

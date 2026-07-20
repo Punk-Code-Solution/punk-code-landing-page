@@ -10,7 +10,7 @@
    ```
    CLIENT_EMAIL=...
    CLIENT_PASS=...          # senha de app do Gmail
-   GEMINI_API_KEY=...       # Google AI Studio
+   CURSOR_API_KEY=...       # Cursor Dashboard → Integrations / API Keys
    BLOG_CRON_SECRET=...     # segredo para disparar o radar
    ```
    Opcional em produção (Vercel): `TURSO_DATABASE_URL` + `TURSO_AUTH_TOKEN` para persistir posts sem redeploy.
@@ -19,9 +19,9 @@
    npm start
    ```
 
-## Blog radar (RSS + IA)
+## Blog radar (RSS + IA via Cursor)
 
-O robô lê feeds oficiais (Angular, Node.js, web.dev, GitHub Engineering, Cloudflare), gera **comentário curto da Punk Code** com Gemini e **não republica** o texto da fonte.
+O robô lê feeds oficiais (Angular, Node.js, web.dev, GitHub Engineering, Cloudflare), gera **comentário curto da Punk Code** com a **Cloud Agents API do Cursor** e **não republica** o texto da fonte.
 
 ### Rodar localmente
 
@@ -41,19 +41,27 @@ GET /api/blog/posts
 GET /api/blog/posts/:slug
 
 # gerar novos radars (protegido)
-POST /api/blog/radar/run
+GET|POST /api/blog/radar/run
 Header: x-blog-secret: <BLOG_CRON_SECRET>
+# ou Authorization: Bearer <BLOG_CRON_SECRET> (Vercel Cron)
 ```
+
+### Agendamento automático
+
+- **Vercel Cron**: segunda-feira 12:00 UTC (`Backend/vercel.json`)
+- **GitHub Actions**: workflow `.github/workflows/blog-radar.yml` (mesmo horário)
+
+Configure `CURSOR_API_KEY` nos secrets da Vercel e do GitHub. Na Vercel, o cron usa `CRON_SECRET` (gerado automaticamente) ou `BLOG_CRON_SECRET`.
 
 ### Deploy na Vercel
 
 No projeto `punk-code-api`, configure:
 
 - `CLIENT_EMAIL`, `CLIENT_PASS`
-- `GEMINI_API_KEY`, `BLOG_CRON_SECRET`
+- `CURSOR_API_KEY`, `BLOG_CRON_SECRET`
 - Recomendado: `TURSO_DATABASE_URL`, `TURSO_AUTH_TOKEN`
 
-Sem Turso, novos posts gerados na Vercel **não persistem** entre invocações — use `npm run blog:radar` local, commit do JSON e redeploy, ou configure Turso.
+Sem Turso, novos posts gerados na Vercel **não persistem** entre invocações — use o GitHub Actions (commit automático do JSON) ou configure Turso.
 
 Health check:
 
@@ -66,7 +74,7 @@ GET https://punk-code-api.vercel.app/health
 - `src/config/mailer.js` — Nodemailer
 - `src/controllers/mail.controller.js` — envio de e-mail
 - `src/routes/mail.routes.js`
-- `src/blog/` — feeds, Gemini, store, radar
+- `src/blog/` — feeds, Cursor API, store, radar
 - `src/routes/blog.routes.js`
 - `data/blog-posts.json` — seed + posts gerados
 - `src/app.js` — Express

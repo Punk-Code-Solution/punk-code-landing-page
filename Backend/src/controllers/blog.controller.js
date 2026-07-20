@@ -28,11 +28,28 @@ async function getPost(req, res) {
   }
 }
 
+function isRadarAuthorized(req) {
+  const secret = process.env.BLOG_CRON_SECRET || process.env.CRON_SECRET;
+  if (!secret) {
+    return false;
+  }
+
+  const provided = req.header('x-blog-secret') || req.query.secret;
+  if (provided === secret) {
+    return true;
+  }
+
+  const auth = req.header('authorization') || '';
+  if (auth === `Bearer ${secret}`) {
+    return true;
+  }
+
+  return false;
+}
+
 async function runRadarJob(req, res) {
   try {
-    const secret = process.env.BLOG_CRON_SECRET;
-    const provided = req.header('x-blog-secret') || req.query.secret;
-    if (!secret || provided !== secret) {
+    if (!isRadarAuthorized(req)) {
       return res.status(401).json({ error: 'Não autorizado' });
     }
 
