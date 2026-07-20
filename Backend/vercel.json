@@ -6,8 +6,16 @@
   },
   "crons": [
     {
-      "path": "/api/blog/radar/run",
-      "schedule": "0 12 * * 1"
+      "path": "/api/blog/radar/run?max=1",
+      "schedule": "0 12 * * *"
+    },
+    {
+      "path": "/api/blog/radar/run?max=1",
+      "schedule": "0 15 * * *"
+    },
+    {
+      "path": "/api/blog/radar/run?max=1",
+      "schedule": "0 21 * * *"
     }
   ],
   "rewrites": [

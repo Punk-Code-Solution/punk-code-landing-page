@@ -4,7 +4,7 @@ const { runRadar } = require('../blog/radar');
 
 async function main() {
   const maxArg = process.argv.find(a => a.startsWith('--max='));
-  const maxNew = maxArg ? Number(maxArg.split('=')[1]) : 3;
+  const maxNew = maxArg ? Number(maxArg.split('=')[1]) : 1;
 
   console.log('🛰️  Rodando radar do blog Punk Code...');
   const result = await runRadar({ maxNew });

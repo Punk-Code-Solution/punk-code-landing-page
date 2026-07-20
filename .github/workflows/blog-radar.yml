@@ -2,8 +2,12 @@ name: Blog Radar
 
 on:
   schedule:
-    # Segunda-feira 09:00 BRT (12:00 UTC)
-    - cron: '0 12 * * 1'
+    # 09:00 BRT (manhã)
+    - cron: '0 12 * * *'
+    # 12:00 BRT (meio-dia)
+    - cron: '0 15 * * *'
+    # 18:00 BRT (final da tarde)
+    - cron: '0 21 * * *'
   workflow_dispatch:
 
 jobs:
@@ -25,13 +29,13 @@ jobs:
         working-directory: Backend
         run: npm ci
 
-      - name: Gerar posts radar
+      - name: Gerar 1 post radar
         working-directory: Backend
         env:
           CURSOR_API_KEY: ${{ secrets.CURSOR_API_KEY }}
           TURSO_DATABASE_URL: ${{ secrets.TURSO_DATABASE_URL }}
           TURSO_AUTH_TOKEN: ${{ secrets.TURSO_AUTH_TOKEN }}
-        run: npm run blog:radar
+        run: npm run blog:radar -- --max=1
 
       - name: Commitar posts gerados no repositório
         run: |

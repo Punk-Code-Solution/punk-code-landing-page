@@ -46,10 +46,20 @@ Header: x-blog-secret: <BLOG_CRON_SECRET>
 # ou Authorization: Bearer <BLOG_CRON_SECRET> (Vercel Cron)
 ```
 
-### Agendamento automático
+### Agendamento automático (3 posts/dia)
 
-- **Vercel Cron**: segunda-feira 12:00 UTC (`Backend/vercel.json`)
-- **GitHub Actions**: workflow `.github/workflows/blog-radar.yml` (mesmo horário)
+Horários em horário de Brasília (BRT):
+
+| Período | Horário BRT | UTC |
+|---------|-------------|-----|
+| Manhã | 09:00 | 12:00 |
+| Meio-dia | 12:00 | 15:00 |
+| Final da tarde | 18:00 | 21:00 |
+
+Cada execução gera **1 post novo** (até 3 por dia).
+
+- **Vercel Cron**: 3 jobs diários em `Backend/vercel.json`
+- **GitHub Actions**: workflow `.github/workflows/blog-radar.yml` (mesmos horários)
 
 Configure `CURSOR_API_KEY` nos secrets da Vercel e do GitHub. Na Vercel, o cron usa `CRON_SECRET` (gerado automaticamente) ou `BLOG_CRON_SECRET`.
 

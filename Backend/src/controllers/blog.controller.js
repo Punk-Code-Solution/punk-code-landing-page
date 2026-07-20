@@ -53,8 +53,8 @@ async function runRadarJob(req, res) {
       return res.status(401).json({ error: 'Não autorizado' });
     }
 
-    const maxNew = Number(req.query.max || req.body?.max || 3);
-    const result = await runRadar({ maxNew: Number.isFinite(maxNew) ? maxNew : 3 });
+    const maxNew = Number(req.query.max || req.body?.max || 1);
+    const result = await runRadar({ maxNew: Number.isFinite(maxNew) ? maxNew : 1 });
     res.json({ ok: true, ...result });
   } catch (error) {
     console.error('[blog] runRadarJob', error);
