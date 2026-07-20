@@ -23,11 +23,5 @@
       "source": "/(.*)",
       "destination": "/src/app.js"
     }
-  ],
-  "builds": [
-    {
-      "src": "src/app.js",
-      "use": "@vercel/node"
-    }
   ]
 }
