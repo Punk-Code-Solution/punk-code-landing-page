@@ -23,7 +23,7 @@ app.get('/health', (_req, res) => {
     ok: true,
     mailConfigured,
     blog: {
-      cursorConfigured: Boolean(process.env.CURSOR_API_KEY),
+      cursorConfigured: Boolean(process.env.CURSOR_API_KEY || process.env.GEMINI_API_KEY),
       cronSecretConfigured: Boolean(process.env.BLOG_CRON_SECRET || process.env.CRON_SECRET),
       tursoConfigured: Boolean(process.env.TURSO_DATABASE_URL && process.env.TURSO_AUTH_TOKEN),
     },

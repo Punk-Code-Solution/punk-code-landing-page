@@ -3,8 +3,8 @@
     "version": "1.0.0",
     "main": "src/server.js",
     "scripts": {
-        "start": "node src/server.js",
-        "blog:radar": "node src/scripts/run-radar.js"
+        "start": "node --use-system-ca src/server.js",
+        "blog:radar": "node --use-system-ca src/scripts/run-radar.js"
     },
     "dependencies": {
         "@libsql/client": "^0.17.4",

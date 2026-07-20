@@ -127,6 +127,9 @@
 
 @media (max-width: 1024px) {
   :host {
+    --menu-button-inset: clamp(1.25rem, 4vw, 2rem);
+    --menu-logo-inset: clamp(1.25rem, 4vw, 2rem);
+
     &>header {
       display: block !important;
       width: 100%;
@@ -140,9 +143,9 @@
       &>div#logo {
         position: absolute;
         top: 50%;
-        left: 10%;
+        left: var(--menu-logo-inset);
 
-        transform: translate(-50%, -50%);
+        transform: translateY(-50%);
       }
 
       &>div#button_menu_and_close {
@@ -150,7 +153,7 @@
 
         position: absolute;
         top: 50%;
-        right: 10px;
+        right: var(--menu-button-inset);
 
         transform: translate(0, -50%);
       }
@@ -170,7 +173,7 @@
         background-color: rgba(0, 0, 0, 0.7);
 
         &>ul {
-          background-color: var(--dark-green);
+          background: linear-gradient(90deg, var(--dark-green), var(--black));
           width: 100%;
           flex-direction: column;
           justify-content: flex-start;
@@ -215,28 +218,36 @@
 }
 
 @media (max-width: 768px) {
+  :host {
+    --menu-button-inset: clamp(1.25rem, 5vw, 2rem);
+    --menu-logo-inset: clamp(1.25rem, 5vw, 2rem);
 
-  .container {
-    margin-right: 50px;
-    margin-inline-end: auto;
+    &>header {
+      &>div#logo {
+        left: var(--menu-logo-inset);
+      }
+
+      &>div#button_menu_and_close {
+        width: auto;
+        right: var(--menu-button-inset);
+      }
+    }
   }
-
-    &>div#button_menu_and_close {
-      width: 100%;
-      
-    }
-  
-
-  &>div#logo {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-  
-      transform: translate(-50%, -50%);
-    }
-
 }
 
 @media (max-width: 420px) {
-  
+  :host {
+    --menu-button-inset: 1.25rem;
+    --menu-logo-inset: 1.25rem;
+
+    &>header {
+      &>div#logo {
+        left: var(--menu-logo-inset);
+      }
+
+      &>div#button_menu_and_close {
+        right: var(--menu-button-inset);
+      }
+    }
+  }
 }

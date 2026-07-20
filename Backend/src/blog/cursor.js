@@ -12,7 +12,7 @@ function sleep(ms) {
 }
 
 function getApiKey() {
-  const key = process.env.CURSOR_API_KEY?.trim();
+  const key = (process.env.CURSOR_API_KEY || process.env.GEMINI_API_KEY)?.trim();
   if (!key) {
     throw new Error('CURSOR_API_KEY não configurada');
   }

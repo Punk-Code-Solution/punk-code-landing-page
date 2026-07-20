@@ -1,5 +1,63 @@
 [
   {
+    "slug": "radar-teste-dev-publicacao-1784550776433",
+    "title": "Radar [TESTE DEV]: publicação via API local",
+    "excerpt": "Post de teste criado em desenvolvimento para validar o fluxo front + back.",
+    "type": "radar",
+    "publishedAt": "2026-07-20",
+    "tags": [
+      "Radar",
+      "Teste",
+      "Dev"
+    ],
+    "readingMinutes": 2,
+    "body": [
+      "Este é um post de teste gerado localmente para validar a publicação no frontend em modo desenvolvimento.",
+      "Se você está vendo este texto na listagem do blog, o fluxo API -> Angular está funcionando."
+    ],
+    "takeaways": [
+      "Backend responde em localhost:3000",
+      "Frontend consome /api/blog/posts",
+      "Post aparece no topo da listagem"
+    ],
+    "source": {
+      "name": "Teste Local",
+      "url": "https://example.com/teste-dev"
+    },
+    "radarComment": "Teste de integração: o blog em dev deve buscar posts da API local e exibir este radar no topo.",
+    "aiAssisted": true
+  },
+  {
+    "slug": "radar-angular-reune-fluxos-reativos-agentes-de-ia-e-eventos-de-estado",
+    "title": "Radar: Angular reúne fluxos reativos, agentes de IA e eventos de estado",
+    "excerpt": "A edição semanal do Angular Blog destaca uma masterclass da comunidade sobre arquiteturas reativas, agentes de IA no fluxo de desenvolvimento e novas abordagens para gestão de estado.",
+    "type": "radar",
+    "publishedAt": "2026-07-20",
+    "tags": [
+      "Radar",
+      "Angular",
+      "PME",
+      "Desenvolvimento Web"
+    ],
+    "readingMinutes": 3,
+    "body": [
+      "O Angular Blog publicou, em 17 de julho de 2026, uma edição do Angular Weekly intitulada \"Reactive Flows, AI Agents, and State Events: This Week's Angular Masterclass!\", reunindo conteúdos da comunidade sobre fluxos reativos ponta a ponta, uso de agentes de IA no pipeline de desenvolvimento e plugins para eventos em SignalStore.",
+      "Para empresas que dependem de sites e sistemas web estáveis, o movimento reforça três frentes práticas: interfaces mais responsivas com arquitetura reativa, diagnóstico mais rápido de falhas assíncronas e produtividade no time com ferramentas de IA bem integradas ao fluxo de trabalho. Quem ainda opera em versões antigas ou modelos de estado fragmentados tende a acumular custo de manutenção e lentidão na entrega de novas funcionalidades.",
+      "Se você quer avaliar o impacto disso no seu portal ou sistema Angular — sem comprometer a operação do dia a dia — a Punk Code pode ajudar a mapear um plano de modernização sob medida para o seu contexto."
+    ],
+    "takeaways": [
+      "Fluxos reativos unificados tendem a melhorar performance e previsibilidade em aplicações Angular de médio porte.",
+      "Agentes de IA no desenvolvimento aceleram tarefas repetitivas, mas exigem processo e revisão para não comprometer qualidade.",
+      "Eventos de estado e monitoramento orientado a signals facilitam detectar falhas antes que afetem usuários finais."
+    ],
+    "source": {
+      "name": "Angular Blog",
+      "url": "https://blog.angular.dev/angular-weekly-july-17-2026-05440da623ad?source=rss----447683c3d9a3---4"
+    },
+    "radarComment": "Para PMEs que mantêm portais, intranets ou sistemas internos em Angular, o sinal é claro: o ecossistema está convergindo reatividade, observabilidade e automação assistida por IA. Isso não exige reescrever tudo de uma vez, mas torna mais arriscado adiar atualizações de stack e revisões de arquitetura. Na Punk Code, vemos oportunidade em evoluir bases legadas com passos incrementais — SSR, signals e monitoramento de erros — para ganhar performance e previsibilidade sem parar a operação.",
+    "aiAssisted": true
+  },
+  {
     "slug": "radar-angular-ia-e-testes-reais-para-evolucao-de-sistemas",
     "title": "Radar Angular: IA e Testes Reais para Evolução de Sistemas",
     "excerpt": "O Angular Blog destaca avanços em engenharia comunitária, codificação agente (IA) e testes de componentes com usuários reais. Inovações que impactam diretamente a qualidade e eficiência de aplicações.",
@@ -40,12 +98,6 @@
       "Angular"
     ],
     "readingMinutes": 3,
-    "aiAssisted": true,
-    "source": {
-      "name": "Angular Blog (oficial)",
-      "url": "https://blog.angular.dev/"
-    },
-    "radarComment": "Para times que mantêm sistemas Angular (como vários produtos que entregamos), acompanhar o blog oficial evita surpresa em breaking changes, SSR e tooling. Na prática, isso reduz custo de upgrade e melhora performance percebida no painel do cliente.",
     "body": [
       "Este post é uma curadoria: não republicamos artigos do Angular. Apontamos a fonte oficial e comentamos o impacto para empresas que investem em sistemas web de longo prazo.",
       "Se o seu painel ainda está em versão antiga, planejar upgrade com testes no fluxo crítico costuma ser mais barato do que empurrar a dívida por mais um ano."
@@ -54,7 +106,13 @@
       "Leia sempre a fonte oficial (link acima)",
       "Planeje upgrades com janela de teste",
       "SSR e performance afetam SEO e conversão"
-    ]
+    ],
+    "source": {
+      "name": "Angular Blog (oficial)",
+      "url": "https://blog.angular.dev/"
+    },
+    "radarComment": "Para times que mantêm sistemas Angular (como vários produtos que entregamos), acompanhar o blog oficial evita surpresa em breaking changes, SSR e tooling. Na prática, isso reduz custo de upgrade e melhora performance percebida no painel do cliente.",
+    "aiAssisted": true
   },
   {
     "slug": "site-institucional-ainda-converte-2026",
@@ -79,7 +137,8 @@
       "Primeiro viewport: marca, promessa, CTA e prova visual",
       "Cada seção deve ter um único objetivo",
       "Página de contato e projetos precisam ser fáceis de achar"
-    ]
+    ],
+    "aiAssisted": false
   },
   {
     "slug": "angular-ou-react-para-seu-negocio",
@@ -104,7 +163,8 @@
       "Angular: sistemas internos e painéis robustos",
       "React/RN: UI flexível e apps mobile",
       "Documente a decisão para o time futuro"
-    ]
+    ],
+    "aiAssisted": false
   },
   {
     "slug": "validar-ideia-sistema-antes-investir",
@@ -129,7 +189,8 @@
       "MVP = uma jornada crítica, bem feita",
       "Evite “só mais um módulo” sem evidência",
       "Combine discovery com estimativa realista"
-    ]
+    ],
+    "aiAssisted": false
   },
   {
     "slug": "checklist-seo-tecnico-sites-empresa",
@@ -154,7 +215,8 @@
       "Sitemap e robots.txt alinhados",
       "Imagens leves e com texto alternativo",
       "Meça LCP/INP no mobile real"
-    ]
+    ],
+    "aiAssisted": false
   },
   {
     "slug": "radar-web-vitals-experiencia",
@@ -168,12 +230,6 @@
       "SEO"
     ],
     "readingMinutes": 3,
-    "aiAssisted": true,
-    "source": {
-      "name": "web.dev — Core Web Vitals",
-      "url": "https://web.dev/articles/vitals"
-    },
-    "radarComment": "Para sites institucionais e landing pages, LCP e interatividade ruim afastam lead antes do formulário. Otimizar imagem, fonte e JavaScript no primeiro viewport é investimento direto em conversão — não só “nota no Lighthouse”.",
     "body": [
       "Não copiamos o guia do web.dev: resumimos a relevância de negócio e linkamos a documentação oficial para quem quiser o detalhe técnico completo.",
       "Na Punk Code, medimos essas métricas em projetos de site e ajustamos o que impacta a primeira impressão do visitante."
@@ -182,7 +238,13 @@
       "Foque no mobile real do seu público",
       "Imagem hero leve e bem dimensionada",
       "Menos JS no carregamento inicial"
-    ]
+    ],
+    "source": {
+      "name": "web.dev — Core Web Vitals",
+      "url": "https://web.dev/articles/vitals"
+    },
+    "radarComment": "Para sites institucionais e landing pages, LCP e interatividade ruim afastam lead antes do formulário. Otimizar imagem, fonte e JavaScript no primeiro viewport é investimento direto em conversão — não só “nota no Lighthouse”.",
+    "aiAssisted": true
   },
   {
     "slug": "testes-automatizados-o-que-importa-pme",
@@ -207,7 +269,8 @@
       "E2E poucos e estáveis > muitos frágeis",
       "CI rodando a cada PR evita surpresa",
       "Documente o que é crítico para o negócio"
-    ]
+    ],
+    "aiAssisted": false
   },
   {
     "slug": "mvp-ao-produto-erros-que-atrasam",
@@ -232,7 +295,8 @@
       "Demo frequente com stakeholders",
       "Mudança de escopo tem custo explícito",
       "Reserve tempo para débito técnico"
-    ]
+    ],
+    "aiAssisted": false
   },
   {
     "slug": "radar-seguranca-basica-apps-web",
@@ -245,12 +309,6 @@
       "Segurança"
     ],
     "readingMinutes": 4,
-    "aiAssisted": true,
-    "source": {
-      "name": "OWASP Top Ten",
-      "url": "https://owasp.org/www-project-top-ten/"
-    },
-    "radarComment": "Para PMEs, o risco mais comum não é “hacker cinematográfico” — é formulário sem rate limit, senha fraca, dependência vulnerável ou API aberta demais. Tratar o Top Ten como checklist de revisão periódica evita incidente caro.",
     "body": [
       "Este radar não reproduz o conteúdo OWASP. Indicamos a referência e traduzimos para decisões de produto: autenticação, validação de input, controle de acesso e atualização de pacotes.",
       "Em todo backend que entregamos, headers de segurança, validação e princípio do menor privilégio entram como padrão — não como opcional."
@@ -259,7 +317,13 @@
       "Atualize dependências com rotina",
       "Nunca confie só na validação do front",
       "Revise permissões e logs de acesso"
-    ]
+    ],
+    "source": {
+      "name": "OWASP Top Ten",
+      "url": "https://owasp.org/www-project-top-ten/"
+    },
+    "radarComment": "Para PMEs, o risco mais comum não é “hacker cinematográfico” — é formulário sem rate limit, senha fraca, dependência vulnerável ou API aberta demais. Tratar o Top Ten como checklist de revisão periódica evita incidente caro.",
+    "aiAssisted": true
   },
   {
     "slug": "o-que-aprendemos-construindo-plataformas",
@@ -273,11 +337,6 @@
       "Arquitetura"
     ],
     "readingMinutes": 7,
-    "relatedProjectIds": [
-      "app-pronto",
-      "studio-style",
-      "gamers-league"
-    ],
     "body": [
       "Construir produto real ensina o que tutorial não mostra: filas que travam, upload grande, permissões confusas e o usuário que ignora o “fluxo ideal”.",
       "No App Pronto, o desafio foi orquestrar agendamento, chat, pagamento e vídeo sem transformar o app em labirinto. No Studio & Style e Igreja 4.0, o painel precisa dar visão executiva sem sobrecarregar quem opera no dia a dia.",
@@ -289,6 +348,12 @@
       "Jobs assíncronos pedem status na UI",
       "Permissões desde o dia um",
       "Cases reais aceleram decisões de produto"
+    ],
+    "aiAssisted": false,
+    "relatedProjectIds": [
+      "app-pronto",
+      "studio-style",
+      "gamers-league"
     ]
   }
 ]
