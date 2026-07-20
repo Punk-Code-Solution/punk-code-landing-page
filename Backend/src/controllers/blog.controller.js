@@ -41,18 +41,25 @@ async function getPost(req, res) {
 }
 
 function isRadarAuthorized(req) {
-  const secret = process.env.BLOG_CRON_SECRET || process.env.CRON_SECRET;
-  if (!secret) {
+  // Aceita BLOG_CRON_SECRET (manual) e CRON_SECRET (Vercel Cron).
+  // Se só um estiver definido, usa esse; se os dois existirem e forem
+  // diferentes, qualquer um válido libera o job.
+  const secrets = [process.env.BLOG_CRON_SECRET, process.env.CRON_SECRET]
+    .map(s => (s || '').trim())
+    .filter(Boolean);
+
+  if (!secrets.length) {
     return false;
   }
 
   const provided = req.header('x-blog-secret') || req.query.secret;
-  if (provided === secret) {
+  if (provided && secrets.includes(provided)) {
     return true;
   }
 
   const auth = req.header('authorization') || '';
-  if (auth === `Bearer ${secret}`) {
+  const bearer = auth.startsWith('Bearer ') ? auth.slice(7).trim() : '';
+  if (bearer && secrets.includes(bearer)) {
     return true;
   }
 
