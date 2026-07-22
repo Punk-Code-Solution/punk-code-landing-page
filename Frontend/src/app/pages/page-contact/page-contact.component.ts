@@ -9,11 +9,10 @@ import { SchemaService } from '../../services/schema.services';
 import Swal from 'sweetalert2';
 
 @Component({
-  selector: 'page-contact',
-  standalone: true,
-  imports: [NavbarComponent, FooterComponent, FormsModule, CommonModule, NgClass],
-  templateUrl: './page-contact.component.html',
-  styleUrl: './page-contact.component.css',
+    selector: 'page-contact',
+    imports: [NavbarComponent, FooterComponent, FormsModule, CommonModule, NgClass],
+    templateUrl: './page-contact.component.html',
+    styleUrl: './page-contact.component.css'
 })
 export class PageContactComponent implements OnInit, OnDestroy {
   private readonly schemaId = 'contact-schema';

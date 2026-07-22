@@ -31,11 +31,10 @@ export interface ProjectItem {
 }
 
 @Component({
-  selector: 'page-projects',
-  standalone: true,
-  imports: [NavbarComponent, FooterComponent, CommonModule, NgClass, NgFor],
-  templateUrl: './page-projects.component.html',
-  styleUrl: './page-projects.component.css',
+    selector: 'page-projects',
+    imports: [NavbarComponent, FooterComponent, CommonModule, NgClass, NgFor],
+    templateUrl: './page-projects.component.html',
+    styleUrl: './page-projects.component.css'
 })
 export class PageProjectsComponent implements OnInit, OnDestroy, AfterViewInit {
   private readonly schemaId = 'projects-schema';

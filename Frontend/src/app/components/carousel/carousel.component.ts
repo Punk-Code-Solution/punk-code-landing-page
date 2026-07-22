@@ -3,11 +3,10 @@ import { first } from 'rxjs';
 import { WINDOW } from '../../tokens';
 
 @Component({
-  selector: 'carousel',
-  standalone: true,
-  imports: [],
-  templateUrl: './carousel.component.html',
-  styleUrl: './carousel.component.css'
+    selector: 'carousel',
+    imports: [],
+    templateUrl: './carousel.component.html',
+    styleUrl: './carousel.component.css'
 })
 export class CarouselComponent implements OnInit, OnDestroy {
   private window = inject(WINDOW);

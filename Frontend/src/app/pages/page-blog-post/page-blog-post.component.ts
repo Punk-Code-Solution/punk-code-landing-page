@@ -19,11 +19,10 @@ import { BlogPost } from '../../models/blog-post.model';
 import { Subscription, switchMap, of } from 'rxjs';
 
 @Component({
-  selector: 'page-blog-post',
-  standalone: true,
-  imports: [NavbarComponent, FooterComponent, CommonModule, NgClass, RouterLink],
-  templateUrl: './page-blog-post.component.html',
-  styleUrl: './page-blog-post.component.css',
+    selector: 'page-blog-post',
+    imports: [NavbarComponent, FooterComponent, CommonModule, NgClass, RouterLink],
+    templateUrl: './page-blog-post.component.html',
+    styleUrl: './page-blog-post.component.css'
 })
 export class PageBlogPostComponent implements OnInit, OnDestroy, AfterViewInit {
   private readonly schemaId = 'blog-post-schema';

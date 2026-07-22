@@ -8,18 +8,17 @@ import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { SchemaService } from '../../services/schema.services';
 
 @Component({
-  selector: 'page-services',
-  standalone: true,
-  imports: [
-    NavbarComponent,
-    ServiceSolutionComponent,
-    FooterComponent,
-    NgFor,
-    NgClass,
-    CommonModule
-  ],
-  templateUrl: './page-services.component.html',
-  styleUrl: './page-services.component.css'
+    selector: 'page-services',
+    imports: [
+        NavbarComponent,
+        ServiceSolutionComponent,
+        FooterComponent,
+        NgFor,
+        NgClass,
+        CommonModule
+    ],
+    templateUrl: './page-services.component.html',
+    styleUrl: './page-services.component.css'
 })
 export class PageServicesComponent implements OnInit, OnDestroy {
 

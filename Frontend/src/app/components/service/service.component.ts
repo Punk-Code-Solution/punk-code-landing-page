@@ -3,11 +3,10 @@ import { CommonModule, isPlatformBrowser } from '@angular/common';
 
 
 @Component({
-  selector: 'service',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './service.component.html',
-  styleUrl: './service.component.css'
+    selector: 'service',
+    imports: [CommonModule],
+    templateUrl: './service.component.html',
+    styleUrl: './service.component.css'
 })
 export class ServiceComponent implements OnInit {
 

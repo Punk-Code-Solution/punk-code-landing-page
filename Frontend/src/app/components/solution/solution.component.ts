@@ -2,13 +2,12 @@ import { Component, HostListener, ElementRef, ViewChild, OnInit, Inject, PLATFOR
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 
 @Component({
-  selector: 'solution',
-  standalone: true,
-  imports: [
-    CommonModule
-  ],
-  templateUrl: './solution.component.html',
-  styleUrl: './solution.component.css'
+    selector: 'solution',
+    imports: [
+        CommonModule
+    ],
+    templateUrl: './solution.component.html',
+    styleUrl: './solution.component.css'
 })
 export class SolutionComponent implements OnInit {
 

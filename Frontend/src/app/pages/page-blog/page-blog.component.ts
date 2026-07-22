@@ -21,11 +21,10 @@ import { Subscription } from 'rxjs';
 type BlogFilter = BlogPostType | 'all';
 
 @Component({
-  selector: 'page-blog',
-  standalone: true,
-  imports: [NavbarComponent, FooterComponent, CommonModule, NgClass, RouterLink],
-  templateUrl: './page-blog.component.html',
-  styleUrl: './page-blog.component.css',
+    selector: 'page-blog',
+    imports: [NavbarComponent, FooterComponent, CommonModule, NgClass, RouterLink],
+    templateUrl: './page-blog.component.html',
+    styleUrl: './page-blog.component.css'
 })
 export class PageBlogComponent implements OnInit, OnDestroy, AfterViewInit {
   private readonly schemaId = 'blog-schema';

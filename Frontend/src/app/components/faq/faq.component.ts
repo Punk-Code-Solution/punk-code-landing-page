@@ -2,11 +2,10 @@ import { Component, HostListener, OnInit, ElementRef, Inject, PLATFORM_ID } from
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 
 @Component({
-  selector: 'app-faq',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './faq.component.html',
-  styleUrls: ['./faq.component.css'],
+    selector: 'app-faq',
+    imports: [CommonModule],
+    templateUrl: './faq.component.html',
+    styleUrls: ['./faq.component.css']
 })
 export class FaqComponent implements OnInit {
 

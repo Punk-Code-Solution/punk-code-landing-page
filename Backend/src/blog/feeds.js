@@ -26,14 +26,19 @@ const RSS_FEEDS = [
   },
 ];
 
-const CURSOR_MODELS = [
-  'composer-2.5',
-  'gpt-5.6-sol-medium',
+// Ordem: mais barato / free-tier primeiro. Se um esgotar cota, o radar tenta o próximo.
+const GEMINI_MODELS = [
+  'gemini-2.5-flash-lite',
+  'gemini-2.0-flash-lite',
+  'gemini-2.0-flash',
+  'gemini-2.5-flash',
+  'gemini-1.5-flash',
+  'gemini-1.5-flash-8b',
 ];
 
 module.exports = {
   RSS_FEEDS,
-  CURSOR_MODELS,
+  GEMINI_MODELS,
   MAX_ITEMS_PER_FEED: 2,
   MAX_NEW_POSTS_PER_RUN: 1,
   RSS_SNIPPET_MAX_CHARS: 1200,

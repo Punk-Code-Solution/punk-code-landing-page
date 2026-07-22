@@ -10,7 +10,7 @@
    ```
    CLIENT_EMAIL=...
    CLIENT_PASS=...          # senha de app do Gmail
-   CURSOR_API_KEY=...       # Cursor Dashboard → Integrations / API Keys
+   GEMINI_API_KEY=...       # Google AI Studio
    BLOG_CRON_SECRET=...     # segredo para disparar o radar
    ```
    Opcional em produção (Vercel): `TURSO_DATABASE_URL` + `TURSO_AUTH_TOKEN` para persistir posts sem redeploy.
@@ -19,9 +19,11 @@
    npm start
    ```
 
-## Blog radar (RSS + IA via Cursor)
+## Blog radar (RSS + Gemini)
 
-O robô lê feeds oficiais (Angular, Node.js, web.dev, GitHub Engineering, Cloudflare), gera **comentário curto da Punk Code** com a **Cloud Agents API do Cursor** e **não republica** o texto da fonte.
+O robô lê feeds oficiais (Angular, Node.js, web.dev, GitHub Engineering, Cloudflare), gera **comentário curto da Punk Code** com **Gemini** e **não republica** o texto da fonte.
+
+Se um modelo esgotar cota (429), o radar tenta automaticamente o próximo da lista (`GEMINI_MODELOS` ou padrão flash/lite).
 
 ### Rodar localmente
 
@@ -61,14 +63,14 @@ Cada execução gera **1 post novo** (até 3 por dia).
 - **Vercel Cron**: 3 jobs diários em `Backend/vercel.json`
 - **GitHub Actions**: workflow `.github/workflows/blog-radar.yml` (mesmos horários)
 
-Configure `CURSOR_API_KEY` nos secrets da Vercel e do GitHub. Na Vercel, o cron usa `CRON_SECRET` (gerado automaticamente) ou `BLOG_CRON_SECRET`.
+Configure `GEMINI_API_KEY` (e Turso) nos secrets da Vercel e do GitHub. Na Vercel, o cron usa `CRON_SECRET` (gerado automaticamente) ou `BLOG_CRON_SECRET`.
 
 ### Deploy na Vercel
 
 No projeto `punk-code-api`, configure:
 
 - `CLIENT_EMAIL`, `CLIENT_PASS`
-- `CURSOR_API_KEY`, `BLOG_CRON_SECRET`
+- `GEMINI_API_KEY`, `BLOG_CRON_SECRET`
 - Recomendado: `TURSO_DATABASE_URL`, `TURSO_AUTH_TOKEN`
 
 Sem Turso, novos posts gerados na Vercel **não persistem** entre invocações — use o GitHub Actions (commit automático do JSON) ou configure Turso.
@@ -121,7 +123,7 @@ Evento: **`email.received`**.
 - `src/controllers/webhook.controller.js` — Resend Inbound
 - `src/routes/mail.routes.js`
 - `src/routes/webhook.routes.js`
-- `src/blog/` — feeds, Cursor API, store, radar
+- `src/blog/` — feeds, Gemini, store, radar
 - `src/routes/blog.routes.js`
 - `data/blog-posts.json` — seed + posts gerados
 - `src/app.js` — Express

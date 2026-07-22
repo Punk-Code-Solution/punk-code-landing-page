@@ -2,11 +2,10 @@ import { Component, Input } from '@angular/core';
 import { NgFor } from '@angular/common';
 
 @Component({
-  selector: 'service-solution',
-  standalone: true,
-  imports: [NgFor],
-  templateUrl: './service-solution.component.html',
-  styleUrl: './service-solution.component.css'
+    selector: 'service-solution',
+    imports: [NgFor],
+    templateUrl: './service-solution.component.html',
+    styleUrl: './service-solution.component.css'
 })
 export class ServiceSolutionComponent {
 

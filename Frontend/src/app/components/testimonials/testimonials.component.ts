@@ -9,13 +9,12 @@ interface Testimony {
 }
 
 @Component({
-  selector: 'testimonials',
-  standalone: true,
-  imports: [
-    CarouselComponent
-  ],
-  templateUrl: './testimonials.component.html',
-  styleUrl: './testimonials.component.css'
+    selector: 'testimonials',
+    imports: [
+        CarouselComponent
+    ],
+    templateUrl: './testimonials.component.html',
+    styleUrl: './testimonials.component.css'
 })
 export class TestimonialsComponent implements OnInit {
   private window = inject(WINDOW);

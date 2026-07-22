@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { PageServicesComponent } from './page-services.component';
+import { testingProviders } from '../../../testing/testing-providers';
 
 describe('PageServicesComponent', () => {
   let component: PageServicesComponent;
@@ -8,9 +8,9 @@ describe('PageServicesComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PageServicesComponent]
-    })
-    .compileComponents();
+      imports: [PageServicesComponent],
+      providers: testingProviders,
+    }).compileComponents();
 
     fixture = TestBed.createComponent(PageServicesComponent);
     component = fixture.componentInstance;

@@ -1,7 +1,7 @@
 const Parser = require('rss-parser');
 const { RSS_FEEDS, MAX_ITEMS_PER_FEED, MAX_NEW_POSTS_PER_RUN } = require('./feeds');
 const { stripHtml, slugify, uniqueSlug, nowIso } = require('./utils');
-const { generateRadarDraft } = require('./cursor');
+const { generateRadarDraft } = require('./gemini');
 const { listPosts, addPosts, sourceUrlExists } = require('./store');
 
 const parser = new Parser({
@@ -125,13 +125,13 @@ async function runRadar({ maxNew = MAX_NEW_POSTS_PER_RUN } = {}) {
         created.push(post);
       } catch (error) {
         errors.push({ link: item.link, fonte: item.fonte, error: error.message });
-        if (/unauthorized|invalid api key|CURSOR_API_KEY/i.test(error.message || '')) {
+        if (/API key not valid|API_KEY_INVALID|invalid api key|GEMINI_API_KEY|permission denied/i.test(error.message || '')) {
           break;
         }
       }
     }
 
-    if (errors.some(e => /unauthorized|invalid api key|CURSOR_API_KEY/i.test(e.error || ''))) {
+    if (errors.some(e => /API key not valid|API_KEY_INVALID|invalid api key|GEMINI_API_KEY|permission denied/i.test(e.error || ''))) {
       break;
     }
   }

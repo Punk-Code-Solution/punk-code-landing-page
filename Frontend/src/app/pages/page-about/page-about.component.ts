@@ -6,16 +6,15 @@ import { CommonModule, isPlatformBrowser, NgClass } from '@angular/common';
 import { SchemaService } from '../../services/schema.services';
 
 @Component({
-  selector: 'page-about',
-  standalone: true,
-  imports: [
-    NavbarComponent,
-    FooterComponent,
-    CommonModule,
-    NgClass
-  ],
-  templateUrl: './page-about.component.html',
-  styleUrl: './page-about.component.css'
+    selector: 'page-about',
+    imports: [
+        NavbarComponent,
+        FooterComponent,
+        CommonModule,
+        NgClass
+    ],
+    templateUrl: './page-about.component.html',
+    styleUrl: './page-about.component.css'
 })
 export class PageAboutComponent implements OnInit, OnDestroy {
   private readonly schemaId = 'about-schema';
