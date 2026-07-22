@@ -3,11 +3,12 @@ const express = require('express');
 const cors = require('cors');
 const mailRoutes = require('./routes/mail.routes');
 const blogRoutes = require('./routes/blog.routes');
+const webhookRoutes = require('./routes/webhook.routes');
 const { assertMailConfigured } = require('./config/mailer');
 
 const app = express();
 app.use(cors());
-app.use(express.json());
+app.use(express.json({ limit: '2mb' }));
 
 app.get('/health', (_req, res) => {
   let mailConfigured = false;
@@ -22,6 +23,13 @@ app.get('/health', (_req, res) => {
   res.json({
     ok: true,
     mailConfigured,
+    inbound: {
+      resendConfigured: Boolean(process.env.RESEND_API_KEY),
+      webhookTokenConfigured: Boolean(process.env.RESEND_WEBHOOK_TOKEN),
+      forwardConfigured: Boolean(
+        process.env.INBOUND_FORWARD_TO || process.env.CLIENT_EMAIL,
+      ),
+    },
     blog: {
       cursorConfigured: Boolean(process.env.CURSOR_API_KEY || process.env.GEMINI_API_KEY),
       cronSecretConfigured: Boolean(process.env.BLOG_CRON_SECRET || process.env.CRON_SECRET),
@@ -31,6 +39,7 @@ app.get('/health', (_req, res) => {
 });
 
 app.use('/', mailRoutes);
+app.use('/', webhookRoutes);
 app.use('/api/blog', blogRoutes);
 
 if (!process.env.VERCEL) {

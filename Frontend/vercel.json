@@ -1,6 +1,10 @@
 {
   "rewrites": [
     {
+      "source": "/webhook/email",
+      "destination": "https://punk-code-api.vercel.app/webhook/email"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }

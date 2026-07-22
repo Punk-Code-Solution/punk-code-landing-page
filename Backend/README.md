@@ -79,11 +79,48 @@ Health check:
 GET https://punk-code-api.vercel.app/health
 ```
 
+## Resend Inbound (receber e-mail do domínio)
+
+Recebe `email.received` do Resend, busca o corpo na API e encaminha para `INBOUND_FORWARD_TO` (ou `CLIENT_EMAIL`) via Gmail SMTP já usado no contato.
+
+### Variáveis (Vercel do projeto `punk-code-api`)
+
+| Variável | Uso |
+|----------|-----|
+| `RESEND_API_KEY` | Buscar conteúdo do e-mail recebido |
+| `RESEND_WEBHOOK_TOKEN` | Token na query `?token=` (recomendado) |
+| `INBOUND_FORWARD_TO` | Destino do forward (ex.: seu Hotmail) |
+| `CLIENT_EMAIL` / `CLIENT_PASS` | SMTP Gmail para enviar o forward |
+
+### URL no painel Resend
+
+Preferencial (API direta):
+
+```text
+https://punk-code-api.vercel.app/webhook/email?token=<RESEND_WEBHOOK_TOKEN>
+```
+
+Ou via rewrite do site (Frontend `vercel.json`):
+
+```text
+https://www.punkcodesolution.com.br/webhook/email?token=<RESEND_WEBHOOK_TOKEN>
+```
+
+Evento: **`email.received`**.
+
+### Teste
+
+1. Deploy do Backend + Frontend com o rewrite.
+2. Envie um e-mail para `teste@inbound.punkcodesolution.com.br`.
+3. Confira o forward em `INBOUND_FORWARD_TO`.
+
 ## Estrutura
 
 - `src/config/mailer.js` — Nodemailer
 - `src/controllers/mail.controller.js` — envio de e-mail
+- `src/controllers/webhook.controller.js` — Resend Inbound
 - `src/routes/mail.routes.js`
+- `src/routes/webhook.routes.js`
 - `src/blog/` — feeds, Cursor API, store, radar
 - `src/routes/blog.routes.js`
 - `data/blog-posts.json` — seed + posts gerados
