@@ -8,6 +8,8 @@
   flex-direction: column;
   justify-content: center;
   overflow: hidden;
+  position: relative;
+  max-width: 100%;
 }
 
 .solutions-section::before {
@@ -58,11 +60,13 @@
 /* Solutions Grid */
 .solutions-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
   gap: 2rem;
   max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
   padding: 0 2rem;
+  box-sizing: border-box;
 }
 
 /* Solution Cards */

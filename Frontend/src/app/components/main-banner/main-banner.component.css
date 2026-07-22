@@ -26,13 +26,13 @@
 
       &>.button {
         padding: 10px 20px;
-        color: var(--light-green);
-        font-size: clamp(1.3rem, 80vw, 1.5rem)1.;
+        font-size: clamp(1rem, 4vw, 1.5rem);
         font-family: var(--quantico-font);
         background: #F2F6EE;
         color: #0D4318;
         border-radius: 20px 0 20px 0;
         border: 1px solid var(--light-green);
+        max-width: 100%;
 
         &:hover {
           filter: brightness(0.95);
@@ -64,12 +64,24 @@
 @media (max-width: 1200px) {
   :host {
     position: static;
+    overflow-x: clip;
+    max-width: 100%;
 
     &>section {
       justify-content: center;
+      max-width: 100%;
 
       &>div {
-        width: 90%;
+        width: min(90%, 100%);
+        max-width: 100%;
+        padding-inline: 0.5rem;
+        box-sizing: border-box;
+
+        &>h1,
+        &>p {
+          max-width: 100%;
+          overflow-wrap: anywhere;
+        }
       }
     }
 

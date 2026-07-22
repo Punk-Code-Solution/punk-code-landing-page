@@ -10,10 +10,8 @@
 
 html {
   font-size: 18px;
-}
-
-html {
   overflow-x: hidden;
+  max-width: 100%;
 }
 
 button {
@@ -57,7 +55,8 @@ li {
 .gradient-background {
   position: relative;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
+  max-width: 100%;
   overflow: hidden;
   background: linear-gradient(9deg, rgba(13, 67, 24, 1) 0%, rgba(13, 115, 47, 1) 50%, rgba(6, 78, 59, 1) 100%);
   background-size: 600% 600%;
@@ -168,10 +167,18 @@ li {
 
 body {
   width: 100%;
+  max-width: 100%;
   min-height: 100vh;
-
+  overflow-x: hidden;
   background-color: var(--light-green);
   font-family: var(--quantico-font);
+}
+
+app-root {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 h1 {
@@ -205,8 +212,24 @@ p {
 .container {
   max-width: 1500px;
   width: 95%;
-
   margin: 0 auto;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: min(95%, 100%);
+    padding-inline: 0.75rem;
+  }
+
+  h1 {
+    font-size: clamp(1.75rem, 8vw, 2.5rem);
+    overflow-wrap: anywhere;
+  }
+
+  h2 {
+    font-size: clamp(1.5rem, 6vw, 2rem);
+  }
 }
 
 /* General settings - End */
