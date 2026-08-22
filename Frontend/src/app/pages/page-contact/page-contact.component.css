@@ -155,6 +155,24 @@
   transform: translateX(2px) rotate(15deg);
 }
 
+.whatsapp-contact-btn {
+  display: block;
+  width: 100%;
+  margin-top: 1rem;
+  padding: 12px 32px;
+  font-size: 1.05rem;
+  font-family: var(--quantico-font);
+  text-align: center;
+  color: var(--dark-green);
+  border: 2px solid var(--dark-green);
+  border-radius: 20px 0 20px 0;
+  box-sizing: border-box;
+}
+
+.whatsapp-contact-btn:hover {
+  background: rgba(13, 67, 24, 0.08);
+}
+
 .submit-button:hover {
   background-color: var(--button-hover-bg);
   transform: translateY(-2px);
@@ -162,7 +180,7 @@
 }
 
 .informacoes-contato {
-  background: linear-gradient(9deg, rgba(13, 67, 24, 1) 0%, rgba(13, 115, 47, 1) 50%, rgba(6, 78, 59, 1) 100%);
+  background: var(--dark-green);
   /* Changed: More pronounced gradient angle for Image 2 */
   color: var(--light-green);
   padding: 40px;

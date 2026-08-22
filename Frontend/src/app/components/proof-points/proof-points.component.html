@@ -1,0 +1,10 @@
+<section class="proof">
+  <div class="container">
+    <h2 revealOnScroll>{{ title }}</h2>
+    <ul>
+      @for (point of points; track point; let i = $index) {
+        <li revealOnScroll [revealDelay]="0.08 * (i + 1) + 's'">{{ point }}</li>
+      }
+    </ul>
+  </div>
+</section>

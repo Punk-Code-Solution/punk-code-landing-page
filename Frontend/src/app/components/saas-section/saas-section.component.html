@@ -1,0 +1,67 @@
+<section id="produtos" class="showcase">
+  <div class="wrap">
+    <h2 revealOnScroll>Produtos prontos para assinar</h2>
+    <p class="sub" revealOnScroll revealDelay="0.08s">
+      Quatro soluções pensadas para rotinas reais — igreja, estúdio, marketplace de serviços e
+      ligas gamer.
+    </p>
+    <div class="cards">
+      @for (product of products; track product.id; let i = $index) {
+        <a
+          class="card"
+          [href]="'#' + product.anchor"
+          revealOnScroll
+          [revealDelay]="0.08 * (i + 1) + 's'"
+        >
+          <h3>{{ product.name }}</h3>
+          <p>{{ product.cardLine }}</p>
+          <span class="card-cta">{{ product.cardCta }}</span>
+        </a>
+      }
+    </div>
+  </div>
+</section>
+
+@for (product of products; track product.id) {
+  <section
+    [id]="product.anchor"
+    class="detail"
+    [class.theme-light]="product.theme === 'light'"
+    [class.theme-dark]="product.theme === 'dark'"
+  >
+    <div class="wrap detail-grid">
+      <div class="detail-copy reveal-from-left" revealOnScroll>
+        <p class="product-name">{{ product.name }}</p>
+        <h2>{{ product.headline }}</h2>
+        <ul class="features">
+          @for (feature of product.features; track feature) {
+            <li>{{ feature }}</li>
+          }
+        </ul>
+        <div class="cta-row">
+          <a
+            class="btn btn-primary"
+            [href]="product.primaryCta.href"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {{ product.primaryCta.label }}
+          </a>
+          @if (product.secondaryCta) {
+            <a
+              class="btn btn-secondary"
+              [href]="product.secondaryCta.href"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {{ product.secondaryCta.label }}
+            </a>
+          }
+        </div>
+      </div>
+      <div class="detail-media reveal-from-right" revealOnScroll revealDelay="0.12s">
+        <img [src]="product.imageSrc" [alt]="product.imageAlt" loading="lazy" />
+      </div>
+    </div>
+  </section>
+}

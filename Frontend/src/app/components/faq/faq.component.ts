@@ -2,15 +2,53 @@ import { Component, HostListener, OnInit, ElementRef, Inject, PLATFORM_ID } from
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 
 @Component({
-    selector: 'app-faq',
-    imports: [CommonModule],
-    templateUrl: './faq.component.html',
-    styleUrls: ['./faq.component.css']
+  selector: 'app-faq',
+  imports: [CommonModule],
+  templateUrl: './faq.component.html',
+  styleUrls: ['./faq.component.css'],
 })
 export class FaqComponent implements OnInit {
-
   isAnimated = false;
   animatedItems: boolean[] = [];
+
+  faqs = [
+    {
+      question: 'Qual a diferença entre um produto pronto e um projeto sob medida?',
+      answer:
+        'Os produtos prontos (como Igreja 4.0 ou Studio & Style) você assina e começa a usar com planos claros. O sob medida é quando o seu processo não cabe em um produto padrão — aí desenhamos e construímos a solução exclusiva para o seu negócio.',
+      open: true,
+    },
+    {
+      question: 'Quanto tempo leva para começar a usar um produto pronto?',
+      answer:
+        'Na maioria dos casos, após alinharmos o plano e o acesso, você já consegue operar em poucos dias. O tempo exato depende do tamanho da equipe e do volume de dados que você quiser organizar no início.',
+      open: false,
+    },
+    {
+      question: 'O que inclui o diagnóstico de um projeto sob medida?',
+      answer:
+        'Mapeamos o problema de negócio, os gargalos da operação e o que precisa mudar. Com isso, montamos um escopo objetivo: o que será entregue, em que ordem e com qual expectativa de resultado.',
+      open: false,
+    },
+    {
+      question: 'Como funciona o suporte depois da entrega ou da assinatura?',
+      answer:
+        'Você conta com acompanhamento contínuo para manter a operação estável. Ajustes e evoluções entram conforme o plano contratado ou como evolução combinada do projeto.',
+      open: false,
+    },
+    {
+      question: 'Posso migrar de planilha ou de outro sistema?',
+      answer:
+        'Sim. Avaliamos o que você já usa, o que vale a pena trazer e como fazer a transição com o menor impacto no dia a dia da equipe.',
+      open: false,
+    },
+    {
+      question: 'O Finanças News está à venda?',
+      answer:
+        'Não. O Finanças News é um projeto que desenvolvemos — um case real. Se você quiser algo parecido para o seu negócio, fazemos sob medida.',
+      open: false,
+    },
+  ];
 
   constructor(
     private el: ElementRef,
@@ -19,14 +57,12 @@ export class FaqComponent implements OnInit {
 
   ngOnInit() {
     this.checkScroll();
-    // Initialize animated items array
     this.animatedItems = new Array(this.faqs.length).fill(false);
   }
 
   @HostListener('window:scroll', ['$event'])
   @HostListener('window:resize', ['$event'])
   checkScroll() {
-    // Check if we're in a browser environment
     if (!isPlatformBrowser(this.platformId)) {
       return;
     }
@@ -36,7 +72,6 @@ export class FaqComponent implements OnInit {
 
     if (scrollPosition > componentPosition) {
       this.isAnimated = true;
-      // Animate items with staggered delay
       this.animateItems();
     }
   }
@@ -45,37 +80,9 @@ export class FaqComponent implements OnInit {
     this.faqs.forEach((_, index) => {
       setTimeout(() => {
         this.animatedItems[index] = true;
-      }, index * 200); // 200ms delay between each item
+      }, index * 200);
     });
   }
-
-  faqs = [
-    {
-      question: 'Quais tipos de sites vocês desenvolvem?',
-      answer:
-        'Desenvolvemos sites institucionais profissionais voltados para empresas de diversos segmentos. Nosso foco é criar páginas modernas, responsivas e otimizadas para buscadores (SEO), com ênfase em apresentar sua marca, serviços e diferenciais de forma clara e eficaz.',
-      open: true,
-    },
-    {
-      question: 'Quanto tempo leva para desenvolver um site?',
-      answer:
-        'O tempo de desenvolvimento de um site pode variar, depende do escopo do projeto, quantidade de páginas e prontidão dos materiais fornecidos pelo cliente.',
-      open: false,
-    },
-    {
-      question: 'O site será adaptado para celulares e tablets?',
-      answer:
-        'Todos os nossos sites são desenvolvidos com design responsivo, garantindo uma boa experiência de navegação em dispositivos móveis, como smartphones e tablets.',
-      open: false,
-    },
-    {
-      question:
-        'Posso solicitar novas funcionalidades depois que o site estiver pronto?',
-      answer:
-        'Podemos adicionar novas seções, formulários, integrações ou qualquer funcionalidade que sua empresa precise, mesmo após o site estar publicado. Essas solicitações são tratadas dentro do nosso suporte ou como serviços adicionais, dependendo da complexidade.',
-      open: false,
-    },
-  ];
 
   toggle(index: number) {
     this.faqs = this.faqs.map((faq, i) => ({

@@ -1,0 +1,144 @@
+:host {
+  display: block;
+}
+
+.wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-inline: 1.5rem;
+}
+
+.services {
+  background: var(--dark-green);
+  color: var(--light-green);
+  padding: 5rem 0;
+}
+
+.services h2 {
+  font-size: clamp(1.55rem, 3.2vw, 2.35rem);
+  line-height: 1.25;
+  margin: 0 0 2.25rem;
+  max-width: 42rem;
+}
+
+.offers {
+  display: grid;
+  gap: 1.25rem;
+  margin-bottom: 3rem;
+}
+
+.offers article {
+  background: rgba(242, 246, 238, 0.06);
+  border: 1px solid rgba(242, 246, 238, 0.18);
+  border-radius: 20px;
+  padding: 1.5rem;
+}
+
+.offers h3 {
+  font-size: 1.25rem;
+  margin: 0 0 0.55rem;
+}
+
+.offers p {
+  margin: 0;
+  line-height: 1.5;
+  opacity: 0.95;
+}
+
+.process-title {
+  font-size: 1.45rem;
+  margin: 0 0 1.35rem;
+}
+
+.process {
+  display: grid;
+  gap: 1.15rem;
+  margin: 0 0 2rem;
+  padding: 0;
+  list-style: none;
+}
+
+.process li {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  background: rgba(242, 246, 238, 0.05);
+  border-radius: 16px;
+  padding: 1.1rem;
+}
+
+.step-num {
+  flex: 0 0 2.35rem;
+  height: 2.35rem;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--light-green);
+  border-radius: 50%;
+  font-weight: 700;
+}
+
+.process h4 {
+  margin: 0 0 0.35rem;
+  font-size: 1.1rem;
+}
+
+.process p {
+  margin: 0;
+  line-height: 1.45;
+  opacity: 0.95;
+}
+
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.3rem;
+  font-family: var(--quantico-font);
+  background: var(--light-green);
+  color: var(--dark-green);
+  border: 1px solid var(--light-green);
+  border-radius: 20px 0 20px 0;
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--light-green);
+}
+
+.qa-pack {
+  background: var(--dark-green);
+  color: var(--light-green);
+  padding: 4rem 0;
+}
+
+.qa-pack h2 {
+  font-size: clamp(1.45rem, 3vw, 2.1rem);
+  margin: 0 0 0.85rem;
+  max-width: 36rem;
+}
+
+.qa-pack p {
+  margin: 0 0 1.5rem;
+  max-width: 36rem;
+  line-height: 1.5;
+}
+
+@media (min-width: 768px) {
+  .offers {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .process {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1100px) {
+  .process {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

@@ -1,0 +1,45 @@
+<section id="servicos" class="services">
+  <div class="wrap">
+    <h2 revealOnScroll>Quando o produto pronto não cobre o seu processo, construímos o seu.</h2>
+    <div class="offers">
+      @for (offer of offers; track offer.id; let i = $index) {
+        <article revealOnScroll [revealDelay]="0.08 * (i + 1) + 's'">
+          <h3>{{ offer.title }}</h3>
+          <p>{{ offer.description }}</p>
+        </article>
+      }
+    </div>
+
+    <h3 class="process-title" revealOnScroll>Como trabalhamos</h3>
+    <ol class="process">
+      @for (step of steps; track step.step; let i = $index) {
+        <li revealOnScroll [revealDelay]="0.08 * (i + 1) + 's'">
+          <span class="step-num">{{ step.step }}</span>
+          <div>
+            <h4>{{ step.title }}</h4>
+            <p>{{ step.description }}</p>
+          </div>
+        </li>
+      }
+    </ol>
+
+    <div class="cta-row" revealOnScroll revealDelay="0.1s">
+      <a class="btn" [href]="specialistHref" target="_blank" rel="noopener noreferrer">
+        Falar com um especialista
+      </a>
+      <a class="btn btn-outline" href="#contato">Solicitar orçamento</a>
+    </div>
+  </div>
+</section>
+
+<section class="qa-pack">
+  <div class="wrap reveal-scale" revealOnScroll>
+    <h2>Seu sistema já existe — mas está seguro e estável?</h2>
+    <p>
+      O QA Pack faz um diagnóstico completo: pontos fracos, riscos e plano de ação objetivo.
+    </p>
+    <a class="btn" [href]="auditHref" target="_blank" rel="noopener noreferrer">
+      Quero uma auditoria
+    </a>
+  </div>
+</section>

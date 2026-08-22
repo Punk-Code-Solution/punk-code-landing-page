@@ -6,6 +6,8 @@ import { environment } from '../../../environment/environment';
 import { FormsModule } from '@angular/forms';
 import { CommonModule, isPlatformBrowser, NgClass } from '@angular/common';
 import { SchemaService } from '../../services/schema.services';
+import { INTEREST_OPTIONS } from '../../data/services-offer';
+import { whatsappUrl } from '../../data/whatsapp';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -17,12 +19,17 @@ import Swal from 'sweetalert2';
 export class PageContactComponent implements OnInit, OnDestroy {
   private readonly schemaId = 'contact-schema';
 
+  readonly interestOptions = INTEREST_OPTIONS;
+  readonly whatsappHref = whatsappUrl(
+    'Olá! Vim pela página de contato da Punk Code e quero conversar.'
+  );
+
   nome = '';
   email = '';
   mensagem = '';
   telefone = '';
   empresa = '';
-  servico = 'web';
+  servico = '';
   isLoading = false;
 
   isAnimated = false;
@@ -69,7 +76,7 @@ export class PageContactComponent implements OnInit, OnDestroy {
           '@type': 'Organization',
           name: 'Punk Code Solution',
           email: 'punkcodesolution@gmail.com',
-          telephone: '+55-73-99834-8081',
+          telephone: '+55-75-98811-0732',
           address: {
             '@type': 'PostalAddress',
             addressLocality: 'Ilhéus',
@@ -135,9 +142,8 @@ export class PageContactComponent implements OnInit, OnDestroy {
   private readonly requiredFields = [
     { key: 'nome', label: 'Nome' },
     { key: 'email', label: 'Email' },
-    { key: 'mensagem', label: 'Mensagem' },
-    { key: 'telefone', label: 'Telefone' },
-    { key: 'servico', label: 'Serviço' },
+    { key: 'telefone', label: 'WhatsApp' },
+    { key: 'servico', label: 'Solução de Interesse' },
   ] as const;
 
   private getMissingFields(): string[] {
@@ -178,16 +184,19 @@ export class PageContactComponent implements OnInit, OnDestroy {
     }
 
     this.isLoading = true;
+    const interestLabel =
+      this.interestOptions.find(o => o.value === this.servico)?.label ?? this.servico;
+
     fetch(`${environment.apiUrl}/send-proposta`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         nome: this.nome,
         email: this.email,
-        mensagem: this.mensagem,
+        mensagem: this.mensagem || `Interesse em: ${interestLabel}`,
         telefone: this.telefone,
         empresa: this.empresa,
-        servico: this.servico,
+        servico: interestLabel,
       }),
     })
       .then(async response => {
@@ -227,6 +236,6 @@ export class PageContactComponent implements OnInit, OnDestroy {
     this.mensagem = '';
     this.telefone = '';
     this.empresa = '';
-    this.servico = 'web';
+    this.servico = '';
   }
 }

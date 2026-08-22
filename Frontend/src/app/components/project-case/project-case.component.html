@@ -1,0 +1,29 @@
+<section [id]="project.anchor" class="case">
+  <div class="wrap grid">
+    <div class="copy reveal-from-left" revealOnScroll>
+      <p class="badge">{{ project.badge }}</p>
+      <p class="name">{{ project.name }}</p>
+      <h2>{{ project.headline }}</h2>
+      <p class="body">{{ project.body }}</p>
+      <ul>
+        @for (item of project.outcomes; track item) {
+          <li>{{ item }}</li>
+        }
+      </ul>
+      <div class="cta-row">
+        <a class="btn" href="#servicos">{{ project.ctaLabel }}</a>
+        <a
+          class="btn btn-outline"
+          [href]="project.ctaHref"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Falar no WhatsApp
+        </a>
+      </div>
+    </div>
+    <div class="media reveal-from-right" revealOnScroll revealDelay="0.12s">
+      <img [src]="project.imageSrc" [alt]="project.imageAlt" loading="lazy" />
+    </div>
+  </div>
+</section>

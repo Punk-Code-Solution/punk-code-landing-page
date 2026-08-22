@@ -35,21 +35,18 @@ li {
 
   --quantico-font: "Quantico", sans-serif;
 
-  --background: linear-gradient(9deg, rgba(13, 67, 24, 1) 0%, rgba(13, 115, 47, 1) 50%, rgba(6, 78, 59, 1) 100%);
-
-  --light-background: linear-gradient(9deg, #F2F6EE 0%, #0D4318 50%, #F2F6EE 100%);
+  --background: var(--dark-green);
+  --light-background: var(--light-green);
 
   /* Additional color variables for components */
   --text-color-dark: #333;
   --text-color-light: #ffffff;
-  --gradient-green: linear-gradient(9deg, rgba(13, 67, 24, 1) 0%, rgba(13, 115, 47, 1) 50%, rgba(6, 78, 59, 1) 100%);
+  --gradient-green: var(--dark-green);
 
 }
 
 .default {
-
-  background: linear-gradient(9deg, rgba(13, 67, 24, 1) 0%, rgba(13, 115, 47, 1) 50%, rgba(6, 78, 59, 1) 100%);
-
+  background: var(--dark-green);
 }
 
 .gradient-background {
@@ -58,65 +55,7 @@ li {
   width: 100%;
   max-width: 100%;
   overflow: hidden;
-  background: linear-gradient(9deg, rgba(13, 67, 24, 1) 0%, rgba(13, 115, 47, 1) 50%, rgba(6, 78, 59, 1) 100%);
-  background-size: 600% 600%;
-  animation: gradientShift 15s ease infinite;
-}
-
-.gradient-background::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 200%;
-  height: 200%;
-  pointer-events: none;
-
-  background-image:
-    repeating-linear-gradient(
-      60deg,
-      rgba(144, 238, 144, 0.05),
-      rgba(144, 238, 144, 0.05) 1px,
-      transparent 5px,
-      transparent 100px
-    ),
-    repeating-linear-gradient(
-      120deg,
-      rgba(144, 238, 144, 0.05),
-      rgba(144, 238, 144, 0.05) 1px,
-      transparent 5px,
-      transparent 50px
-    );
-
-  animation: moveLines 60s linear infinite;
-}
-
-
-@keyframes gradientShift {
-  0% {
-    background-position: 0% 50%;
-  }
-  25% {
-    background-position: 50% 100%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  75% {
-    background-position: 50% 0%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-@keyframes moveLines {
-  0% {
-    transform: translate(0, 0);
-  }
-  100% {
-    transform: translate(-25%, -25%);
-  }
+  background: var(--dark-green);
 }
 
 /* Common animations for components */

@@ -25,7 +25,7 @@ a {
 
 /* --- ÍCONE DO TOPO --- */
 .icon-container {
-  background: linear-gradient(9deg, rgba(13, 67, 24, 1) 0%, rgba(13, 115, 47, 1) 50%, rgba(6, 78, 59, 1) 100%);
+  background: var(--dark-green);
   /* Verde escuro do fundo do ícone */
   color: #ffffff;
   /* Cor do ícone (branco) */
@@ -92,7 +92,7 @@ a {
 
 /* --- BOTÃO DE ORÇAMENTO --- */
 .quote-button {
-  background: linear-gradient(9deg, rgba(13, 67, 24, 1) 0%, rgba(13, 115, 47, 1) 50%, rgba(6, 78, 59, 1) 100%);
+  background: var(--dark-green);
   /* Verde escuro, o mesmo do ícone */
   color: #ffffff;
   /* Texto branco */
@@ -109,6 +109,6 @@ a {
 }
 
 .quote-button:hover {
-  background: linear-gradient(9deg, rgba(13, 67, 24, 1) 0%, rgba(13, 115, 47, 1) 50%, rgba(6, 78, 59, 1) 100%);
+  background: var(--dark-green);
   /* Um tom de verde um pouco mais escuro para o hover */
 }

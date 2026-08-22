@@ -54,7 +54,7 @@
 
 /* --- Seção de Soluções (Fundo Claro) --- */
 .solutions-section {
-  background: linear-gradient(9deg, rgba(13, 67, 24, 1) 0%, rgba(13, 115, 47, 1) 50%, rgba(6, 78, 59, 1) 100%);
+  background: var(--dark-green);
   padding: 4rem 2rem;
   text-align: center;
 }
@@ -126,7 +126,7 @@
   width: 90px;
   height: 90px;
   border-radius: 50%;
-  background: linear-gradient(9deg, rgba(13, 67, 24, 1) 0%, rgba(13, 115, 47, 1) 50%, rgba(6, 78, 59, 1) 100%);
+  background: var(--dark-green);
   display: flex;
   justify-content: center;
   align-items: center;
